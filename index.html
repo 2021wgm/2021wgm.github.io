@@ -105,8 +105,15 @@
 <p>元素在页面中是按照自左向右边排列的<br>默认情况下如果设置左和上外边距 则会移动元素自身<br>如果是设置右和下外边距则会移动其他元素<br>（如果margin取赋值  移动的方向改变  但移动的对象还是与正值时的对象一样）</p>
 <p>盒子实际占用空间（包括margin部分）</p>
 <p>IE盒子模型:box-sizing:border-box;(怪异模式) width&#x2F;height属性包含padding和border+内容区</p>
-<p>W3C标准盒子模型:box-sizing:content-box;（标准模式）默认模式 width&#x2F;height属性包含不包含padding和border<br><br/><br><br/></p>
-<h4 id="垂直外边距"><a href="#垂直外边距" class="headerlink" title="垂直外边距:"></a>垂直外边距:</h4><p>相邻的情况:<br>当上面盒子设置 margin-bottom</p>
+<p>W3C标准盒子模型:box-sizing:content-box;（标准模式）默认模式 width&#x2F;height属性包含不包含padding和border </p>
+<p>默认情况下:盒子可见框的大小由边框，内边距，内容区组成</p>
+<p>默认值: content-box </p>
+<br/>
+<br/>
+#### 垂直外边距: ####
+相邻的情况:
+当上面盒子设置 margin-bottom
+
 <p>下面盒子设置 margin-top</p>
 <p>这其中的间距 取其中的最大值</p>
 <p>特殊情况:<br>如果相邻的外边距一正一负,取他们的和<br>如果相邻的外边距都是负的,取其中绝对值较大的</p>
@@ -146,10 +153,7 @@
 <h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器:"></a>选择器:</h4><p>交集选择器:<br>p class&#x3D;”a<br>p.a{… 同时满足p标签 又满足类名a<br>class&#x3D;”a b c” 多个类名<br>.a.b.c{…<br>并集选择器:<br>.a,span{…<br>子元素选择器:<br>ul&gt;li</p>
 <p>后代选择器:<br>ul li (子元素也是后代选择器)</p>
 <p>兄弟选择器:<br>p &#x2F;p&gt;<br>span &#x2F;span</p>
-<p>p+span  选择p元素的兄弟元素span</p>
-<ul>
-<li>代表 紧挨着p标签的  ，下一个，隔了一个标签就不算</li>
-</ul>
+<p>p+span  选择p元素的兄弟元素span<br>&lt;+ 代表 紧挨着p标签的  ，下一个，隔了一个标签就不算</p>
 <p>p~span  代表选择p标签下面所有的兄弟元素span</p>
 <p>属性选择器:</p>
 <p title=""   
@@ -175,6 +179,124 @@
 <p>p::selection{… p标签中选中的内容</p>
 <p>p::before{… 元素的开始 这两个是不会被上面::selection选中的</p>
 <p>p::after{… 元素的最后<br><br/><br><br/></p>
+<h4 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签:"></a>语义化标签:</h4><p>em  行内  让字体倾斜</p>
+<p>strong 行内  加粗字体</p>
+<p>q  行内  引号 </p>
+<p>h1~h6 （h1字体最大）</p>
+<p>p（p元素内不能放块级元素）</p>
+<p>header 块级 表示网页头部<br>main  块级 表示网页主体部分<br>footer 块级 表示网页底部<br>nav 块级 表示网页中的导航<br>aside  块级 表示网页的侧边栏<br>article 块级 表示文章<br>section 块级 表示区块</p>
+<p>单个的:<br>br  换行<br><br/><br><br/></p>
+<h4 id="权重的比较"><a href="#权重的比较" class="headerlink" title="权重的比较:"></a>权重的比较:</h4><p>！important   权重最高   （这个在开发中能不用就不用）<br>内联  1000<br>id    100<br>类和伪类，属性选择器 10<br>元素      1<br>通配     0<br>继承     没有优先级</p>
+<p>div#box1  权重是叠加的   1 + 100 &#x3D;101</p>
+<p>div,p,span   分组选择器是单独计算的</p>
+<p>不能跨数量级<br>如果优先级计算相同，则优先使用靠下的样式<br><br/><br><br/></p>
+<h4 id="像素与百分比"><a href="#像素与百分比" class="headerlink" title="像素与百分比:"></a>像素与百分比:</h4><p>像素:屏幕(显示器)实际是由一个一个小点点（正方形）构成的<br>不同屏幕的像素大小是不同的，像素越小的屏幕显示的效果越清晰<br> 所以同样的200px在不同设备下显示效果不一样</p>
+<p>百分比:可以将属性设置为相对于父元素的百分比<br>使子元素跟随父元素的改变而改变<br><br/><br><br/></p>
+<h4 id="em与rem"><a href="#em与rem" class="headerlink" title="em与rem:"></a>em与rem:</h4><p>em是相对自身的字体大小设置的 ，默认为 1em &#x3D; 16px<br>这个font-size属性可以自己定义</p>
+<p>rem 是相对于根元素的字体大小(即html)设置的<br><br/><br><br/></p>
+<h4 id="RGB"><a href="#RGB" class="headerlink" title="RGB:"></a>RGB:</h4><p>通过三种颜色的不同浓度调配出不同的值<br>每一种颜色的范围在0~255(0% ~ 100%)之间</p>
+<p>R :red</p>
+<p>G:green</p>
+<p>B：blue</p>
+<p>蓝色:  background-color:rgb（0,0,255）</p>
+<p>黑色: 0,0,0<br>白色: 255,255,255</p>
+<p>rgba(0,0,0,.5)  第四个值表示透明度  .5代表0.5  1代表不透明 0表示完全透明</p>
+<p>16进制的rgb值<br>语法#红绿蓝<br>颜色浓度在 00 - ff之间<br>background-color:#ff0000 红色</p>
+<p>如果颜色两位两位重复则可以简写 如上面可以简写成 #f00</p>
+<p>项 #aabbcd  则不能简写了<br><br/><br><br/></p>
+<h4 id="HSL："><a href="#HSL：" class="headerlink" title="HSL："></a>HSL：</h4><p>H :色相（取值范围 0 - 360，一个环）</p>
+<p>S: 饱和度(颜色的浓度 0% - 100%)</p>
+<p>L: 亮度(0% - 100%)</p>
+<p>红色  background-color:hsl(0, 100%, 50%);</p>
+<p>hsla（, , , x,） x表示透明度<br><br/><br><br/></p>
+<h4 id="过度约束"><a href="#过度约束" class="headerlink" title="过度约束:"></a>过度约束:</h4><p>一个元素在其父元素中，水平布局必须要满足一下的等式:<br>margin-left + border-left + padding-left + width + padding-right+ border-right + margin-right &#x3D; 其父元素内容区的宽度(必须满足)</p>
+<p>如果相加结果使等式不成立，则称为过渡约束,则等式会自动调整</p>
+<p>调整情况:</p>
+<p>如果这七个值中没有auto的情况,则浏览器会自动调整margin-right的值来使等式成立</p>
+<p>这七个值中有三个值可以设置为auto<br>width<br>margin-left<br>margin-right</p>
+<p>width若为auto,（若其它值为0）则width和父元素内容区一样宽，<br>若其它有值,则auto&#x3D;父内容区宽 - 其他值宽和<br>如果同时将width和（一个或两个）外边距设置为auto ,则width会调整到最大，外边距会自动调整为0<br>如果将两个外边距设置为auto ,宽度固定,那么会两个外边距的值是相同的</p>
+<p>如果其他值为0 宽度大于父元素内容区 则调整margin-right为负值<br><br/><br><br/></p>
+<h4 id="轮廓阴影与圆角"><a href="#轮廓阴影与圆角" class="headerlink" title="轮廓阴影与圆角:"></a>轮廓阴影与圆角:</h4><p>起到边框作用但不会影响壳子可见框大小（周围的元素的布局不会受到影响),outline:10px solid blue;</p>
+<p>box-shadow 默认处于元素内，默认是看不见的<br>  10px               10px            50px     black;<br>  水平向右移动        垂直向下移动   设置阴影的模糊半径</p>
+<p>四个圆角<br>border-radius: 左上 右上 右下 坐下</p>
+<p>三个值  左上  右上&#x2F;下左 右下</p>
+<p>border-top-left-radius<br>border-top-right-radius<br>border-bottom-right-radius<br>border-bottom-left-radius</p>
+<p>若border-bottom-right-radius:50px;  在右边底部的顶点处  向左50px处  向上50px处  垂直画线 焦点处就是圆心  半径为 50px  然后和原来的两个点相切 出来的圆角</p>
+<p>border-radius: 20px &#x2F; 40px ;横向20px 纵向 40px</p>
+<p>border-radius:50% 将元素设置为一个圆形</p>
+<h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动:"></a>浮动:</h4><p>三个值<br>none 默认值 元素不浮动<br>left<br>right</p>
+<p>设置浮动的元素，会完全从文档流中脱离，不再占用文档流的位置<br>设置浮动以后，元素会向父元素的左边或者右边移动<br>浮动元素默认不会从父元素中移出<br>浮动元素向左或者向右移动时，不会超过它前面的其他浮动元素<br>浮动元素不会超过它前边浮动的兄弟元素，最多最多就是和它一样高<br>浮动元素不会盖住文字，文字会自动环绕在浮动元素周围</p>
+<p>脱离文档流的特点:</p>
+<p>1 块元素不再独占页面的一行</p>
+<p>2 脱离文档流以后，块元素的宽度和高度默认被内容撑开</p>
+<p>脱离文档流后，不需要再区分块和行内了<br><br/><br><br/></p>
+<h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC:"></a>BFC:</h4><p>在浮动布局中，父元素的高度默认是被子元素撑起的，<br>当子元素浮动后，会完全脱离文档流，将不会撑起父元素的高度</p>
+<p>开区BFC的元素会变成一个独立的布局区域</p>
+<p>特点:<br>开启BFC的元素不会被浮动元素覆盖<br>开启BFC的元素子元素和父元素外边距不会重叠(例子:给子元素margin-top不会作用到父元素身上)<br>开启BFC的元素可以包裹住浮动的元素，不会出现高度塌陷</p>
+<p>开启方式:</p>
+<p>1 float:left&#x2F;right（缺点:脱流，宽度被内容撑开）</p>
+<p>2 display:inline-block(缺点:宽度被内容撑开)&#x2F;table-cell&#x2F;table-caption&#x2F;flow-root</p>
+<p>3 overflow:auto&#x2F;hidden&#x2F;scroll（缺点:这个值有滚动条）</p>
+<p>4 position:absolute&#x2F;fixed</p>
+<p>此外解决高度坍塌方法还有:<br>clear:<br>作用:清除浮动元素对当前元素所产生的影响</p>
+<p>left  清除左侧浮动元素对当前元素所产生的影响<br>right 清除右侧浮动元素对当前元素所产生的影响<br>both  清除两侧中影响最大的那侧</p>
+<p>原理:设置清除浮动以后，浏览器会自动为元素添加一个上外边距</p>
+<p>这个也可以解决高度塌陷问题</p>
+<p>子元素末尾添加一个div ，然后给这个元素添加clear:both 属性</p>
+<p>在父元素身上添加 ::after (默认为行内元素)</p>
+<p>给属性:<br>content:’’;<br>clear:both;<br>display:block;</p>
+<p>同时解决高度塌陷和外边距重叠:<br>.clearfix::before,<br>.clearfix:after{<br>content:’’;<br>display:table;<br>clear:both;<br><br/><br><br/></p>
+<h4 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位:"></a>相对定位:</h4><p>特点:<br>【相对于自身原来的位置（文档流中的位置，更细致就是指 元素的左上角的一个点，画两条线，向右是x轴正方向，向下是y轴正方向），如 想要移动到在元素的位置上边 top 取负值，自身原来的位置还会被保留下来】</p>
+<p>开启相对定位的元素如果不设置偏移量(offset 即 top bottom left right)，元素不会有任何的变化</p>
+<p>相对定位会提高元素的层级，会高于文档流中的元素</p>
+<p>相对定位不会使元素脱离文档流</p>
+<p>相对定位不会改变元素的性质 块级还是块级 行内还是行内</p>
+<p>top：定位元素与定位位置上边的距离（这样的属性只存在于开启了定位的元素中，一般元素不适用），这个与margin-top的区别在于 top 只会影响自身，margin-top还会影响别的元素<br><br/><br><br/></p>
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位:"></a>绝对定位:</h4><p>会从文档流中脱离</p>
+<p>会改变元素的性质  行内变成块  块的宽高被内容撑开</p>
+<p>会使元素提升一个层级</p>
+<p>参照物为最近的开启了定位的祖先级元素(只要position不为static),如果所有祖先级元素都没有开启定位，则参照物为根元素(html,也称为初始包含块)<br><br/><br><br/></p>
+<h4 id="绝对定位元素的过渡约束"><a href="#绝对定位元素的过渡约束" class="headerlink" title="绝对定位元素的过渡约束:"></a>绝对定位元素的过渡约束:</h4><p>当为绝对定位时,<br>left + … +right （共9个值）&#x3D;父元素内容区的宽度</p>
+<p>当发生过渡约束时,9个值中如果没有auto,会调整right来使等式成立(如  left:0 right:0  实际上是在左边 right值被改变了)</p>
+<p>如果有auto ,则调整auto来使等式成立<br>可设置成auto的值  margin width  left right</p>
+<p>当margin-left:auto margin-right:auto  (此时没写left,right  则都默认为auto,这种情况下写margin-left margin-right 无效  需要写left 0 ;right 0 才能生效 为居中，没有写left right的结局是在左边)</p>
+<p>垂直方向的等式必须满足 top +margin-top&#x2F;bottom + padding-top&#x2F;bottom +height + border + bottom&#x3D; …包含块的高度</p>
+<p>垂直水平居中<br>margin-left&#x2F;right:auto  left&#x2F;right:0<br>margin-top&#x2F;bottom:auto  top&#x2F;bottom:0<br><br/><br><br/></p>
+<h4 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位:"></a>固定定位:</h4><p>position:fixed<br>也是一种绝对定位 大部分特点与绝对定位一致</p>
+<p>唯一不同的是  固定定位的参照物永远都是  浏览器的视口(视口就是看到的固定不变的 而html  网页 还包含后面可以滚动的部分)，【永远都固定到刚开始看到的位置，不会随着滚动条滚动而<br><br/><br><br/></p>
+<h4 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位:"></a>粘滞定位:</h4><p>position:sticky </p>
+<p>当元素到达某个位置时将其固定(不会随着滚动条滑动而滑动)</p>
+<p>如  top:100  当元素到达浏览器的视口的100px时固定不动<br><br/><br><br/></p>
+<h4 id="层级"><a href="#层级" class="headerlink" title="层级:"></a>层级:</h4><p>定位的元素（position不为static）比一般的元素层级高</p>
+<p>定位的元素 层级默认都一样</p>
+<p>对于定位的元素:</p>
+<p>z-index需要一个整数作为参数 值越大 层级大层级越高  越高越优先显示</p>
+<p>如果层级一样 靠下的元素优先显示<br><br/><br><br/></p>
+<h4 id="字体族"><a href="#字体族" class="headerlink" title="字体族:"></a>字体族:</h4><p>font-family:<br>字体分类<br>serif 衬线字体<br>sans-serif 非衬线字体<br>monospace 等宽字体</p>
+<p>有空格的用’’ 包裹</p>
+<p>1 ，2 ，3  电脑里面若有字体1就采用1，没有就采用2, …</p>
+<p>电脑里面的字体文件存储的位置  c&gt;Windows&#x2F;Fonts （C:\Windows\Fonts）</p>
+<p>如果想让用户使用指定的字体，但用户电脑里面本身没有</p>
+<p>@font-face{<br>font-family:myfont;(自定义字体的名字)(这里要注意版权)<br>src：url(…)（如 ZCOOLKuaiLe-Regular.ttf），url(…) 先考虑前面<br>}</p>
+<p>div{<br>font-family:myfont;<br>}</p>
+<p>这样可以使用在线(服务器上的字体)<br><br/><br><br/></p>
+<h4 id="图标字体"><a href="#图标字体" class="headerlink" title="图标字体:"></a>图标字体:</h4><p>li::before{<br>content:”.…”;<br>font-family:…<br>font-weight:…</p>
+<p><span class="fan">&amp;#xs12..;</span></p>
+<p>在iconfont中</p>
+<p>如:<br>content:’\e625’</p>
+<p>而在<span class='iconfont'>&amp;#xe625</span><br><br/><br><br/></p>
+<h4 id="行高"><a href="#行高" class="headerlink" title="行高:"></a>行高:</h4><p>行高:文字占有的实际高度(是指单行的行高)<br>line-height:2<br>若为整数，则为自身字体的倍数(font-size的倍数)</p>
+<p>如<br>font-size:50px;<br>line-height:200px;</p>
+<p>则上面75px,下面75px的空隙<br><br/><br><br/></p>
+<h4 id="字体的简写属性"><a href="#字体的简写属性" class="headerlink" title="字体的简写属性:"></a>字体的简写属性:</h4><p>font:italic bold  50px&#x2F;2(这里2代表行高，如果不写，会有一个默认值，会覆盖掉前面的line-height)  ‘Times …(字体)’，字体1，字体2;<br>其中字体大小&#x2F;行高,字体族必须放在最后<br><br/><br><br/></p>
+<h4 id="文本的垂直对齐"><a href="#文本的垂直对齐" class="headerlink" title="文本的垂直对齐:"></a>文本的垂直对齐:</h4><p>&lt;div…(font-size:50px) &lt;span…(font-size:20px)</p>
+<p>给span 添加vertical-align:middle(其他值:bottom top baseline)（这个是在行高范围内，而不是font-size的文字大小内）</p>
+<p>图标对齐方式默认为基线baseline<br><br/><br><br/></p>
+<h4 id="省略号"><a href="#省略号" class="headerlink" title="省略号:"></a>省略号:</h4><p>white-space:nowrap 设置网页如何处理空白<br>overflow:hidden<br>text-overflow:ellipsis<br><br/><br><br/></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他:"></a>其他:</h4><p>一个元素 想让左边留一些间隙</p>
+<p>设置   margin-left   那么外边那部分不是元素本身拥有的了</p>
+<p>设置   padding-left   空出来的还是元素本身拥有的</p>
+<p>若一个元素自身没有设置宽度 则宽度默认为auto ,这种情况下设置padding不会撑大盒子</p>
 
       
     </div>
