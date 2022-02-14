@@ -14,7 +14,7 @@
 <meta property="og:description" content="盒模型:每个盒子都由 内容区(content) 内边距(padding) 边框(border) 外边距(margin) 组成 内容区由width 和 height决定 border-width:四个值: 上 右 下 左 三个值:上 左右 下 两个值: 上下 左右 一个值: 四个方向 border-color值的设置也与border-width一样padding值的设置也是一样的 若添加backgr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T16:59:54.000Z">
-<meta property="article:modified_time" content="2022-02-13T09:38:51.490Z">
+<meta property="article:modified_time" content="2022-02-13T13:51:22.322Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -141,7 +141,11 @@
 <h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径:"></a>相对路径:</h4><p>如果不写.&#x2F;也不写 ..&#x2F;  ，相当于写了.&#x2F;<br>.&#x2F; 表示当前文件夹内查找<br><br/><br><br/></p>
 <h4 id="img标签"><a href="#img标签" class="headerlink" title="img标签:"></a>img标签:</h4><p>自结束标签 替换元素<br>img src&#x3D;””   绝对路径（如:http:&#x2F;&#x2F;…）和相对路径都可以</p>
 <p>alt&#x3D;””  图片无法加载出来时显示的信息,主要是给搜索引擎识别图片</p>
-<p>width&#x3D;””   若设置宽或高其中一个属性值 则另外一个会等比例缩放,若同时设置两个 则不会<br><br/><br><br/></p>
+<p>width&#x3D;””   若设置宽或高其中一个属性值 则另外一个会等比例缩放,若同时设置两个 则不会</p>
+<p>图片属于网页中的外部资源，外部资源都需要浏览器单独发送请求加载。</p>
+<p>浏览器加载外部资源时是按需加载的，用则加载，不用则不加载</p>
+<p>a:link  (a标签默认就是处于这个状态)</p>
+<p>a:link 会首先加载,而a：active 和 a:hover 会在指定状态触发时加载<br><br/><br><br/></p>
 <h4 id="内联框架"><a href="#内联框架" class="headerlink" title="内联框架:"></a>内联框架:</h4><p>iframe src&#x3D;””  向当前页面中引入一个其它页面（图片地址也行,引入相对路径下的页面也行）<br>frameborder&#x3D;”0” 边框<br><br/><br><br/></p>
 <h4 id="音频与视频标签"><a href="#音频与视频标签" class="headerlink" title="音频与视频标签:"></a>音频与视频标签:</h4><p>audio src&#x3D;”” 引入外部的音频文件  默认是没有任何显示的<br>必须加上 controls(加上就行了，不需要给值)<br>autoplay 自动播放(大部分浏览器不支持，但IE9及以上支持)<br>loop  播放完之后又自动从开始播放<br>在不同浏览器中显示的可能不一样</p>
 <p>audio controls<br>文字提示。。。<br>source src&#x3D;”   可以用source来指定文件的路径<br>对于支持audio标签的直接会找到source标签,对于不支持audio标签的，自然不会找到source标签，所以文字就会显示出来</p>
@@ -225,7 +229,7 @@
 <p>border-top-left-radius<br>border-top-right-radius<br>border-bottom-right-radius<br>border-bottom-left-radius</p>
 <p>若border-bottom-right-radius:50px;  在右边底部的顶点处  向左50px处  向上50px处  垂直画线 焦点处就是圆心  半径为 50px  然后和原来的两个点相切 出来的圆角</p>
 <p>border-radius: 20px &#x2F; 40px ;横向20px 纵向 40px</p>
-<p>border-radius:50% 将元素设置为一个圆形</p>
+<p>border-radius:50% 将元素设置为一个圆形<br><br/><br><br/></p>
 <h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动:"></a>浮动:</h4><p>三个值<br>none 默认值 元素不浮动<br>left<br>right</p>
 <p>设置浮动的元素，会完全从文档流中脱离，不再占用文档流的位置<br>设置浮动以后，元素会向父元素的左边或者右边移动<br>浮动元素默认不会从父元素中移出<br>浮动元素向左或者向右移动时，不会超过它前面的其他浮动元素<br>浮动元素不会超过它前边浮动的兄弟元素，最多最多就是和它一样高<br>浮动元素不会盖住文字，文字会自动环绕在浮动元素周围</p>
 <p>脱离文档流的特点:</p>
@@ -263,8 +267,12 @@
 <p>如果有auto ,则调整auto来使等式成立<br>可设置成auto的值  margin width  left right</p>
 <p>当margin-left:auto margin-right:auto  (此时没写left,right  则都默认为auto,这种情况下写margin-left margin-right 无效  需要写left 0 ;right 0 才能生效 为居中，没有写left right的结局是在左边)</p>
 <p>垂直方向的等式必须满足 top +margin-top&#x2F;bottom + padding-top&#x2F;bottom +height + border + bottom&#x3D; …包含块的高度</p>
-<p>垂直水平居中<br>margin-left&#x2F;right:auto  left&#x2F;right:0<br>margin-top&#x2F;bottom:auto  top&#x2F;bottom:0<br><br/><br><br/></p>
-<h4 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位:"></a>固定定位:</h4><p>position:fixed<br>也是一种绝对定位 大部分特点与绝对定位一致</p>
+<br/>
+<br/>
+#### 固定定位: ####
+position:fixed
+也是一种绝对定位 大部分特点与绝对定位一致
+
 <p>唯一不同的是  固定定位的参照物永远都是  浏览器的视口(视口就是看到的固定不变的 而html  网页 还包含后面可以滚动的部分)，【永远都固定到刚开始看到的位置，不会随着滚动条滚动而<br><br/><br><br/></p>
 <h4 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位:"></a>粘滞定位:</h4><p>position:sticky </p>
 <p>当元素到达某个位置时将其固定(不会随着滚动条滑动而滑动)</p>
@@ -294,6 +302,136 @@
 <p>给span 添加vertical-align:middle(其他值:bottom top baseline)（这个是在行高范围内，而不是font-size的文字大小内）</p>
 <p>图标对齐方式默认为基线baseline<br><br/><br><br/></p>
 <h4 id="省略号"><a href="#省略号" class="headerlink" title="省略号:"></a>省略号:</h4><p>white-space:nowrap 设置网页如何处理空白<br>overflow:hidden<br>text-overflow:ellipsis<br><br/><br><br/></p>
+<h4 id="hover的使用场景"><a href="#hover的使用场景" class="headerlink" title="hover的使用场景:"></a>hover的使用场景:</h4><p>.current-city:hover + .city-list  前者触发时 后者对应…</p>
+  <div class="location"
+
+  <div class="current-city"
+  <div class="city-list"
+</div
+但当移到city-list区域时就会消失
+
+<p>于是将hover给到location(这个就包含了整个区域，上面的current-city就不会包括city-list区域) </p>
+<p>浮出的盒子需要设置绝对定位，使其不占页面位置</p>
+<p>一些样式考虑除了加给hover之后的，还有本身<br><br/><br><br/></p>
+<h4 id="背景"><a href="#背景" class="headerlink" title="背景:"></a>背景:</h4><p>如果背景图片小于元素，则图片会在元素中自动平铺将元素铺满<br>如果背景图片和元素一样大，则会正常显示<br>background-repeat:repeat(默认值)&#x2F;repeat-x&#x2F;repeat-y 沿着某个方向重复&#x2F;no-repeat 不重复<br>background-position:top left 在元素左上角</p>
+<p>background-position：10px(往右走)  10px（往下走） </p>
+<p>background-clip:border-box(默认值，背景还会出现在边框的下边)&#x2F;padding-box(出现在内容区和内边距)&#x2F;content-box(背景只会出现在内容区)</p>
+<p>当背景图片大于元素时:<br>background-size:100px（宽） 100px(高) &#x2F;如果只写一个值，第二个值默认为auto&#x2F;cover（图片比例不变，将元素铺满，这样可能图片显示不全）&#x2F;contain（图片比例不变，显示完整，但可能没有铺满元素）<br>background-attachment:scroll 背景图片会随元素滚动&#x2F; fixed 背景图片不会随元素滚动<br>background:url(‘…’) #bfa  center center&#x2F;contain(这个值必须固定在位置后面)<br>content-box border-box no-repeat</p>
+<p>没有顺序要求，也没有哪个属性是必须写的</p>
+<p>background-origin:背景图片偏移量计算的原点 padding-box(background-position从内边距开始计算)  content-box(从内容区开始计算)  border-box(从边框处开始计算)</p>
+<p>origin 写在前    clip写在后面</p>
+<p>渐变颜色:<br>用正方形线条 从上到下选1px  图像-&gt;裁剪  文件_-&gt;存储为web所用格式 存储<br>background-image:url(…)<br>background-repeat:repeat-x<br>前提是高度一致<br><br/><br><br/></p>
+<h4 id="雪碧图"><a href="#雪碧图" class="headerlink" title="雪碧图:"></a>雪碧图:</h4><p>解决图片闪烁的问题<br>可以将多个小图片保存在一张大图片中，然后通过background-position来显示图片的位置<br>优点:降低请求的次数，加快访问速度<br><br/><br><br/></p>
+<h4 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变:"></a>线性渐变:</h4><p>颜色沿着一条直线发生变化<br>渐变是图片，需要通过background-image来设置</p>
+<p>background-image:linear-gradient(red,yellow)   从上(红色)到底部(黄色)，中间是过渡区域</p>
+<p>background-image:linear-gradient(to right ，red,yellow) 从左向右变<br> to top left, 从右下到左上</p>
+<p>可以指定多个颜色，多个颜色默认情况下平均分布</p>
+<p>background-image:linear-gradient(to right ,red 50px ,yellow)<br>从50px 开始渐变(50px以前的都是红色)  </p>
+<p>background-image:linear-gradient(to right ,red 50px ,yellow 100px）如果是200px, 100px后面都是黄色   </p>
+<p>background-image: repeating-linear-gradient(to right ,red 50px ,yellow 100px）  重复的线性渐变<br><br/><br><br/></p>
+<h4 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变:"></a>径向渐变:</h4><p>background-image:radial-gradient(red,green)<br>默认情况下 径向渐变的圆心形状根据元素的形状来计算的<br>正方形 -&gt; 圆形</p>
+<p>长方形 -&gt; 椭圆形</p>
+<p>也可以手动指定径向渐变的大小</p>
+<p>background-image：radial-gradient(100px 100px red,green)  100px正方形内的圆中从内到外 渐变</p>
+<p>radial-gradient(100px 100px at 0px 0px, red,green) 可以指定渐变的圆心<br><br/><br><br/>      </p>
+<h4 id="超链接的伪类"><a href="#超链接的伪类" class="headerlink" title="超链接的伪类:"></a>超链接的伪类:</h4><p>a:link{…表示没有访问过的链接</p>
+<p>a:visited{… 表示访问过的链接 由于隐私的原因，只能修改颜色</p>
+<p>下面这两个对任何标签都适用<br>：hover{…鼠标移上去的状态 </p>
+<p>:active{…点击不松手时的状态<br><br/><br><br/></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格:"></a>表格:</h4><table>
+thead>tr>td /th (加粗 居中 的效果)  头部
+tbody>tr>td 主题
+tfoot>tr>td 脚步
+
+<td>这个是行内元素
+
+<p>合并两列: colspan&#x3D;’2’ </p>
+<p>合并两行: rowspan&#x3D;’2’</p>
+<p>table{</p>
+<p>border-spacing:0px; 指定边框之间的距离</p>
+<p>border-collapse:collapse;合并边框</p>
+<p>}</p>
+<p>如果表格中没有写tbody,而是直接写tr,那么浏览器会自动创建一个tbody,并且将tr放到里面</p>
+<p>display:table-cell;将元素可以设置成单元格<br>这种情况下 vertical-align:middle; 可以将里面的元素 设置成 垂直居中<br><br/><br><br/></p>
+<h4 id="表单"><a href="#表单" class="headerlink" title="表单:"></a>表单:</h4><p>用于提交数据</p>
+<form action=""  
+actio. 表单要提交数据的服务器的地址
+<input type="text" name="..." 
+autocomplete="on /off"   历史记录显示与否 （也可以直接给到form 属性上，可直接作用在所有input type="text" 上  
+
+<p>数据要提交到服务器，必须要为元素指定一个name属性</p>
+<p>单选按钮  <input type="radio" name='...'>  &lt;input …<br>两个必须是同一个name属性 同时还需要有一个value属性<br>checked 默认选中</p>
+<p>多选框 type&#x3D;’checkbox’ …</p>
+<p>下拉列表</p>
+<p>&lt;select name&#x3D;’</p>
+<option value='...' selected> ...</option>
+
+<p>input type&#x3D;”submit”  点完就提交了</p>
+<p>input type&#x3D;”button”  只是可以点击</p>
+<p>input type&#x3D;”reset”  点完重置所有</p>
+<p>readonly  将表单项设置为只读性 数据会提交</p>
+<p>disabled  将表单项设置为禁用  数据不会提交</p>
+<p>autofocus 用于设置表单项 自动获取焦点<br><br/><br><br/></p>
+<h4 id="vscode快捷键"><a href="#vscode快捷键" class="headerlink" title="vscode快捷键:"></a>vscode快捷键:</h4><p>按住alt 点击多个 会出现多个光标 可以同时控制多个</p>
+<p>.a$*3 &#x3D;&gt;.a1+.a2+.a3<br><br/><br><br/></p>
+<h4 id="过渡"><a href="#过渡" class="headerlink" title="过渡:"></a>过渡:</h4><p>属性<br>transition-property:width,height;（all）</p>
+<p>过渡时间:<br>transition-duration:2s;</p>
+<p>颜色也能适用</p>
+<p>必须是一个有效数值向另一个有效数值过渡(如 margin-left:auto   margin-left:0; 不会有过渡效果)</p>
+<p>过渡的执行方式<br>transition-timing-function:<br>ease 默认值 慢速开始 先加速 后减速<br>linear  匀速运动<br>ease-in 加速运动<br>ease-out 减速运动<br>ease-in-out 先加速 后匀速</p>
+<p>steps(3) 分步骤</p>
+<p>transition-delay:2s  等待一定时间后再执行过渡</p>
+<p>transition 可以同时设置所有<br>有一个要求 如果要写延迟  第一个是持续时间 第二个是延迟时间<br><br/><br><br/></p>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画:"></a>动画:</h4><p>@keyframes name1{  设置一个关键帧  设置了动画执行的每一个步骤<br>….<br>from （动画的开始位置 ,也可以用0%表示）{ margin-left:0; </p>
+<p>to(动画的结束位置,也可以用100%表示){margin-left:200px;</p>
+<p>与过渡的区别是  动画不需要操作</p>
+<p>.box2{<br>animation-name:name1  对当前元素生效的关键帧的名字<br>animation-duration:2s 动画的执行时间</p>
+<p>animation-delay:2s;</p>
+<p>animation-timing-function:linear;</p>
+<p>animation-iteration-count:2;动画执行的次数 infinite  无限</p>
+<p>animation-direction:reverse(反着执行);指定动画运行的方向  （normal）<br>alternate 开始也是从 from 到 to  重复执行动画时反向执行<br>alternate-reverse  开始是从to 到 from  重复执行动画时反向执行</p>
+<p>animation-play-state:running（默认值）;设置动画的执行状态 paused（暂停状态）</p>
+<p>动画的填充模式<br>animation-fill-mode:none(默认值) 动画执行完毕后 元素回到原来的位置<br>forwards 动画执行完毕后 元素会停止在动画结束的位置<br>backwards  动画延迟等待时 元素就会处于开始状态<br>both 结合了上面两个（forwards 和 backwards）</p>
+<h4 id="变形"><a href="#变形" class="headerlink" title="变形:"></a>变形:</h4><p>设置变形效果<br>transform:scaleX&#x2F;Y（2） 水平&#x2F;垂直放大2倍</p>
+<p>scale(2) 双方向放大2倍</p>
+<p>变形的原点 默认值center center<br>transform-origin:0 20px</p>
+<p>transform: translateX（）沿着x轴方向 （水平 向右） translateY)() 垂直向上 translateZ()  向外</p>
+<p>不会对布局造成影响</p>
+<p>transform:translateX(100%)  相对于自身的百分百  </p>
+<p>transform:rotate(X&#x2F;Y&#x2F;Z)<br>transform:rotateZ(180deg&#x2F;1turn 一圈)</p>
+<p>是否显示元素的背面<br>backface-visibility:visible 显示   hidden 隐藏<br>z轴；<br>调整元素和人眼之间的距离<br>距离越大，离人越近。<br>z轴平移属于立体效果（近大远小） 默认情况下网页是不支持立体效果的 如果需要看见效果，需要设置网页的视距</p>
+<p>html：{<br>perspective:800px(一般 800 到 1000)</p>
+<p>…:hover{<br>transform:translateZ（800px）  直接贴满<br><br/><br><br/></p>
+<h4 id="元素垂直水平居中"><a href="#元素垂直水平居中" class="headerlink" title="元素垂直水平居中:"></a>元素垂直水平居中:</h4><p>对于盒子大小是确定的</p>
+<p>position:absolute;<br>top,right,bottom,left :0;<br>margin:auto;</p>
+<p>但对于盒子大小是被内容撑开的:</p>
+<p>left:50%;<br>top:50%;<br>transform:translateX(-50%) translateY(-50%);</p>
+<h4 id="变量与计算器"><a href="#变量与计算器" class="headerlink" title="变量与计算器:"></a>变量与计算器:</h4><p>css原生支持变量的设置</p>
+<p>html{<br>–color:#bfa;<br>–length:100px;</p>
+<p>.box1{<br>background-color:var(–color); 使用这个变量<br>width:var(–length)</p>
+<p>width:calc(1000px&#x2F;2)  calc相当于计算器( * …</p>
+<h4 id="关于less："><a href="#关于less：" class="headerlink" title="关于less："></a>关于less：</h4><p>是css的预处理语言<br>是css的增强版 用更少的代码实现更强的样式</p>
+<p>浏览器无法直接执行less代码，必须先转换成css代码，再教给浏览器去执行</p>
+<p>easy-less插件<br>建一个less文件，保存后会自动多出一个css文件</p>
+<p>好处：<br>less中写的是<br>body{<br>div{<br>color:green;<br>}<br>}</p>
+<p>css中会出现<br>body div{<br>color:green;</p>
+<p>变量:可以存储任意值 语法: @变量名<br>@a:100px; 这个不会出现在css中<br>.box{<br>width:@a;</p>
+<p>作为一部分使用时<br>@c:box6;</p>
+<p>background-image:url(“@{c}&#x2F;1.jpg”) 这里引号必须加上</p>
+<p>可以在变量声明前使用</p>
+<p>&amp;相当于父级元素<br>&amp;:hover{<br>…</p>
+<p>.p2:extend(.p1){ 可以拥有p1的样式,同时还能设置自己的样式<br>…</p>
+<p>.p3{<br>.p1（） 直接复制了p1的样式</p>
+<p>.p4(){专门用来给别人用 混合函数<br>….</p>
+<p>.p5{<br>.p4();</p>
+<p>上面混合函数中还可以设置变量</p>
+<p>.p4(@w,@h,@bg-color){  这里还可以设置默认值 @w:100px;<br>width:@w;</p>
+<p>.p5{<br>.p4（200px,300px,green);按顺序传递参数</p>
+<p>还可以指定变量名<br>.p5{<br>.p4(@bg-color:red,@w:200px,@h:300px)</p>
+<p>color:average(red,orange) 取两个颜色之间的平均值</p>
+<p>background-color:darken(#bfa,20%);加深前面的颜色20%</p>
+<p>在less中所有数值可以直接运算<br>.box{<br>width:500px + 500px</p>
+<p>在less中还可以这样写<br>@import “2.less”  引入其他的less文件（相当于其他的文件的代码 全部复制到这个文件中了）</p>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他:"></a>其他:</h4><p>一个元素想让左边留一些间隙，如果设置 margin-left   那么外边那部分不是元素本身拥有的了，如果设置padding-left，空出来的还是元素本身拥有的</p>
 <p>若一个元素自身没有设置宽度 则宽度默认为auto ,这种情况下设置padding不会撑大盒子</p>
 
