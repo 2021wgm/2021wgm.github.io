@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>JS | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JS编写的位置:可写在外部文件中，然后引入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS">
+<meta property="og:url" content="http://example.com/2022/02/14/JS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-14T10:40:51.000Z">
+<meta property="article:modified_time" content="2022-02-15T15:34:06.575Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-JS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/14/JS/" class="article-date">
+  <time class="dt-published" datetime="2022-02-14T10:40:51.000Z" itemprop="datePublished">2022-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      JS
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="JS编写的位置"><a href="#JS编写的位置" class="headerlink" title="JS编写的位置:"></a>JS编写的位置:</h4><p>可写在外部文件中，然后引入</p>
+<script type="text/javascript" src="js/script.js"
+
+也可以写在<script  </script
+
+还可以 <button onclick="">
+<br/>
+#### 字面量与变量: ####
+字面量都是一些不可改变的值 如 1，2，3
+变量可以用来保存字面量，变量的值是可以任意改变的
+
+声明变量  var a;
+<br/>
+#### 标识符: ####
+js中所有可以由我们自主命名的都可以称为标识符
+
+1 标识符可以含有 字母，数字，_,$,
+2 标识符不能以数字开头
+3 标识符不能是ES中的关键字(如:var,if)和保留字(如extend,class)
+4 标识符一般采用驼峰命名法
+  首字母小写，每个单词的开头字母大写，其余字母小写
+如 helloworld
+   helloWorld
+<br/>
+#### 数据类型： ####
+数据类型指的就是字面量的类型
+String 字符串
+Number 数字
+Boolean 布尔值
+Null 空值
+Undefined 未定义 6个基本
+Symbol
+
+Object 对象 一个引用
+<br/>
+#### String字符串: ####
+JS中字符串需要用引号引起来
+使用双引号或单引号都可以，但同种引号不要混着用
+在字符串中可以使用\作为转义字符
+\" 表示 "
+\'表示'
+\n表示换行
+\\表示\
+<br/>
+#### Number类型: ####
+在JS中所有数值都是Number类型
+包括整数和浮点数(小数)
+JS中用来表示数字的最大值Number.MAX_VALUE
+如果超过了最大值的大小则为Infinity字面量正无穷大,这个也是Number类型
+NaN的类型也是Number,表示not a number不是一个数字
+Number.MIN_VALUE表示0以上的最小值
+<br/>
+#### Boolean类型: ####
+值只有两个，主要用来逻辑判断
+true 真
+false 假
+<br/>
+#### null和undefined: ####
+null这个值专门用来表示一个空对象 typeof null 结果是 object
+undefined 表示 声明一个变量，但是没有赋值 typeof undefined结果为undefined
+null转成数字为0
+undefined转成数字为NaN
+<br/>
+#### 强制类型转换: ####
+将其他数据类型转换为String：
+.toString()方法 不会影响原变量，但会将结果返回
+null和undefined没有toString()方法，但可用下面的函数转换
+调用String()函数
+
+将其他数据类型转换为Number
+转换方式一:
+使用Number()函数
+字符串转成数字:
+1 如果是纯数字的字符串,则直接将其转换成数字
+2 如果字符串中有非数字的内容，则直接转成NaN
+3 如果字符串是空串或者里面全部都是空格，则转成0
+
+布尔转成数字
+true 1
+false 0
+
+null转成数字为0
+undefined转成数字为NaN
+
+转换方式二:
+parseInt()函数 parseInt可以将一个字符串中的有效数字读取出来，然后转换成Number类型，但如果第一位就是非数字，name直接转为NaN
+parseFloat()函数  parseFloat和parseInt类似，不同的是 parseFloat还可以获得有效的小数
+对于非String类型使用parseInt或者parseFloat，会将其先转成字符串，然后再转成Number
+
+将其他类型转成Boolean类型:
+数字中：0和NaN转布尔都是false
+字符串中:只有空串("")转布尔为false
+null和undefined转布尔都为false
+<br/>
+#### 其他进制的数: ####
+在js中，如果要表示16进制的数，需要以0x开头
+var a=0x10 结果为16
+如果要表示8进制的数，需要以0开头
+var a=070 结果为56
+如果要标识2进制的数，需要以0b开头
+var a=0b10 结果为 2
+像var a="070"
+parseInt(a);
+这种字符串有的浏览器当成8进制，有的当成10进制度
+解决方法:
+parseInt(a,10)第一个表示参数，第二个表示进制
+<br/>
+#### 算数运算符: ####
++：对于非Number类型的进行计算，会将其转换为number类型，然后进行计算，并将结果返回。
+任何值和NaN计算都为NaN(若是字符串相加除外)
+任何一个值和字符串相加，都会将其先转换为字符串，然后进行拼串。  
+var a=1;
+a=1+"";
+结果为字符串1，这里是虽然是隐式转换，但过程中还是用到了 String（）函数
+
+-,*,/:
+会将参与计算的值都转换为number类型，然后计算。
+var a="1";
+a=a-0;
+a=a*1;
+a=a/1;
+结果为Number类型的1,可以做隐式的类型转换。
+
+%：取余。
+<br/>
+#### 一元运算符: ####
+只需要一个操作数
+var a=1;
+console.log(+a);1 没有影响
+
+var a=1;
+console.log(-a);-1 有影响
+
+都会将非number类型的值转换为Number类型，
+var a=false;
+console.log(+a)；0；
+
+可以用+a;来做隐式转换成number类型(原理和Number()函数一样)
+<br/>
+#### 自增与自减 ####:
+var a=1;
+a++;此时 表达式 的值是1
+console.log(a):这里变成2;
+对于一个变量自增以后，原变量的值会立即增加1;
+无论是a++,还是++a,都会立即让原来的变量值加1，区别是a++这个表达式的值是自增以前的值，
+而++a这个表达式的值是自增以后的值。
+var a=20;
+var a=a++;
+等价于 var e=a++;
+a=e;
+a的结果还是20;
+<br/>
+#### 逻辑运算符: ####
+! 非运算符:对一个布尔值进行取反操作，false变成true,true变成false,
+不会改变原来变量的值，
+var a=true;
+console.log(!a);false;
+console.log(a);true;
+对于非布尔值取反，会将其先转换为布尔值，然后取反。
+可以取两次反，将一个非布尔类型的值转换为布尔类型的值，并且不改变原值
+var a=1;
+a=!!a;true;
+
+&& 与运算符:
+a&&b;
+只有两个值都为true,结果才是true;
+如果有一个值为false,结果就是false;
+如果第一个值为false,则不会再看第二个值
+
+|| 或运算符:
+只有两个值都为false,才返回false
+若需其中一个值为true,就会返回true
+如果第一个值为true,则不会再去看第二值
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/14/JS/" data-id="ckzoaf7pv0001rwno7mtshftc" data-title="JS" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">github官网快速进入的方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/14/JS/">JS</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/">github官网快速进入的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/CSS/">CSS</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
