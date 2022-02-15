@@ -6,15 +6,15 @@
   
   <title>JS | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="JS编写的位置:可写在外部文件中，然后引入">
+  <meta name="description" content="JS编写的位置:可写在外部文件中，然后引入script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js” 也可以写在script  &#x2F;script 还可以 button onclick&#x3D;”” 字面量与变量:字面量都是一些不可改变的值 如 1，2，3 变量可以用来保存字面量，变量的值可以任意改变 声明变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS">
 <meta property="og:url" content="http://example.com/2022/02/14/JS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入">
+<meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js” 也可以写在script  &#x2F;script 还可以 button onclick&#x3D;”” 字面量与变量:字面量都是一些不可改变的值 如 1，2，3 变量可以用来保存字面量，变量的值可以任意改变 声明变量">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-14T10:40:51.000Z">
-<meta property="article:modified_time" content="2022-02-15T15:44:59.565Z">
+<meta property="article:modified_time" content="2022-02-15T15:47:19.742Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -95,184 +95,43 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="JS编写的位置"><a href="#JS编写的位置" class="headerlink" title="JS编写的位置:"></a>JS编写的位置:</h4><p>可写在外部文件中，然后引入</p>
-<script type="text/javascript" src="js/script.js"
+        <h4 id="JS编写的位置"><a href="#JS编写的位置" class="headerlink" title="JS编写的位置:"></a>JS编写的位置:</h4><p>可写在外部文件中，然后引入<br>script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js”</p>
+<p>也可以写在script  &#x2F;script</p>
+<p>还可以 button onclick&#x3D;””<br><br/></p>
+<h4 id="字面量与变量"><a href="#字面量与变量" class="headerlink" title="字面量与变量:"></a>字面量与变量:</h4><p>字面量都是一些不可改变的值 如 1，2，3</p>
+<p>变量可以用来保存字面量，变量的值可以任意改变</p>
+<p>声明变量  var a;<br><br/></p>
+<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符:"></a>标识符:</h4><p>js中所有可以由我们自主命名的都可以称为标识符</p>
+<p>1 标识符可以含有 字母，数字，_,$,<br>2 标识符不能以数字开头<br>3 标识符不能是ES中的关键字(如:var,if)和保留字(如extend,class)<br>4 标识符一般采用驼峰命名法<br>  首字母小写，每个单词的开头字母大写，其余字母小写<br>如 helloworld<br>   helloWorld<br><br/></p>
+<h4 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h4><p>数据类型指的就是字面量的类型<br>String 字符串<br>Number 数字<br>Boolean 布尔值<br>Null 空值<br>Undefined 未定义 6个基本<br>Symbol</p>
+<p>Object 对象 一个引用<br><br/></p>
+<h4 id="String字符串"><a href="#String字符串" class="headerlink" title="String字符串:"></a>String字符串:</h4><p>JS中字符串需要用引号引起来<br>使用双引号或单引号都可以，但同种引号不要混着用<br>在字符串中可以使用\作为转义字符<br>&quot; 表示 “<br>&#39;表示’<br>\n表示换行<br>\表示<br><br/></p>
+<h4 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型:"></a>Number类型:</h4><p>在JS中所有数值都是Number类型<br>包括整数和浮点数(小数)<br>JS中用来表示数字的最大值Number.MAX_VALUE<br>如果超过了最大值的大小则为Infinity字面量正无穷大,这个也是Number类型<br>NaN的类型也是Number,表示not a number不是一个数字<br>Number.MIN_VALUE表示0以上的最小值<br><br/></p>
+<h4 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型:"></a>Boolean类型:</h4><p>值只有两个，主要用来逻辑判断<br>true 真<br>false 假<br><br/></p>
+<h4 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined:"></a>null和undefined:</h4><p>null这个值专门用来表示一个空对象 typeof null 结果是 object<br>undefined 表示 声明一个变量，但是没有赋值 typeof undefined结果为undefined<br>null转成数字为0<br>undefined转成数字为NaN<br><br/></p>
+<h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换:"></a>强制类型转换:</h4><p>将其他数据类型转换为String：<br>.toString()方法 不会影响原变量，但会将结果返回<br>null和undefined没有toString()方法，但可用下面的函数转换<br>调用String()函数</p>
+<p>将其他数据类型转换为Number<br>转换方式一:<br>使用Number()函数<br>字符串转成数字:<br>1 如果是纯数字的字符串,则直接将其转换成数字<br>2 如果字符串中有非数字的内容，则直接转成NaN<br>3 如果字符串是空串或者里面全部都是空格，则转成0</p>
+<p>布尔转成数字<br>true 1<br>false 0</p>
+<p>null转成数字为0<br>undefined转成数字为NaN</p>
+<p>转换方式二:<br>parseInt()函数 parseInt可以将一个字符串中的有效数字读取出来，然后转换成Number类型，但如果第一位就是非数字，name直接转为NaN<br>parseFloat()函数  parseFloat和parseInt类似，不同的是 parseFloat还可以获得有效的小数<br>对于非String类型使用parseInt或者parseFloat，会将其先转成字符串，然后再转成Number</p>
+<p>将其他类型转成Boolean类型:<br>数字中：0和NaN转布尔都是false<br>字符串中:只有空串(“”)转布尔为false<br>null和undefined转布尔都为false<br><br/></p>
+<h4 id="其他进制的数"><a href="#其他进制的数" class="headerlink" title="其他进制的数:"></a>其他进制的数:</h4><p>在js中，如果要表示16进制的数，需要以0x开头<br>var a&#x3D;0x10 结果为16<br>如果要表示8进制的数，需要以0开头<br>var a&#x3D;070 结果为56<br>如果要标识2进制的数，需要以0b开头<br>var a&#x3D;0b10 结果为 2<br>像var a&#x3D;”070”<br>parseInt(a);<br>这种字符串有的浏览器当成8进制，有的当成10进制度<br>解决方法:<br>parseInt(a,10)第一个表示参数，第二个表示进制<br><br/></p>
+<h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符:"></a>算数运算符:</h4><p>+：对于非Number类型的进行计算，会将其转换为number类型，然后进行计算，并将结果返回。<br>任何值和NaN计算都为NaN(若是字符串相加除外)<br>任何一个值和字符串相加，都会将其先转换为字符串，然后进行拼串。<br>var a&#x3D;1;<br>a&#x3D;1+””;<br>结果为字符串1，这里是虽然是隐式转换，但过程中还是用到了 String（）函数</p>
+<p>-,<em>,&#x2F;:<br>会将参与计算的值都转换为number类型，然后计算。<br>var a&#x3D;”1”;<br>a&#x3D;a-0;<br>a&#x3D;a</em>1;<br>a&#x3D;a&#x2F;1;<br>结果为Number类型的1,可以做隐式的类型转换。</p>
+<p>%：取余。<br><br/></p>
+<h4 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符:"></a>一元运算符:</h4><p>只需要一个操作数<br>var a&#x3D;1;<br>console.log(+a);1 没有影响</p>
+<p>var a&#x3D;1;<br>console.log(-a);-1 有影响</p>
+<p>都会将非number类型的值转换为Number类型，<br>var a&#x3D;false;<br>console.log(+a)；0；</p>
+<p>可以用+a;来做隐式转换成number类型(原理和Number()函数一样)<br><br/></p>
+<h4 id="自增与自减"><a href="#自增与自减" class="headerlink" title="自增与自减 ####:"></a>自增与自减 ####:</h4><p>var a&#x3D;1;<br>a++;此时 表达式 的值是1<br>console.log(a):这里变成2;<br>对于一个变量自增以后，原变量的值会立即增加1;<br>无论是a++,还是++a,都会立即让原来的变量值加1，区别是a++这个表达式的值是自增以前的值，<br>而++a这个表达式的值是自增以后的值。<br>var a&#x3D;20;<br>var a&#x3D;a++;<br>等价于 var e&#x3D;a++;<br>a&#x3D;e;<br>a的结果还是20;<br><br/></p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符:"></a>逻辑运算符:</h4><p>! 非运算符:对一个布尔值进行取反操作，false变成true,true变成false,<br>不会改变原来变量的值，<br>var a&#x3D;true;<br>console.log(!a);false;<br>console.log(a);true;<br>对于非布尔值取反，会将其先转换为布尔值，然后取反。<br>可以取两次反，将一个非布尔类型的值转换为布尔类型的值，并且不改变原值<br>var a&#x3D;1;<br>a&#x3D;!!a;true;</p>
+<p>&amp;&amp; 与运算符:<br>a&amp;&amp;b;<br>只有两个值都为true,结果才是true;<br>如果有一个值为false,结果就是false;<br>如果第一个值为false,则不会再看第二个值</p>
+<p>|| 或运算符:<br>只有两个值都为false,才返回false<br>若需其中一个值为true,就会返回true<br>如果第一个值为true,则不会再去看第二值</p>
 
-也可以写在<script  </script
-
-还可以 <button onclick=""
-<br/>
-#### 字面量与变量: ####
-字面量都是一些不可改变的值 如 1，2，3
-
-变量可以用来保存字面量，变量的值可以任意改变
-
-声明变量  var a;
-<br/>
-#### 标识符: ####
-js中所有可以由我们自主命名的都可以称为标识符
-
-1 标识符可以含有 字母，数字，_,$,
-2 标识符不能以数字开头
-3 标识符不能是ES中的关键字(如:var,if)和保留字(如extend,class)
-4 标识符一般采用驼峰命名法
-  首字母小写，每个单词的开头字母大写，其余字母小写
-如 helloworld
-   helloWorld
-<br/>
-#### 数据类型： ####
-数据类型指的就是字面量的类型
-String 字符串
-Number 数字
-Boolean 布尔值
-Null 空值
-Undefined 未定义 6个基本
-Symbol
-
-Object 对象 一个引用
-<br/>
-#### String字符串: ####
-JS中字符串需要用引号引起来
-使用双引号或单引号都可以，但同种引号不要混着用
-在字符串中可以使用\作为转义字符
-\" 表示 "
-\'表示'
-\n表示换行
-\\表示\
-<br/>
-#### Number类型: ####
-在JS中所有数值都是Number类型
-包括整数和浮点数(小数)
-JS中用来表示数字的最大值Number.MAX_VALUE
-如果超过了最大值的大小则为Infinity字面量正无穷大,这个也是Number类型
-NaN的类型也是Number,表示not a number不是一个数字
-Number.MIN_VALUE表示0以上的最小值
-<br/>
-#### Boolean类型: ####
-值只有两个，主要用来逻辑判断
-true 真
-false 假
-<br/>
-#### null和undefined: ####
-null这个值专门用来表示一个空对象 typeof null 结果是 object
-undefined 表示 声明一个变量，但是没有赋值 typeof undefined结果为undefined
-null转成数字为0
-undefined转成数字为NaN
-<br/>
-#### 强制类型转换: ####
-将其他数据类型转换为String：
-.toString()方法 不会影响原变量，但会将结果返回
-null和undefined没有toString()方法，但可用下面的函数转换
-调用String()函数
-
-将其他数据类型转换为Number
-转换方式一:
-使用Number()函数
-字符串转成数字:
-1 如果是纯数字的字符串,则直接将其转换成数字
-2 如果字符串中有非数字的内容，则直接转成NaN
-3 如果字符串是空串或者里面全部都是空格，则转成0
-
-布尔转成数字
-true 1
-false 0
-
-null转成数字为0
-undefined转成数字为NaN
-
-转换方式二:
-parseInt()函数 parseInt可以将一个字符串中的有效数字读取出来，然后转换成Number类型，但如果第一位就是非数字，name直接转为NaN
-parseFloat()函数  parseFloat和parseInt类似，不同的是 parseFloat还可以获得有效的小数
-对于非String类型使用parseInt或者parseFloat，会将其先转成字符串，然后再转成Number
-
-将其他类型转成Boolean类型:
-数字中：0和NaN转布尔都是false
-字符串中:只有空串("")转布尔为false
-null和undefined转布尔都为false
-<br/>
-#### 其他进制的数: ####
-在js中，如果要表示16进制的数，需要以0x开头
-var a=0x10 结果为16
-如果要表示8进制的数，需要以0开头
-var a=070 结果为56
-如果要标识2进制的数，需要以0b开头
-var a=0b10 结果为 2
-像var a="070"
-parseInt(a);
-这种字符串有的浏览器当成8进制，有的当成10进制度
-解决方法:
-parseInt(a,10)第一个表示参数，第二个表示进制
-<br/>
-#### 算数运算符: ####
-+：对于非Number类型的进行计算，会将其转换为number类型，然后进行计算，并将结果返回。
-任何值和NaN计算都为NaN(若是字符串相加除外)
-任何一个值和字符串相加，都会将其先转换为字符串，然后进行拼串。  
-var a=1;
-a=1+"";
-结果为字符串1，这里是虽然是隐式转换，但过程中还是用到了 String（）函数
-
--,*,/:
-会将参与计算的值都转换为number类型，然后计算。
-var a="1";
-a=a-0;
-a=a*1;
-a=a/1;
-结果为Number类型的1,可以做隐式的类型转换。
-
-%：取余。
-<br/>
-#### 一元运算符: ####
-只需要一个操作数
-var a=1;
-console.log(+a);1 没有影响
-
-var a=1;
-console.log(-a);-1 有影响
-
-都会将非number类型的值转换为Number类型，
-var a=false;
-console.log(+a)；0；
-
-可以用+a;来做隐式转换成number类型(原理和Number()函数一样)
-<br/>
-#### 自增与自减 ####:
-var a=1;
-a++;此时 表达式 的值是1
-console.log(a):这里变成2;
-对于一个变量自增以后，原变量的值会立即增加1;
-无论是a++,还是++a,都会立即让原来的变量值加1，区别是a++这个表达式的值是自增以前的值，
-而++a这个表达式的值是自增以后的值。
-var a=20;
-var a=a++;
-等价于 var e=a++;
-a=e;
-a的结果还是20;
-<br/>
-#### 逻辑运算符: ####
-! 非运算符:对一个布尔值进行取反操作，false变成true,true变成false,
-不会改变原来变量的值，
-var a=true;
-console.log(!a);false;
-console.log(a);true;
-对于非布尔值取反，会将其先转换为布尔值，然后取反。
-可以取两次反，将一个非布尔类型的值转换为布尔类型的值，并且不改变原值
-var a=1;
-a=!!a;true;
-
-&& 与运算符:
-a&&b;
-只有两个值都为true,结果才是true;
-如果有一个值为false,结果就是false;
-如果第一个值为false,则不会再看第二个值
-
-|| 或运算符:
-只有两个值都为false,才返回false
-若需其中一个值为true,就会返回true
-如果第一个值为true,则不会再去看第二值
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/JS/" data-id="ckzoarbok0001pcno5pf93xnx" data-title="JS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/JS/" data-id="ckzoauc550001e4no73uw6c2f" data-title="JS" class="article-share-link">Share</a>
       
       
       
