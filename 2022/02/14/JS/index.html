@@ -14,7 +14,7 @@
 <meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js” 也可以写在script  &#x2F;script 还可以 button onclick&#x3D;”” 字面量与变量:字面量都是一些不可改变的值 如 1，2，3 变量可以用来保存字面量，变量的值是可以任意改变的 声明变">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-14T10:40:51.000Z">
-<meta property="article:modified_time" content="2022-02-15T15:54:36.392Z">
+<meta property="article:modified_time" content="2022-02-17T15:47:49.527Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -123,15 +123,37 @@
 <p>var a&#x3D;1;<br>console.log(-a);-1 有影响</p>
 <p>都会将非number类型的值转换为Number类型，<br>var a&#x3D;false;<br>console.log(+a)；0；</p>
 <p>可以用+a;来做隐式转换成number类型(原理和Number()函数一样)<br><br/></p>
-<h4 id="自增与自减"><a href="#自增与自减" class="headerlink" title="自增与自减 ####:"></a>自增与自减 ####:</h4><p>var a&#x3D;1;<br>a++;此时 表达式 的值是1<br>console.log(a):这里变成2;<br>对于一个变量自增以后，原变量的值会立即增加1;<br>无论是a++,还是++a,都会立即让原来的变量值加1，区别是a++这个表达式的值是自增以前的值，<br>而++a这个表达式的值是自增以后的值。<br>var a&#x3D;20;<br>var a&#x3D;a++;<br>等价于 var e&#x3D;a++;<br>a&#x3D;e;<br>a的结果还是20;<br><br/></p>
+<h4 id="自增与自减"><a href="#自增与自减" class="headerlink" title="自增与自减:"></a>自增与自减:</h4><p>var a&#x3D;1;<br>a++;此时 表达式 的值是1<br>console.log(a):这里变成2;<br>对于一个变量自增以后，原变量的值会立即增加1;<br>无论是a++,还是++a,都会立即让原来的变量值加1，区别是a++这个表达式的值是自增以前的值，<br>而++a这个表达式的值是自增以后的值。<br>var a&#x3D;20;<br>var a&#x3D;a++;<br>等价于 var e&#x3D;a++;<br>a&#x3D;e;<br>a的结果还是20;<br><br/></p>
 <h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符:"></a>逻辑运算符:</h4><p>! 非运算符:对一个布尔值进行取反操作，false变成true,true变成false,<br>不会改变原来变量的值，<br>var a&#x3D;true;<br>console.log(!a);false;<br>console.log(a);true;<br>对于非布尔值取反，会将其先转换为布尔值，然后取反。<br>可以取两次反，将一个非布尔类型的值转换为布尔类型的值，并且不改变原值<br>var a&#x3D;1;<br>a&#x3D;!!a;true;</p>
 <p>&amp;&amp; 与运算符:<br>a&amp;&amp;b;<br>只有两个值都为true,结果才是true;<br>如果有一个值为false,结果就是false;<br>如果第一个值为false,则不会再看第二个值</p>
-<p>|| 或运算符:<br>只有两个值都为false,才返回false<br>若需其中一个值为true,就会返回true<br>如果第一个值为true,则不会再去看第二值</p>
+<p>|| 或运算符:<br>只有两个值都为false,才返回false<br>若需其中一个值为true,就会返回true<br>如果第一个值为true,则不会再去看第二值<br><br/></p>
+<h4 id="非布尔值的与或运算"><a href="#非布尔值的与或运算" class="headerlink" title="非布尔值的与或运算:"></a>非布尔值的与或运算:</h4><p>会将其转换成布尔值，然后进行运算,并且返回原值。<br>2&amp;&amp;1  1<br>1&amp;&amp;2  2<br>如果两个值都为true,则返回后面的。<br>0&amp;&amp;2<br>flase&amp;&amp;true<br>返回 0<br>2&amp;&amp;0  0<br>NaN&amp;&amp;0  NaN<br>0&amp;&amp;NaN  0<br>如果两个值中有false,则返回靠前的false<br>如果第一个值为true,则必然返回第二个值<br>如果第一个值为false，则直接返回第一个值<br><br/><br>2||1 2 如果第一个值为true,则直接返回第一个值<br>NaN||1  1  如果第一个值为false,则直接返回第二个值<br><br/></p>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符:"></a>赋值运算符:</h4><p>&#x3D;:可以将符号右侧的值赋值给符号左侧的变量<br>a +&#x3D;5 等价于 a&#x3D;a+5<br>a -&#x3D;5 等价于 a&#x3D;a-5<br>a %&#x3D;5 等价于 a&#x3D;a%5<br><br/></p>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符:"></a>关系运算符:</h4><p>比较两个值的大小，如果成立返回true,不成立返回false<br>4&gt;5 false<br>5&gt;&#x3D;5(大于或者等于 满足其一就成立) true<br>1&gt;”0” true  对于非数字进行比较时，会将其转换为数字然后进行比较。<br>10&lt;&#x3D;”hello” 任何值和NaN做比较都是false<br>“11”&lt;”5” true 特殊情况:如果两边都是字符串，不会将其转成数字比较，而会分别比较字符串中的Unicode编码<br>“abc”&lt;”b” true 比较字符编码时是一位一位进行比较,第一位a比b小，后面就不看了<br>“bbc”&lt;”b” false  第一位两边一样，比较下一位，第二位 左边是b 右侧没有 左边大<br><br/></p>
+<h4 id="Unicode编码表的使用"><a href="#Unicode编码表的使用" class="headerlink" title="Unicode编码表的使用:"></a>Unicode编码表的使用:</h4><p>在字符串中使用转义字符使用Unicode编码:console.log(“\u0054”);<br>在网页中使用Unicode编码:&amp;#编码 这里的编码需要的是10进制<br><br/></p>
+<h4 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符:"></a>相等运算符:</h4><p>&#x3D;&#x3D;  比较两个值是否相等，相等则返回true,否则返回false<br>4&#x3D;&#x3D;5 false<br>“1”&#x3D;&#x3D;1 true  如果两边的类型不同，  大部分情况都会转换为数字<br>true&#x3D;&#x3D;”1”  true  左边布尔转数字 1  右侧字符串也转成数字1<br>null&#x3D;&#x3D;0 false  左边null没有转成数字<br>undefined&#x3D;&#x3D;null true undefined衍生于null<br>NaN&#x3D;&#x3D;NaN  false NaN不和任何值相等，包括它本身</p>
+<p>检查一个值是否是NaN,如果是NaN返回true,否则返回false<br>isNaN(NaN) true<br>isNaN(1)   false<br>!&#x3D; 用来判断两个值是否不相等，不相等返回true 相等返回false</p>
+<p>&#x3D;&#x3D;&#x3D; 全等 用来判断两个值是否全等 若两边值的类型不同，则直接返回false，不会自动做类型转换。<br>“123”&#x3D;&#x3D;123 false<br>“123”&#x3D;&#x3D;123 true<br>null&#x3D;&#x3D;&#x3D;undefined  false  null与undefined相等但不全等</p>
+<p>！&#x3D;&#x3D; 不全等  如果两个值的类型不同，直接返回true<br>1!&#x3D;&#x3D;”1” true<br><br/></p>
+<h4 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符:"></a>条件运算符:</h4><p>语法：<br>条件表达式？语句1:语句2;<br>首先对条件表达式进行求值,若为true，则执行语句1，并返回结果,否则执行语句2，并返回结果。<br>var a&#x3D;1,b&#x3D;2;<br>a&gt;b?alert(“a大”)：alert(“b大”);<br>获取 a和b中的最大值<br>var max&#x3D;a&gt;b?a:b;<br>获取abc中的最大值<br>max&#x3D;max&gt;c?max:c;<br>或者<br>max&#x3D;a&gt;b?(a&gt;max?a:c):(b&gt;c?b:c);<br>如果条件表达式的求值为一个非布尔值，则会将其转换为布尔值，<br>“”?alert(1):alert(2);2<br>“1”?alert(1):alert(2); 1</p>
+<p>if(a&#x3D;10) 表示  if(10) 即 if(true)<br><br/></p>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级:"></a>优先级:</h4><p>, 运算符  可用来同时声明多个变量<br>var a,b,c;<br>1+2*3  先乘除后加减<br>1||2&amp;&amp;3  1如果或的优先级高先算或，如果与的优先级高先算与，如果两个一样高，则按从左往右的顺序<br>这里  &amp;&amp;的优先级比||高<br>可以通过()改变优先级 (1||2)&amp;&amp;3  3<br><br/></p>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块:"></a>代码块:</h4><p>程序是一条一条语句构成的,<br>语句是按照自上向下的顺序一条一条执行的<br>同一个{}中的语句称为一组语句，他们要么都执行，要么都不执行<br>{<br>alert(0);<br>console.log(1);<br>}  这里与不加{}没有区别<br>一个{}中的语句也称为一个代码块<br>在代码块的后边就不用再编写;了<br>JS中的代码块{}只具有分组的作用，没有其他用途。<br>在代码块中的内容，在外部是完全可见的<br><br/></p>
+<h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句:"></a>if语句:</h4><p>if(条件表达式)<br>语句<br>if语句在执行时 会先对条件表达式进行判断<br>如果为 true 则执行if后的语句，若为false 则不执行if后的语句。<br>var a&#x3D;10;<br>if(a&gt;10） if语句只能控制紧随其后的那个语句。<br>alert(1);<br>alert(2);这句还是会执行<br>如果希望if语句可以同时控制多条语句，可以将他们放在代码块{}中<br>if(a&gt;10){<br>alert(1);<br>alert(2);<br>}<br>if…else if…else  会从上到下依次对条件表达式进行求值判断,如果所有条件都不满足，则执行<br>最后一个else后的语句。<br>该语句中，只会有一个代码块被执行，一旦代码块执行了，则直接结束语句。<br>if(a&gt;10){<br>console.log（10）；<br>}else if(a&gt;5){<br>console.log(5);<br>}else if(a&gt;3){<br>console.log(3);<br>}else{<br>console.log(0);<br>}<br><br/></p>
+<h4 id="将三个数按从小到大排列"><a href="#将三个数按从小到大排列" class="headerlink" title="将三个数按从小到大排列:"></a>将三个数按从小到大排列:</h4><p>注:prompt返回的是一个字符串<br>var num1&#x3D;+prompt(“请输入一个数”);<br>var num2&#x3D;+prompt(“请输入第二个数”);<br>var num3&#x3D;+prompt(“请输入第三个数”);<br>if(num1&lt;num2&amp;&amp;num1&lt;num3){<br>&#x2F;&#x2F;如果num1最小<br>if(num2&lt;num3)<br>alert(num1,num2,num3)<br>else alert(num1,num3,num2);<br>}</p>
+<p>else if(num2&lt;num1&amp;&amp;num2&lt;num3){<br>&#x2F;&#x2F;如果num2最小<br>…<br>}</p>
+<p>else{<br>&#x2F;&#x2F;num3最小<br>…<br>}<br><br/></p>
+<h4 id="条件分支语句"><a href="#条件分支语句" class="headerlink" title="条件分支语句:"></a>条件分支语句:</h4><p>switch(条件表达式){<br>case 表达式:<br>语句 …<br>break; 这三行可以有多个<br>default:<br>语句 …<br>break;<br>}</p>
+<p>在执行时会依次将case后面的表达式的值和switch后面的表达式的值进行 全等 比较<br>如果比较的结果为true,则从当前case处开始执行代码，当前case后的代码都会执行<br>如果比较结果为false,则继续向下比较<br>使用break可以退出switch语句<br>如果所有的比较结果都为false,则只执行default后的语句</p>
+<p>var a&#x3D;1;<br>switch(a){<br>case 1:<br>console.log(“1”);<br>break;<br>}<br><br/></p>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环:"></a>while循环:</h4><p>while(条件表达式){<br>}<br>先对条件表达式进行求值判断<br>如果值为true,则执行循环体<br>循环体执行完以后，继续对表达式进行判断<br>如果为true,则继续执行循环体，以此类推<br>如果值为false，则终止循环</p>
+<p>while(true){  这个称为死循环<br>alert(n++)；<br>break;可以使用break终止循环<br>} </p>
+<p>do…while循环<br>先执行循环体，判断，继续执行循环体，然后判断,以此类推。<br>如果结果为false,则终止循环。<br>do{<br>语句…<br>}while（条件表达式）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/JS/" data-id="ckzocmoab00017knobusbaa1y" data-title="JS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/JS/" data-id="ckzr5yfkc00005kno654t13qh" data-title="JS" class="article-share-link">Share</a>
       
       
       
