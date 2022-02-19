@@ -14,7 +14,7 @@
 <meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js” 也可以写在script  &#x2F;script 还可以 button onclick&#x3D;”” 字面量与变量:字面量都是一些不可改变的值 如 1，2，3 变量可以用来保存字面量，变量的值是可以任意改变的 声明变">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-14T10:40:51.000Z">
-<meta property="article:modified_time" content="2022-02-17T15:47:49.527Z">
+<meta property="article:modified_time" content="2022-02-19T10:10:46.665Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -149,6 +149,13 @@
 <h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环:"></a>while循环:</h4><p>while(条件表达式){<br>}<br>先对条件表达式进行求值判断<br>如果值为true,则执行循环体<br>循环体执行完以后，继续对表达式进行判断<br>如果为true,则继续执行循环体，以此类推<br>如果值为false，则终止循环</p>
 <p>while(true){  这个称为死循环<br>alert(n++)；<br>break;可以使用break终止循环<br>} </p>
 <p>do…while循环<br>先执行循环体，判断，继续执行循环体，然后判断,以此类推。<br>如果结果为false,则终止循环。<br>do{<br>语句…<br>}while（条件表达式）</p>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环:"></a>for循环:</h4><p>求水仙花数：<br>for(var i&#x3D;100;i&lt;1000;i++){<br>var bai&#x3D;parseInt(i&#x2F;100); &#x2F;&#x2F;获取百位上的数字<br>var shi&#x3D;parseInt((i-bi<em>100)&#x2F;10);&#x2F;&#x2F;获取十位上的数字<br>var ge&#x3D;i%10;<br>if(bai</em>bai<em>bai+shi</em>shi<em>shi+ge</em>ge*ge&#x3D;&#x3D;i){<br>console.log(i);<br>}<br>}</p>
+<p>判断一个数是否是质数:<br>质数:只能被1和它自身整除的数，1不是质数也不是和数，质数必须是大于1的自然数。<br>var num&#x3D;prompt(“请输入一个数”);<br>var flag&#x3D;true;<br>if(num&lt;1){<br>alert(“请输入一个小于1的数”);<br>}else{<br>for(var i&#x3D;2;i&lt;num;i++){<br>&#x2F;&#x2F;优化:i&lt;&#x3D;Math.sqrt(num)  可以对一个数开方<br>if(num%i&#x3D;&#x3D;0){<br>flag&#x3D;false;  &#x2F;&#x2F;如果num能将一个数除断,就不是一个质数<br>&#x2F;&#x2F;优化：加一个break;减少时间<br>}<br>}<br>if(flag){<br>alert(num+”是一个质数”);&#x2F;&#x2F;说明上面的num%i一直都没有除断,所以flag为false一直没执行<br>}else{<br>alert(num+”不是一个质数”);<br>}</p>
+<p>嵌套联系:<br>for(var i&#x3D;0;i&lt;5;i++){&#x2F;&#x2F;控制行的个数<br>i值改变一次前，j值会该改变i次<br>for(var j&#x3D;0;j&lt;&#x3D;i;j++){&#x2F;&#x2F;控制每一行显示的个数<br>document.write(“*”);<br>}<br>document.write(“<br/>“);<br>}<br><br/></p>
+<h4 id="break与continue"><a href="#break与continue" class="headerlink" title="break与continue:"></a>break与continue:</h4><p>break关键字只能又来退出switch或循环语句<br>不能在if语句中使用break和continue<br>break会终止离他最近的循环语句</p>
+<p>可以在break后跟一个label（随便一个标签）,可以终止指定的循环<br>outer：<br>for(…){<br>for(…){<br>break outer;</p>
+<p>continue可以用来跳过当次循环<br>continue默认只会对离他最近的循环起作用<br><br/></p>
+<h4 id="测试程序执行的时间"><a href="#测试程序执行的时间" class="headerlink" title="测试程序执行的时间:"></a>测试程序执行的时间:</h4><p>程序执行前，开启计时器<br>console.time(“test”);text为计时器的名字<br>…<br>console.timeEnd(“test”);终止计时器</p>
 
       
     </div>
