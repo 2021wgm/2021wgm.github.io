@@ -242,7 +242,7 @@ atguigu2:false
 <p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
 
 <p>如果有很高的切换频率，使用v-show<br>频率低的 有v-if<br>另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
-<p>template只能和v-if连用 不能和v-show一起使用<br><template v-if='a===1'></p>
+<p>template只能和v-if连用 不能和v-show一起使用<br>&lt;template v-if&#x3D;’a&#x3D;&#x3D;&#x3D;1’</p>
 <p 123</p
 </template
 
@@ -277,7 +277,7 @@ key的作用：让每一个li拥有了一个唯一的标识（前面只有加了
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl194egy50005zcnodffz5pnp" data-title="vue2.0+3.0" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl1959l6w0006nknocbbhfn20" data-title="vue2.0+3.0" class="article-share-link">Share</a>
       
       
       
@@ -614,7 +614,7 @@ console.log(m1)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/22/ES6-11/" data-id="cl194egxu0001zcno7unv1766" data-title="ES6-11" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/22/ES6-11/" data-id="cl1959l6l0001nknofi3v9fec" data-title="ES6-11" class="article-share-link">Share</a>
       
       
       
@@ -750,7 +750,109 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl194egxy0002zcnoaxtu2ngi" data-title="ajax" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl1959l6p0002nkno79iphlu7" data-title="ajax" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-js2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/25/js2/" class="article-date">
+  <time class="dt-published" datetime="2022-02-25T12:24:11.000Z" itemprop="datePublished">2022-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/02/25/js2/">js2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="new-…-期间发生的事情"><a href="#new-…-期间发生的事情" class="headerlink" title="new …()期间发生的事情:"></a>new …()期间发生的事情:</h4><p>1 立刻创建一个新的对象<br>2 将新建的对象作为函数中的this<br>3 逐行执行函数中的代码<br>4 将新建立的对象作为返回值返回</p>
+<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向:"></a>this指向:</h4><p>以函数的形式调用,this永远都是window<br>以方法的形式调用，this就是调用方法的那个对象<br>以构造函数的形式调用，this就指向被创建出来的那个对象<br>使用call与apply方法调用时.this是指定的那个对象</p>
+<p>任何函数本质上都是通过某个对象来调用的,如果没有直接指定就是window<br>所有函数内部都有一个变量this，它的值是调用函数的当前对象</p>
+<h4 id="null与undefined的区别"><a href="#null与undefined的区别" class="headerlink" title="null与undefined的区别:"></a>null与undefined的区别:</h4><p>undefined:定义了但没有赋值<br>null:定义了也赋值了，值就是null</p>
+<h4 id="什么时候给变量赋值为null"><a href="#什么时候给变量赋值为null" class="headerlink" title="什么时候给变量赋值为null:"></a>什么时候给变量赋值为null:</h4><p>初始赋值，表明将要赋值为对象<br>结束前，让变量的指向的对象成为垃圾对象</p>
+<p>什么是数据？数据的特点?什么是内存?什么是变量?内存分类?内存,数据,变量三者之间的关系?<br>存储在内存中代表特定的信息,本质上是0101..(二进制数)<br>可传递,可运算。<br>内存条通电后产生的可储存数据的空间(临时的)<br>可变化的量,由变量名和变量值组成,每个变量都对象一块小内存，变量名用来查找对象的内存，变量值就是内存中保存的数据<br>栈:全局变量和局部变量  堆:对象。<br>内存是用来存储数据的空间，变量时内存的标识。</p>
+<h4 id="js引擎如何管理内存"><a href="#js引擎如何管理内存" class="headerlink" title="js引擎如何管理内存:"></a>js引擎如何管理内存:</h4><p>分配小内存空间,得到它的使用权<br>存储数据，可以反复进行操作<br>释放当前的小内存空间</p>
+<p>function fn（）{<br>var obj&#x3D;{};<br>}<br>fn();调用完后 obj是自动释放,而obj所指向的对象是在后面的某个时刻有垃圾回收器回收</p>
+<h4 id="什么是对象-为什么要用对象-对象的组成？如何访问对象内部数据-什么时候必须使用-‘属性名’-："><a href="#什么是对象-为什么要用对象-对象的组成？如何访问对象内部数据-什么时候必须使用-‘属性名’-：" class="headerlink" title="什么是对象?为什么要用对象?对象的组成？如何访问对象内部数据?什么时候必须使用[‘属性名’]："></a>什么是对象?为什么要用对象?对象的组成？如何访问对象内部数据?什么时候必须使用[‘属性名’]：</h4><p>多个数据的封装体,用来保存多个数据的容器,一个对象代表现实中的一个事物。<br>统一管理多个数据。<br>属性:属性值(字符串)和属性值组成  方法：一种特别的属性<br>.属性名 (有时不能用)   [‘属性名’] 通用<br>1 属性名包含特殊字符,如 _ 空格 p.content-type&#x3D;… 不能用  p[“content-type”]&#x3D;… 可行，<br>2 变量名不确定<br>var propName&#x3D;’age’<br>var value&#x3D;18<br>p.propName&#x3D;value 不可行  直接属性名当成了propName<br>p[propName]&#x3D;value  （中括号里面的是变量）可行</p>
+<h4 id="什么是函数-为什么要用函数-如何定义函数-如何调用函数"><a href="#什么是函数-为什么要用函数-如何定义函数-如何调用函数" class="headerlink" title="什么是函数?为什么要用函数?如何定义函数?如何调用函数?"></a>什么是函数?为什么要用函数?如何定义函数?如何调用函数?</h4><p>实现特定功能的n条语句的封装体<br>提高代码复用,便于阅读交流<br>函数声明或者表达式(function fn(){}    var f&#x3D;function(){})<br>test() 直接调用<br>obj.test() 通过对象调用<br>new test（）  new调用<br>test.call&#x2F;apply(obj) 临时让test成为obj的方法进行调用(可以让一个函数成为指定任意对象的方法进行调用)</p>
+<p>什么函数才是回调函数?<br>自己定义的  我没有调用  但最终执行了  （如定时器,dom事件）</p>
+<h4 id="关于加不加分号？"><a href="#关于加不加分号？" class="headerlink" title="关于加不加分号？"></a>关于加不加分号？</h4><p>js中一条语句的后面可以不加分号<br>有两种情况下必须加分号:<br>1 小括号开头的前一条语句<br>var a&#x3D;3<br>;(function(){…})()  或者在在3后面加上分号也是一样的</p>
+<p>2 中方括号的前一条语句<br>var b&#x3D;5<br>;[1,2].forEach(function(){})</p>
+<p>合并压缩(合并:将多个js文件合成一个js文件 压缩:把换行,注释能干掉的干掉，然后把变量名,函数名都换成a,b,c,d,..不重复的)</p>
+<h4 id="instanceof是如何判断的"><a href="#instanceof是如何判断的" class="headerlink" title="instanceof是如何判断的"></a>instanceof是如何判断的</h4><p>A instanceof B   如果B函数的显示原型对象在A对象的原型链上,返回true,不然就返回false</p>
+<h4 id="执行上下文："><a href="#执行上下文：" class="headerlink" title="执行上下文："></a>执行上下文：</h4><p>在执行全局代码前将window确定为全局执行上下文<br>对全局数据进行预处理:<br>var 定义的全局变量 &#x3D;&#x3D;&gt;undefined 并添加为window的属性<br>function声明的全局函数 添加为window的方法<br>this 赋值为window<br>开始执行全局代码</p>
+<h4 id="产生过几次执行上下文对象"><a href="#产生过几次执行上下文对象" class="headerlink" title="产生过几次执行上下文对象:"></a>产生过几次执行上下文对象:</h4><p>函数 执行 的次数+1（window全局）</p>
+<h4 id="产生过几个作用域"><a href="#产生过几个作用域" class="headerlink" title="产生过几个作用域:"></a>产生过几个作用域:</h4><p>函数 定义 的个数+1(window全局)</p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化:"></a>优化:</h4><p>for(var i&#x3D;0;length&#x3D;btns.length;i&lt;length;i++){}<br>这里第二步  如果是 i&lt;btns.length btns.length每次都需要计算，放在前面则只需要计算一次</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包:"></a>闭包:</h4><p>产生的条件:<br>一个嵌套的内部(子)函数引用了嵌套的外部(父)函数的变量时，并且执行外部函数</p>
+<p>闭包是是什么:<br>嵌套的内部函数</p>
+<p>常见的闭包:<br>1 将函数作为另外一个函数的返回值<br>function fn1(){<br>var a&#x3D;1;<br>function fn2(){<br>a++;<br>console.log(a);<br>}<br>return fn2;<br>}</p>
+<p>这里执行fn1()后  fn1,fn2变量名 都被释放了,但fn2所对应的对象没有被释放，因为有f指向这个对象,如果没有var f&#x3D;,那么这个fn2所指向的对象也会称为垃圾对象，被释放<br>var f&#x3D;fn1();<br>f();2<br>f();3</p>
+<p>2 将函数作为实参传给另外一个函数调用<br>function showDelay(msg,time){<br>setTimeout(function(){<br>msg();<br>},3000)</p>
+<p>showDelay(function(){console.log(1)},3000）</p>
+<p>3 自定义js模块<br>具有特定功能的js文件<br>将所有数据和功能都封装在一个函数内部(私有的)<br>只向外暴露一个包含n个方法的对象或函数<br>模块的使用者只需要通过模块暴露的对象调用方法来实现对应的功能<br>如 Mymodule.js中<br>function Mymodule(){<br>var msg&#x3D;”hello the earth”;<br>function doSomething(){<br>console.log(msg.toUpperCase());<br>}<br>function doOtherthing(){<br>console.log(msg.toLowerCase());<br>}<br>return {<br>doSomething:doSomething,（这里前面代表的只是字符串，后面是函数名）<br>doOtherthing:doOtherthing<br>}<br>}</p>
+<p>上述还可以写成匿名函数自调用的形式，然后通过window向外暴露出来:<br>（ function Mymodule(window){<br>var msg&#x3D;”hello the earth”;<br>function doSomething(){<br>console.log(msg.toUpperCase());<br>}<br>function doOtherthing(){<br>console.log(msg.toLowerCase());<br>}<br>window.module&#x3D; {<br>doSomething:doSomething,（这里前面代表的只是字符串，后面是函数名）<br>doOtherthing:doOtherthing<br>}<br>})(window)</p>
+<p>如果:实参，形参中添加了window ,能方便代码压缩，都换成a,b,c,d,..等单个字母</p>
+<p>在引入这个文件的文件的js模块中:<br>var module&#x3D;Mymodule();<br>module.doSomething();<br>module.doOtherthing();</p>
+<p>函数执行时出现过几次闭包:<br>取决于 外部 函数执行的次数</p>
+<p>闭包的作用:<br>函数内部的变量在函数执行完成后，仍然存活在内存中(延长了局部变量的声明周期)<br>在函数外部可以操作到函数内部的数据</p>
+<p>闭包的死亡:<br>嵌套的内部函数称为垃圾对象时<br>如上述案例中:<br>执行 f&#x3D;null;</p>
+<p>缺点:<br>函数执行完后，函数内的局部变量没有被释放，占用内存时间会变长。<br>容易造成内存泄漏</p>
+<p>解决:<br>能不用闭包就不用闭包<br>即使释放</p>
+<h4 id="内存溢出与内存泄漏："><a href="#内存溢出与内存泄漏：" class="headerlink" title="内存溢出与内存泄漏："></a>内存溢出与内存泄漏：</h4><p>内存溢出:<br>一种程序运行出现的错误<br>当程序运行需要的内存超过了剩余的内存时，就会抛出内存溢出的错误<br>如:<br>var obj&#x3D;{};<br>for(var i&#x3D;0;i&lt;100000;i++){<br>obj[i]&#x3D;new Array[10000000];<br>}<br>浏览器会直接崩溃</p>
+<p>内存泄漏:<br>占用的内存没有及时释放<br>内存泄漏积累多了就会导致内存溢出</p>
+<p>常见的内存泄漏:<br>1 意外的全局变量：<br> 如: function fn(){<br>a&#x3D;new Array[100000];<br>}</p>
+<p>2 没有及时清理的定时器或者回调函数<br>setInterval(function（）{<br>console.log(1);<br>},1000)</p>
+<p>3 闭包</p>
+<h4 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程:"></a>进程与线程:</h4><p>进程:程序的一次执行,它占有一片独有的内存空间<br>可以通过windows任务管理器（ctrl + alt+delete）查看</p>
+<p>线程:是进程内的一个独立执行单元，<br>是程序执行的一个完整流程】<br>是CPU的最小调度单元</p>
+<p>首先  应用程序存储在硬盘上，然后启动程序A或程序B，程序一启动就会有启动它对应的一个或多个进程，每一个进程会有对应的一个或多个线程</p>
+<p>一个进程如果有多个线程 称为多线程程序,如果只有一个线程，则称为单线程程序,单线程与多线程局限在一个进程内。</p>
+<p>chrome是多进程(可以同时启动多个进程)，但不是所用应用都是多进程</p>
+<p>应用程序必须运行在某个进程的某个线程上<br>一个进程中至少会有一个运行的线程:主线程(这里主线程只会有一个)，进程启动后自动创建<br>一个进程中也可以同时运行多个线程<br>一个进程内的数据可以供其中的多个线程直接共享<br>多个进程之间的数据是不能直接共享的</p>
+<p>线程池:保存多个线程对象的容器，实现线程对象的反复利用。</p>
+<p>多进程与多线程:<br>多进程:一个应用程序可以同时启动多个实例运行(启动多个进程)<br>多线程:在一个进程内，同时有多个线程运行</p>
+<p>比较单线程与多线程:<br>多线程：<br>优点 能有效提高CPU的利用率</p>
+<p>缺点:创建多线程有开销<br>线程间切换也有开销<br>死锁与状态同步问题</p>
+<p>单线程:<br>优点:<br>顺序编程简单易懂</p>
+<p>缺点:<br>效率低</p>
+<p>多个线程不一定就同时执行(如单核:创建多个线程   一个线程中执行一会儿，暂停后，另外的线程)<br>执行一会儿，暂停,….这样反复下去，在两个线程之间跳转运行）</p>
+<p>js是单线程还是多线程?<br>js是单线程运行的<br>但使用H5(即html5的规范 包含html5的 css的一些样式 js的一些新语法)的Web Workers可以多线程运行</p>
+<p>浏览器运行是单线程还是多线程?<br>都是多线程运行</p>
+<p>浏览器运行是单进程还是多进程?<br>有多进程也有单进程的<br>单进程:firefox<br>老版IE</p>
+<p>多进程:chrome<br>新版IE</p>
+<h4 id="js是单线程执行的"><a href="#js是单线程执行的" class="headerlink" title="js是单线程执行的:"></a>js是单线程执行的:</h4><p>如何证明:<br>setTimeout的回调函数是在主线程执行的<br>定时器回调函数只有在运行栈中的代码全部执行完后才会有可能执行</p>
+<p>(alert() 暂停当前主线程的执行 同时暂停计时，点击确定后，恢复程序执行和计时)</p>
+<h4 id="为什么js要用单线程模式？而不用多线程模式"><a href="#为什么js要用单线程模式？而不用多线程模式" class="headerlink" title="为什么js要用单线程模式？而不用多线程模式?"></a>为什么js要用单线程模式？而不用多线程模式?</h4><p>如果是多线程<br>现在如果页面中有一个p标签，线程1是对p标签进行添加文本  线程2是对p进行删除操作 线程1添加文本的时候时间交给了线程2 线程2删除了p标签后再交给线程1运行 此时1是看不到p的，所以会出问题</p>
+<p>（只会允许有一个线程去更新界面）</p>
+<h4 id="事件循环模型"><a href="#事件循环模型" class="headerlink" title="事件循环模型:"></a>事件循环模型:</h4><p>代码的分类:<br>初始化执行代码(同步代码):包含绑定dom事件监听,设置计时器,发送ajax请求的代码（应该不包括里面的回调函数）<br>回调执行代码(异步代码):负责回调逻辑</p>
+<p>js引擎执行代码的基本流程:<br>（js引擎是在主线程）<br>先执行初始化代码:包含一些特殊的代码<br>如:设置计时器<br>   绑定事件监听<br>   发送ajax请求<br>后面在某个时刻才会执行回调代码<br>（异步代码:只有当初始化代码执行完成以后，才有可能执行(看时间))</p>
+<p>模型的2个重要组成:<br>事件(定时器&#x2F;dom事件&#x2F;ajax)管理模块<br>回调队列</p>
+<p>模型的运转流程:<br>执行初始化代码,将事件回调函数交给对应模块管理<br>当事件发生时,管理模块会将回调函数及其数据添加到回调队列中<br>只有当初始化代码执行完后(可能要一定时间),才会遍历读取回调队列(起到一个缓存的作用)中的回调函数执行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/25/js2/" data-id="cl1959l6u0005nknobfe7f7vf" data-title="js2" class="article-share-link">Share</a>
       
       
       
@@ -794,7 +896,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl194egy70007zcno8k140gl7" data-title="计算题" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl1959l6y0008nkno31jrbcxi" data-title="计算题" class="article-share-link">Share</a>
       
       
       
@@ -1125,7 +1227,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl194egy30004zcno68ab4but" data-title="js1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl1959l6t0004nknoa2659lmm" data-title="js1" class="article-share-link">Share</a>
       
       
       
@@ -1168,7 +1270,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl194egy10003zcnodgste7u5" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl1959l6r0003nkno0lgs2e05" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
       
       
       
@@ -1587,7 +1689,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl194egxg0000zcnog2el3yeo" data-title="CSS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl1959l6d0000nkno6bcbce0w" data-title="CSS" class="article-share-link">Share</a>
       
       
       
@@ -1642,7 +1744,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl194egy60006zcno5s1whtfy" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl1959l6x0007nkno93m1dsqj" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
       
       
       
@@ -1697,11 +1799,11 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
           </li>
         
           <li>
-            <a href="/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/">计算题</a>
+            <a href="/2022/02/25/js2/">js2</a>
           </li>
         
           <li>
-            <a href="/2022/02/14/js1/">js1</a>
+            <a href="/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/">计算题</a>
           </li>
         
       </ul>
