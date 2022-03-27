@@ -118,7 +118,7 @@
 <h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法:"></a>模板语法:</h4><p>&lt;a v-bind:href&#x3D;’url’  前面有v-bind,后面的引号里面会当成js表达式执行<br>也可简写成 &lt;a :href&#x3D;’url’<br>还能够指定别的属性 &lt;a v-bind:href&#x3D;’url’ v-bind:x&#x3D;’hello’</p>
 <p>…<br>data:{<br>url:’<a target="_blank" rel="noopener" href="http://www.atguigu.com&/#39;">www.atguigu.com&#39;</a><br>hello:’你好’<br>}</p>
 <h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定:"></a>数据绑定:</h4><p>前面的v-bind是单向数据绑定 ：只能是data中的数据改变 去影响页面中的数据改变<br>，而如果页面中的数据改变，是不会影响到data中的数据改变</p>
-<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br><input v-model:value='m'><br>因为v-model默认收集就是value值，所以可以简写成<br><input v-model='m'> </p>
+<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br>&lt;input v-model:value&#x3D;’m’<br>因为v-model默认收集就是value值，所以可以简写成<br>&lt;input v-model&#x3D;’m’</p>
 <h4 id="el与data的两种写法"><a href="#el与data的两种写法" class="headerlink" title="el与data的两种写法:"></a>el与data的两种写法:</h4><p>（未使用vue-cli之前）<br>el:<br>指定容器除了<br>const v&#x3D;new Vue({<br>el:’#root’<br>}</p>
 <p>还可以 v.$mount(“#root”)</p>
 <p>data:<br>data:{}可以是对象式</p>
@@ -146,7 +146,7 @@
 <p>关键的一步:把data中的数据放到vm身上一份（为了编码更方便 省略了 _data.name中的_data）</p>
 <p>整个基本原理:<br>通过Object.defineProperty()把data中的所有属性添加到vm上<br>为每一个添加到vm身上的属性添加setter和getter<br>在setter和getter内部去操作（读&#x2F;写）data中对应的属性</p>
 <h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理:"></a>事件处理:</h4><p>事件里面绑定的函数 （）可加可不加，但如果时插值语法中必须加 如<p>（（demo()))&lt;&#x2F;p</p>
-<p>点击时触发: <button v-on:click="showInfo()">&lt;&#x2F;button<br>可简写成  &lt;button @click&#x3D;”showInfo”&gt;&lt;&#x2F;button</p>
+<p>点击时触发: &lt;button v-on:click&#x3D;”showInfo()” &lt;&#x2F;button<br>可简写成  &lt;button @click&#x3D;”showInfo”&gt;&lt;&#x2F;button</p>
 <p>new Vue({<br>el:’#root’<br>document.getElementById(“root”)<br>data:{<br>name:’尚硅谷’<br>},<br>methods:{<br>showInfo(a){<br> 此处的this是vm（Vue实例对象） 这里的第一个参数（当没有传入参数的时候）是事件对象 可以获取a.target.innerText<br>}</p>
 <p>如果想传入参数并且不会丢失event<br>&lt;button @click&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  参数位置可以互换，不影响<br>}</p>
 <h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符:"></a>事件修饰符:</h4><p>阻止事件默认行为:<br>methods:{<br>showInfo(event){<br>event.preventDefault();<br>}<br>或者<br>&lt;button @click.prevent&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  (.prevent对点击事件click进行修饰)</p>
@@ -204,23 +204,11 @@
 <h4 id="绑定class样式"><a href="#绑定class样式" class="headerlink" title="绑定class样式:"></a>绑定class样式:</h4><div class='basic' :class='a' 动态样式绑定 适用于类名不确定
 
 <p>data:{<br>a:’normal’<br>}</p>
-<style
-.normal{
-...
-}
-
-
-或者 数组写法 <div class='basic' :class='arr'  适用于 个数不缺名 名字不确定
-
-data:{
-arr:['atguigu1','atguigu2','atguigu3']
-}
-
-<style
-.atguigu1{}
-.atguigu2{}
-
-也可以
+<p>style<br>.normal{<br>…<br>}</p>
+<p>或者 数组写法 &lt;div class&#x3D;’basic’ :class&#x3D;’arr’  适用于 个数不缺名 名字不确定</p>
+<p>data:{<br>arr:[‘atguigu1’,’atguigu2’,’atguigu3’]<br>}</p>
+<p>style<br>.atguigu1{}<br>.atguigu2{}</p>
+<p>也可以</p>
 <div class='basic' :class='[a,b,c]'
 data:{
 a:'atguigu1',
@@ -236,35 +224,16 @@ atguigu2:false
 <div class='basic' :class='{atguigu1:false,atguigu2:false}'>
 
 
-#### 绑定style样式: ####
-<p style='{fontSize:fsize+"px"}'
+<h4 id="绑定style样式"><a href="#绑定style样式" class="headerlink" title="绑定style样式:"></a>绑定style样式:</h4><p style='{fontSize:fsize+"px"}'
 
-对象写法
-data:{
-fsize:40
-} 通常改成
+<p>对象写法<br>data:{<br>fsize:40<br>} 通常改成</p>
 <p style='styleObj'>
 
-data:{
-styleObj:{
-fontSize:'40px'
-}
-}
-或者数组形式
+<p>data:{<br>styleObj:{<br>fontSize:’40px’<br>}<br>}<br>或者数组形式</p>
 <p style='[styleObj,styleObj2]'
 
-data:{
-styleObj:{
-fontSize:'40px'
-}，
-styleObj2:{
-backgroundColor:green;
-}
-}
-
-
-#### 条件渲染: ####
-<p v-show='true'> 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）
+<p>data:{<br>styleObj:{<br>fontSize:’40px’<br>}，<br>styleObj2:{<br>backgroundColor:green;<br>}<br>}</p>
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染:"></a>条件渲染:</h4><p v-show='true'> 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）
 <p v-show='1==3'> 隐藏
 
 
@@ -272,117 +241,38 @@ backgroundColor:green;
 <p v-else-if='false'> 
 <p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
 
-如果有很高的切换频率，使用v-show
-频率低的 有v-if
-另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
-
-template只能和v-if连用 不能和v-show一起使用
-<template v-if='a===1'>
+<p>如果有很高的切换频率，使用v-show<br>频率低的 有v-if<br>另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
+<p>template只能和v-if连用 不能和v-show一起使用<br><template v-if='a===1'></p>
 <p 123</p
 </template
 
 
-#### 列表渲染: ####
-<ul
+<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染:"></a>列表渲染:</h4><ul
 <li v-for='p in persons' :key='p.id'> ((p. ...))</li 
 key的作用：让每一个li拥有了一个唯一的标识（前面只有加了: 后面才会被当成表达式处理）
 或者
 <li v-for='（p,index） in persons' :key='index'>  (把 in 换成 of也行)
 
-data:{
-persons:[{},{},{}]
-}
-
-或者 也可以遍历对象
+<p>data:{<br>persons:[{},{},{}]<br>}</p>
+<p>或者 也可以遍历对象</p>
 <li v-for='（p,k） in car' :key='k'>  (这里p 指 属性值  k表示属性名) (把 in 换成 of也行)
 
-data:{
-car：{
-name：1，
-price:2,
-color:3
-}
-}
-
-v-for也可以遍历字符串
-
-也可以遍历次数
-如  v-for='(a,b) of 5' 
-a 为 1 2 3 4 5
-b 为 0 1 2 3 4
-
-
-#### key的作用与原理: ####
-把初始数据生成虚拟dom（真实dom身上没有key,但虚拟dom身上一定会有key）(此时页面啥也没有，只是内存中出现了虚拟节点)
-然后将虚拟dom转换为真实dom
-用户开始输入内容，数据开始更新，出现了新的数据
-根据新的数据，生成 新的虚拟dom
-
-然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，<li key='0' 老王 20  <input type='text'</li'如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） 
-
-
-使用index作为key不是一定会有问题，如果对数据进行了破坏顺序的操作（如数组中往前面加元素，会造成破坏，而往后面添加则不会，因为此时的key为数组的索引值）
-
-如果不写key,遍历时的索引值会默认最为key值
-
-key值最好用唯一标识(id,身份证号)
-
-
-#### 更新时的一个问题(监视数据的一个原理): ####
-
-如这种情况的改变vue监测不到:
-data:{
-persons:[{},{},{}],
-},
-methods:{
-updataMei(){
-this.person[0]={...}  不奏效 (如果只是数组中某一个元素 的某一个属性做赋值是没问题的  如this.person[0].name=123 是可以的)
-但这样写可以  this.person.splice(0,1,{...})
-}
-
-
-}
-如果显示结果为undefined,那么页面不会报错，但也不会有显示
-
-数组更新监测:
-Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：
-
-push()
-pop()
-shift()
-unshift()
-splice()
-sort()
-reverse()
-
-如果是对象更新:
-data:{
-student:{name:'atguigu'},
-},
-methods:{
-addSex(){
-this.student.sex='男'； 不奏效
-需要这样写   Vue.set(vm._data.student,...)
-可以简写成   Vue.set(this.student,'sex','男')
-也可以  this.$set(....)  （这是对于对象）
-
-用这种方式对于数组 （hobby:['你','猜']）:
- Vue.set(this.hobby,0,'我') 0 表示元素的索引
-}
-
-
-总结:
-如何监测数组中的数据:
-对象中后追加的属性，Vue默认不做响应式处理
-如果需要给后追加的属性做响应式，需使用一下API:
-Vue.set(...)
-vm.$set(...)
-
-如何监测
-
-
-
-
+<p>data:{<br>car：{<br>name：1，<br>price:2,<br>color:3<br>}<br>}</p>
+<p>v-for也可以遍历字符串</p>
+<p>也可以遍历次数<br>如  v-for&#x3D;’(a,b) of 5’<br>a 为 1 2 3 4 5<br>b 为 0 1 2 3 4</p>
+<h4 id="key的作用与原理"><a href="#key的作用与原理" class="headerlink" title="key的作用与原理:"></a>key的作用与原理:</h4><p>把初始数据生成虚拟dom（真实dom身上没有key,但虚拟dom身上一定会有key）(此时页面啥也没有，只是内存中出现了虚拟节点)<br>然后将虚拟dom转换为真实dom<br>用户开始输入内容，数据开始更新，出现了新的数据<br>根据新的数据，生成 新的虚拟dom</p>
+<p>然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，&lt;li key&#x3D;’0’ 老王 20  &lt;input type&#x3D;’text’&lt;&#x2F;li’如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） </p>
+<p>使用index作为key不是一定会有问题，如果对数据进行了破坏顺序的操作（如数组中往前面加元素，会造成破坏，而往后面添加则不会，因为此时的key为数组的索引值）</p>
+<p>如果不写key,遍历时的索引值会默认最为key值</p>
+<p>key值最好用唯一标识(id,身份证号)</p>
+<h4 id="更新时的一个问题-监视数据的一个原理"><a href="#更新时的一个问题-监视数据的一个原理" class="headerlink" title="更新时的一个问题(监视数据的一个原理):"></a>更新时的一个问题(监视数据的一个原理):</h4><p>如这种情况的改变vue监测不到:<br>data:{<br>persons:[{},{},{}],<br>},<br>methods:{<br>updataMei(){<br>this.person[0]&#x3D;{…}  不奏效 (如果只是数组中某一个元素 的某一个属性做赋值是没问题的  如this.person[0].name&#x3D;123 是可以的)<br>但这样写可以  this.person.splice(0,1,{…})<br>}</p>
+<p>}<br>如果显示结果为undefined,那么页面不会报错，但也不会有显示</p>
+<p>数组更新监测:<br>Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：</p>
+<p>push()<br>pop()<br>shift()<br>unshift()<br>splice()<br>sort()<br>reverse()</p>
+<p>如果是对象更新:<br>data:{<br>student:{name:’atguigu’},<br>},<br>methods:{<br>addSex(){<br>this.student.sex&#x3D;’男’； 不奏效<br>需要这样写   Vue.set(vm._data.student,…)<br>可以简写成   Vue.set(this.student,’sex’,’男’)<br>也可以  this.$set(….)  （这是对于对象）</p>
+<p>用这种方式对于数组 （hobby:[‘你’,’猜’]）:<br> Vue.set(this.hobby,0,’我’) 0 表示元素的索引<br>}</p>
+<p>总结:<br>如何监测数组中的数据:<br>对象中后追加的属性，Vue默认不做响应式处理<br>如果需要给后追加的属性做响应式，需使用一下API:<br>Vue.set(…)<br>vm.$set(…)</p>
+<p>如何监测</p>
 
       
     </div>
