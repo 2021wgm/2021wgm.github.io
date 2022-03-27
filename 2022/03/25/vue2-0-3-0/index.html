@@ -6,15 +6,15 @@
   
   <title>vue2.0+3.0 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 生产版，开发板版的区别：开发版(包含完整的警告和调试模式)生产版(删除了警告">
+  <meta name="description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 避免博客生成时 标签转换失败 标签&lt; 后面加空格 生产版，开发板版的区">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue2.0+3.0">
 <meta property="og:url" content="http://example.com/2022/03/25/vue2-0-3-0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 生产版，开发板版的区别：开发版(包含完整的警告和调试模式)生产版(删除了警告">
+<meta property="og:description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 避免博客生成时 标签转换失败 标签&lt; 后面加空格 生产版，开发板版的区">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-24T16:12:49.000Z">
-<meta property="article:modified_time" content="2022-03-27T10:32:13.755Z">
+<meta property="article:modified_time" content="2022-03-27T10:41:31.923Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -96,7 +96,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h4 id="vue特点"><a href="#vue特点" class="headerlink" title="vue特点:"></a>vue特点:</h4><p>采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护<br>无需直接操作dom,提高开发效率<br>虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用）</p>
-<p>tips:所有花括号用(())代替</p>
+<p>tips:所有花括号用(())代替 避免博客生成时 标签转换失败 标签&lt; 后面加空格</p>
 <h4 id="生产版，开发板版的区别："><a href="#生产版，开发板版的区别：" class="headerlink" title="生产版，开发板版的区别："></a>生产版，开发板版的区别：</h4><p>开发版(包含完整的警告和调试模式)<br>生产版(删除了警告  项目写完了，要上线的时候 体积更小)</p>
 <h4 id="安装DevTools："><a href="#安装DevTools：" class="headerlink" title="安装DevTools："></a>安装DevTools：</h4><p>生态系统 -&gt;工具 -&gt;DevTools-&gt;Chrome Extension<br>右上角黑的图标-&gt;管理扩展程序 -&gt;开发者模式打开-&gt;最小化浏览器<br>把安装包按住拖到底部的浏览器</p>
 <h4 id="阻止vue在启动时出现生产提示："><a href="#阻止vue在启动时出现生产提示：" class="headerlink" title="阻止vue在启动时出现生产提示："></a>阻止vue在启动时出现生产提示：</h4><p>（未使用vue-cli之前）<br>Vue.config.productionTip&#x3D;false;</p>
@@ -244,9 +244,9 @@ atguigu2:false
 <p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
 
 <p>如果有很高的切换频率，使用v-show<br>频率低的 有v-if<br>另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
-<p>template只能和v-if连用 不能和v-show一起使用<br>&lt;template v-if&#x3D;’a&#x3D;&#x3D;&#x3D;1’</p>
+<p>template只能和v-if连用 不能和v-show一起使用<br>&lt; template v-if&#x3D;’a&#x3D;&#x3D;&#x3D;1’</p>
 <p 123</p
-</template
+< /template
 
 
 <h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染:"></a>列表渲染:</h4><ul
