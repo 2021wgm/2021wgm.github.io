@@ -14,7 +14,7 @@
 <meta property="og:description" content="盒模型:每个盒子都由 内容区(content) 内边距(padding) 边框(border) 外边距(margin) 组成 内容区由width 和 height决定 border-width:四个值: 上 右 下 左 三个值:上 左右 下 两个值: 上下 左右 一个值: 四个方向 border-color值的设置也与border-width一样padding值的设置也是一样的 若添加backgr">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-10T16:59:54.000Z">
-<meta property="article:modified_time" content="2022-03-12T14:04:00.387Z">
+<meta property="article:modified_time" content="2022-03-27T09:27:45.581Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -121,7 +121,7 @@
 <p>特殊情况:<br>如果相邻的外边距一正一负,取他们的和<br>如果相邻的外边距都是负的,取其中绝对值较大的</p>
 <p>父子的情况:<br>给子元素设置上外边距,它会传给父元素，导致整体移动<br>解决方法:<br>给父元素设置border(起到隔开的作用)<br><br/><br><br/></p>
 <h4 id="display的可选值"><a href="#display的可选值" class="headerlink" title="display的可选值:"></a>display的可选值:</h4><p>inline 转换成行内<br>block  转成块级<br>inline-block 转成行内块<br>table  将元素设置为一个表格<br>none   元素不会在页面中显示<br>flex   弹性盒子<br><br/><br><br/></p>
-<h4 id="隐藏元素的方式与区别"><a href="#隐藏元素的方式与区别" class="headerlink" title="隐藏元素的方式与区别:"></a>隐藏元素的方式与区别:</h4><p>display:none 隐藏元素 不会占据位置</p>
+<h4 id="隐藏元素的方式与区别"><a href="#隐藏元素的方式与区别" class="headerlink" title="隐藏元素的方式与区别:"></a>隐藏元素的方式与区别:</h4><p>display:none 隐藏元素 不会占据位置（不是代表元素标签不在）</p>
 <p>visibility: hidden 隐藏元素  仍然占据位置</p>
 <p>height:0;overflow:hidden;<br><br/><br><br/></p>
 <h4 id="有序列表与无序列表"><a href="#有序列表与无序列表" class="headerlink" title="有序列表与无序列表:"></a>有序列表与无序列表:</h4><p>无序 ul</p>
@@ -363,8 +363,8 @@ actio. 表单要提交数据的服务器的地址
 autocomplete="on /off"   历史记录显示与否 （也可以直接给到form 属性上，可直接作用在所有input type="text" 上  
 
 <p>数据要提交到服务器，必须要为元素指定一个name属性</p>
-<p>单选按钮  <input type="radio" name='...'>  &lt;input …<br>两个必须是同一个name属性 同时还需要有一个value属性<br>checked 默认选中</p>
-<p>多选框 type&#x3D;’checkbox’ …</p>
+<p>单选按钮  &lt;input type&#x3D;”radio” name&#x3D;’…’  &lt;input …<br>两个必须是同一个name属性 同时还需要有一个value属性<br>checked 默认选中</p>
+<p>多选框 type&#x3D;’checkbox’ …（在vue中如果出现多个  关于取值 得这样写<br>&lt;input type&#x3D;’checkbox’v-model&#x3D;’hobby’  value&#x3D;’study’  hobby必须为一个数组  同时必须指定value值，不然每个默认为checked  最后结果全部在数组中 ）</p>
 <p>下拉列表</p>
 <p>&lt;select name&#x3D;’</p>
 <option value='...' selected> ...</option>
@@ -480,7 +480,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl0pe0c9i0000gono1ibzfafl" data-title="CSS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl193mn4m0000hgno7jl2b8ie" data-title="CSS" class="article-share-link">Share</a>
       
       
       
@@ -527,7 +527,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -540,7 +540,15 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       <ul>
         
           <li>
-            <a href="/2022/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+            <a href="/2022/03/25/vue2-0-3-0/">vue2.0+3.0</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/22/ES6-11/">ES6-11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/ajax/">ajax</a>
           </li>
         
           <li>
@@ -548,15 +556,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
           </li>
         
           <li>
-            <a href="/2022/02/14/JS%E6%A0%B8%E5%BF%83/">JS</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/">github官网快速进入的方法</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/11/CSS/">CSS</a>
+            <a href="/2022/02/14/js1/">js1</a>
           </li>
         
       </ul>

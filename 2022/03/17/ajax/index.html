@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ajax | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="优缺点:优势:可以在页面不刷新的情况下向服务端发起请求允许你根据用户事件(鼠标 放在元素上和离开,键盘,表单)来更新部分页面内容 缺点:没有浏览历史，不能回退存在跨域问题(同源) Http协议:也叫做超文本传输协议规定了 浏览器和万维网服务器之间互相通信的规则是一种约定,规则请求(也称为请求报文  浏览器给服务器发的内容): 请求行: 请求类型(get post delete …) url路径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="http://example.com/2022/03/17/ajax/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="优缺点:优势:可以在页面不刷新的情况下向服务端发起请求允许你根据用户事件(鼠标 放在元素上和离开,键盘,表单)来更新部分页面内容 缺点:没有浏览历史，不能回退存在跨域问题(同源) Http协议:也叫做超文本传输协议规定了 浏览器和万维网服务器之间互相通信的规则是一种约定,规则请求(也称为请求报文  浏览器给服务器发的内容): 请求行: 请求类型(get post delete …) url路径">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-17T12:43:05.000Z">
+<meta property="article:modified_time" content="2022-03-23T15:31:08.809Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ajax" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/17/ajax/" class="article-date">
+  <time class="dt-published" datetime="2022-03-17T12:43:05.000Z" itemprop="datePublished">2022-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ajax
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点:"></a>优缺点:</h4><p>优势:可以在页面不刷新的情况下向服务端发起请求<br>允许你根据用户事件(鼠标 放在元素上和离开,键盘,表单)来更新部分页面内容</p>
+<p>缺点:没有浏览历史，不能回退<br>存在跨域问题(同源)</p>
+<h4 id="Http协议"><a href="#Http协议" class="headerlink" title="Http协议:"></a>Http协议:</h4><p>也叫做超文本传输协议<br>规定了 浏览器和万维网服务器之间互相通信的规则<br>是一种约定,规则<br>请求(也称为请求报文  浏览器给服务器发的内容):</p>
+<p>请求行: 请求类型(get post delete …) url路径  Http&#x2F;1.1（http协议版本）</p>
+<p>请求头 包括  Host:atguigu.com<br>Cookie:name&#x3D;guigu<br>Content-type:application&#x2F;x-www-form-urlencoded<br>User-Agent:chrome 83</p>
+<p>空行(没有实际意义)</p>
+<p>请求体 username&#x3D;admin&amp;password&#x3D;admin</p>
+<p>响应(也称为响应报文  服务器给浏览器返回的结果):</p>
+<p>响应行： Http&#x2F;1.1(http协议版本)  200(响应状态码)  OK(响应状态字符串)</p>
+<p>响应头：Content-Type:text&#x2F;html;charset&#x3D;utf-8<br>Content-Iength:2048<br>Content-encoding:gzip</p>
+<p>（空行）</p>
+<p>响应体:<html></p>
+<head>
+</head>
+<body>
+</body>
+</html>
+
+
+
+<p>若在浏览器中查看：<br>鼠标右击-&gt;检查 -&gt;网络(全部)-&gt;刷新-&gt;点击最上面一个请求<br>显示的内容中<br>载荷:请求的参数</p>
+<h4 id="ajax-express框架"><a href="#ajax-express框架" class="headerlink" title="ajax-express框架:"></a>ajax-express框架:</h4><p>基于nodejs</p>
+<p>在最外层位置启动终端<br>初始化: npm init –yes（npm是Nodejs下的一个包管理工具）<br>npm i express</p>
+<p>（根目录下）建立一个js文件<br>引入express :<br>1 const express&#x3D;require(“express”)</p>
+<p>创建应用对象:<br>2 const app&#x3D;express();</p>
+<p>创建路由规则:<br>requst是对请求报文的封装<br>response是对响应报文的封装<br>3 app.get(‘&#x2F;‘,(request.response)&#x3D;&gt;{<br>设置响应体<br>response.send(“hello express”) 还可以放语句  如response.send(‘console.log(“hello”)’)<br>})</p>
+<p>监听端口启动服务<br>4 app.listen(8000，（）&#x3D;&gt;{<br>console.log(“服务已经启动，8000端口监听中”)<br>})<br>(代表的网址  <a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000</a>)<br>然后在这个js文件用终端打开  node  js文件名称<br>然后 回车</p>
+<p>案例:<br>1.js<br>上述一样，改动有<br> app.get(‘&#x2F;server’,(request.response)&#x3D;&gt;{<br>设置响应头 允许跨域<br>response.setHeader(‘Access-Control-Allow-Origin’,’*’) &#x2F;&#x2F;Control有写错过，导致跨域失败</p>
+<p>设置响应体<br>response.send(“hello express”)<br>})</p>
+<p>对应网址（<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server%EF%BC%89">http://127.0.0.1:8000/server）</a></p>
+<p>1.html</p>
+<p>ajax操作</p>
+<p>1 创建对象<br>const xhr&#x3D;new XMLHttpRequest()</p>
+<p>2 初始化(设置请求方法和url)<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p>3 发送<br>xhr.send();</p>
+<p>4 事件绑定 处理服务端返回的结果<br>on when 当…时候<br>readystate是xhr对象中的属性 表示状态 有5个值<br>0 未初始化  最开始的属性就是0<br>1 表示 open方法已经调用完毕<br>2 表示 send方法已经调用完毕<br>3 表示 服务端返回了 部分结果<br>4 表示 服务端返回了  所有结果</p>
+<p>change 改变<br>xhr.onreadystatechange&#x3D;function(){<br>if(xhr.readyState&#x3D;&#x3D;4) 当服务端返回了所有结果时 并且 服务器的返回的响<br>应状态码为200<br>if(xhr.status&#x3D;&#x3D;200&amp;&amp;xhr.status&lt;300){<br>console.log(xhr.status) 响应行里面的响应状态码<br>console.log(xhr.statusText) 响应状态字符串<br>console.log(xhr.getAllResponseHeaders()) 所有响应头<br>console.log(xhr.response) 响应体</p>
+<p>。。。.innerHTML&#x3D;xhr.response;<br>}<br>}</p>
+<p>响应状态码中<br>2xx:2开头的都表示成功</p>
+<p>重启f2</p>
+<p>如果在get请求中要传递参数:<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server%EF%BC%9Fa=100&amp;b=200&amp;c=300&#39;">http://127.0.0.1:8000/server？a=100&amp;b=200&amp;c=300&#39;</a>)</p>
+<p>如果上述案例为post请求:<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)<br>改为<br>xhr.open(‘POST’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p> app.get改为<br>app.post</p>
+<p>如果在post请求中传递参数（请求体）<br>xhr.send(“a&#x3D;100&amp;b&#x3D;200&amp;c&#x3D;300”);或者 xhr.send(“a:100&amp;b:200&amp;c:300”);</p>
+<p>如果要设置请求头:<br>xhr.setRequestHeader(‘Content-Type’,’application&#x2F;x-www-form-urlencoded’)<br>Content-type是预定义的<br>Content-type:用来设置请求体内容的类型<br>application…:用来设置参数的类型</p>
+<p>如果想要自定义的    请求头<br>如:<br>xhr.setRequestHeader(‘name’,’atguigu’)<br>这样服务器那边需要加上<br>response.setHeader(‘Access-Control-Allow-Headers’,’*’)  *表示所有头类型的信息都能接受</p>
+<p>以及<br>app.post改为<br>app.all(.. 可以接受任意类型的请求 get,post,delete,options,…</p>
+<p>如果服务器向要返回一个对象给浏览器<br>由于<br>response.send(“”)里面只能是一个字符串</p>
+<p>所以需要将对象转化为字符串<br>如<br>const data&#x3D;{<br>name:’atguigu’<br>}<br>let str&#x3D;JSON.stringify(data)<br>response.send(str)</p>
+<p>对应的<br>在浏览器接受数据的时候<br>将字符串转化为对象(这是手动设置)<br>let data&#x3D;JSON.parse(xhr.response)</p>
+<p>还可以用一种自动设置的模式<br>xhr.responseType&#x3D;’json’</p>
+<p>为避免改动代码时需要重新启动:<br>npm install  -g nodemon</p>
+<p>重新启动时<br>nodemon 1.js</p>
+<h4 id="IE缓存问题"><a href="#IE缓存问题" class="headerlink" title="IE缓存问题:"></a>IE缓存问题:</h4><p>ie会将ajax请求的结果缓存下来，导致当服务器的数据发生改变时，不能即使的响应给浏览器，因为走的是缓存路线<br>如:xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)<br>需改为<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server?t=&#39;+Date.now()">http://127.0.0.1:8000/server?t=&#39;+Date.now()</a>)  加上一个时间戳<br>这时候就不会走缓存了，而是重新向服务器发起请求</p>
+<h4 id="超时与网络异常处理"><a href="#超时与网络异常处理" class="headerlink" title="超时与网络异常处理:"></a>超时与网络异常处理:</h4><p>服务器端:<br>setTimeout(()&#x3D;&gt;{<br>response.send(“…”);<br>},3000)</p>
+<p>浏览器端超时设置:<br>xhr.timeout&#x3D;2000;<br>xhr.ontimeout&#x3D;function(){<br>alert(“网络异常…”)<br>}</p>
+<p>浏览器端的网络异常回调:<br>xhr.onerror&#x3D;function(){<br>alert(“…”)<br>}</p>
+<h4 id="取消ajax请求"><a href="#取消ajax请求" class="headerlink" title="取消ajax请求:"></a>取消ajax请求:</h4><p>let xhr&#x3D;null;</p>
+<p>xhr&#x3D;new XMLHttpRequest()</p>
+<p>.. .onclick&#x3D;function（）{<br>xhr.abort();<br>}</p>
+<h4 id="ajax重复发送请求的情况"><a href="#ajax重复发送请求的情况" class="headerlink" title="ajax重复发送请求的情况:"></a>ajax重复发送请求的情况:</h4><p>为减少服务器压力</p>
+<p>let isSending&#x3D;false;是否正在发ajax请求 false没法  true正在发送</p>
+<p>..onclick&#x3D;function（）{<br>if(isSending){ 当下次重复发送的时候  上次的还处于发送状态 就取消掉<br>x.abort();<br>}</p>
+<p>const xhr&#x3D;new XMLHttpRequest()<br>isSending&#x3D;true 表示正在发送<br>…<br>xhr.onreadystatechange&#x3D;function(){<br>if（xhr.readystate&#x3D;&#x3D;4）{<br>isSending&#x3D;false;  请求成功了下次就不需要再发送，不用再重复执行代码<br>}</p>
+<p>}<br>}</p>
+<h4 id="在jquery中如何发送ajax请求"><a href="#在jquery中如何发送ajax请求" class="headerlink" title="在jquery中如何发送ajax请求:"></a>在jquery中如何发送ajax请求:</h4><p>搜 bootcdn<br>粘贴链接<br>$(‘button’).eq(0).click(function(){<br>$.get(   get后面四个参数<br>“<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/jquery-server&quot;">http://127.0.0.1:8000/jquery-server&quot;</a>,<br>{<br>a:100,<br>b:200<br>},<br>function(data){<br>data 为响应体<br>})<br>}，<br>‘json’) 设置响应体类型</p>
+<p>post请求也一样的</p>
+<p>主要在这里:<br>$(‘button’).eq(1).click(function(){<br>$.ajax({<br>url：”<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/jquery-server&quot;">http://127.0.0.1:8000/jquery-server&quot;</a>, 给谁发<br>data:{a:100,b:200},  参数<br>type:’GET’,请求类型<br>dataType：’json’, 响应体结果设置<br>success：function(data){ 成功的回调</p>
+<p>},<br>timeout:2000,超时时间<br>error:function(){ 失败的回调</p>
+<p>},<br>headers:{<br>c:300,<br>d:400<br>}</p>
+<p>})</p>
+<h4 id="使用axios发送ajax请求："><a href="#使用axios发送ajax请求：" class="headerlink" title="使用axios发送ajax请求：####"></a>使用axios发送ajax请求：####</h4><p>引入链接后</p>
+<p>axios.get(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/axios-server&#39;,{">http://127.0.0.1:8080/axios-server&#39;,{</a> 第二个参为一个对象<br>params:{参数<br>id:100<br>}，<br>headers:{请求头信息<br>name:’atguigu’<br>}</p>
+<p>}</p>
+<p>)</p>
+<p>还可以在外边配置baseURL<br>axios.defaults.baseURL&#x3D;’<a href="http://127.0.0.1:8080&#39;">http://127.0.0.1:8080&#39;</a><br>axios.get(‘axios-server’,…)</p>
+<p>如果是post请求<br>axios.post(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/axios-server&#39;">http://127.0.0.1:8080/axios-server&#39;</a>,<br>data:{请求体信息<br>username:123,<br>passward:456<br>}，<br>{其他配置<br>{<br>params:{参数<br>id:100<br>}，<br>headers:{请求头信息<br>name:’atguigu’<br>},<br>}</p>
+<p>}</p>
+<p>)</p>
+<p>axios还可以这样发送请求<br>axios({<br>method:’POST’,<br>url:’…’,<br>params:{level:30},<br>headers:{a:100},<br>data:{username:1}请求体</p>
+<p>})</p>
+<h4 id="使用fetch发送ajax请求"><a href="#使用fetch发送ajax请求" class="headerlink" title="使用fetch发送ajax请求:"></a>使用fetch发送ajax请求:</h4><p>fetch属于全局对象的，可以直接调用<br>fetch(‘<a target="_blank" rel="noopener" href="http://127.../?vip=10&#39;,{">http://127...?vip=10&#39;,{</a><br>method:’POST’<br>header：{name：’atguigu’},<br>body:’user&#x3D;admin&amp;password&#x3D;admin’<br>})</p>
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域:"></a>跨域:</h4><p>同源策略:是浏览器的一种安全策略<br>同源(同一个来源): 协议 域名 端口号 必须完全一样<br>违背同源策略就是跨域</p>
+<p>服务器端:<br>response.sendFile(__dirname+’&#x2F;index.html’) 响应一个页面</p>
+<p>一个Url(http:127.0.0.1:9000&#x2F;person)下的按钮点击后访问另一个url（http:127.0.0.1:9000&#x2F;data）<br>协议,域名，端口可以省略，浏览器会默认加上<br>x.open(‘GET’,’&#x2F;data’)</p>
+<h4 id="如何解决跨域"><a href="#如何解决跨域" class="headerlink" title="如何解决跨域:"></a>如何解决跨域:</h4><p>JSONP：只支持get请求<br>利用script标签的跨域能力来发送请求的<br>天生具有跨域能力的标签:img link iframe script<br>服务端返回函数调用并且把参数放在里面<br>response.send(‘console.log(“hello”)’)<br>如在<br>2.html：</p>
+<script>
+function hander(data){
+.. .innerHTML=data....
+}
+</script>
+<script src='...2.js'></script>
+
+<p>在2.js中:<br>app&#x2F;all(‘jsonp-server’,’….’)</p>
+<p>回调里加上<br>response.end(<code>handle($&#123;str&#125;)</code>)</p>
+<p>如果vscode中用live server打开<br><a target="_blank" rel="noopener" href="http://127.0.0.1:5500/1.html">http://127.0.0.1:5500/1.html</a><br>如果是 in Default Browsers访问<br>file:&#x2F;&#x2F;&#x2F;G:&#x2F;rain&#x2F;1.html</p>
+<h4 id="设置cors响应头实现跨域"><a href="#设置cors响应头实现跨域" class="headerlink" title="设置cors响应头实现跨域:"></a>设置cors响应头实现跨域:</h4><p>支持get和post请求<br>主要通过在服务端设置响应头</p>
+<p>response.setHeader(‘Access-Control-Allow-Origin’,’*’)<br>第2个参数也可以特指某一个url ‘http:127.0.0.1:5050’</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl193mn5e0002hgnoabxfd8w6" data-title="ajax" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/22/ES6-11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ES6-11
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/25/vue2-0-3-0/">vue2.0+3.0</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/22/ES6-11/">ES6-11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/ajax/">ajax</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/">计算题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/14/js1/">js1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-面试题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-vue2-0-3-0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2022-02-25T12:24:11.000Z" itemprop="datePublished">2022-02-25</time>
+    <a href="/2022/03/25/vue2-0-3-0/" class="article-date">
+  <time class="dt-published" datetime="2022-03-24T16:12:49.000Z" itemprop="datePublished">2022-03-25</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+      <a class="p-name article-title" href="/2022/03/25/vue2-0-3-0/">vue2.0+3.0</a>
     </h1>
   
 
@@ -93,51 +93,774 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="new-…-期间发生的事情"><a href="#new-…-期间发生的事情" class="headerlink" title="new …()期间发生的事情:"></a>new …()期间发生的事情:</h4><p>1 立刻创建一个新的对象<br>2 将新建的对象作为函数中的this<br>3 逐行执行函数中的代码<br>4 将新建立的对象作为返回值返回</p>
-<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向:"></a>this指向:</h4><p>以函数的形式调用,this永远都是window<br>以方法的形式调用，this就是调用方法的那个对象<br>以构造函数的形式调用，this就指向被创建出来的那个对象<br>使用call与apply方法调用时.this是指定的那个对象</p>
-<p>任何函数本质上都是通过某个对象来调用的,如果没有直接指定就是window<br>所有函数内部都有一个变量this，它的值是调用函数的当前对象</p>
-<h4 id="null与undefined的区别"><a href="#null与undefined的区别" class="headerlink" title="null与undefined的区别:"></a>null与undefined的区别:</h4><p>undefined:定义了但没有赋值<br>null:定义了也赋值了，值就是null</p>
-<h4 id="什么时候给变量赋值为null"><a href="#什么时候给变量赋值为null" class="headerlink" title="什么时候给变量赋值为null:"></a>什么时候给变量赋值为null:</h4><p>初始赋值，表明将要赋值为对象<br>结束前，让变量的指向的对象成为垃圾对象</p>
-<p>什么是数据？数据的特点?什么是内存?什么是变量?内存分类?内存,数据,变量三者之间的关系?<br>存储在内存中代表特定的信息,本质上是0101..(二进制数)<br>可传递,可运算。<br>内存条通电后产生的可储存数据的空间(临时的)<br>可变化的量,由变量名和变量值组成,每个变量都对象一块小内存，变量名用来查找对象的内存，变量值就是内存中保存的数据<br>栈:全局变量和局部变量  堆:对象。<br>内存是用来存储数据的空间，变量时内存的标识。</p>
-<h4 id="判断一个数是否是质数"><a href="#判断一个数是否是质数" class="headerlink" title="判断一个数是否是质数:"></a>判断一个数是否是质数:</h4><p>质数:只能被1和它自身整除的数，1不是质数也不是和数，质数必须是大于1的自然数。<br>var num&#x3D;prompt(“请输入一个数”);<br>var flag&#x3D;true;<br>if(num&lt;1){<br>alert(“请输入一个小于1的数”);<br>}else{<br>for(var i&#x3D;2;i&lt;num;i++){<br>&#x2F;&#x2F;优化:i&lt;&#x3D;Math.sqrt(num)  可以对一个数开方<br>if(num%i&#x3D;&#x3D;0){<br>flag&#x3D;false;  &#x2F;&#x2F;如果num能将一个数除断,就不是一个质数<br>&#x2F;&#x2F;优化：加一个break;减少时间<br>}<br>}<br>if(flag){<br>alert(num+”是一个质数”);&#x2F;&#x2F;说明上面的num%i一直都没有除断,所以flag为false一直没执行<br>}else{<br>alert(num+”不是一个质数”);<br>}</p>
-<h4 id="js引擎如何管理内存"><a href="#js引擎如何管理内存" class="headerlink" title="js引擎如何管理内存:"></a>js引擎如何管理内存:</h4><p>分配小内存空间,得到它的使用权<br>存储数据，可以反复进行操作<br>释放当前的小内存空间</p>
-<p>function fn（）{<br>var obj&#x3D;{};<br>}<br>fn();调用完后 obj是自动释放,而obj所指向的对象是在后面的某个时刻有垃圾回收器回收</p>
-<h4 id="什么是对象-为什么要用对象-对象的组成？如何访问对象内部数据-什么时候必须使用-‘属性名’-："><a href="#什么是对象-为什么要用对象-对象的组成？如何访问对象内部数据-什么时候必须使用-‘属性名’-：" class="headerlink" title="什么是对象?为什么要用对象?对象的组成？如何访问对象内部数据?什么时候必须使用[‘属性名’]："></a>什么是对象?为什么要用对象?对象的组成？如何访问对象内部数据?什么时候必须使用[‘属性名’]：</h4><p>多个数据的封装体,用来保存多个数据的容器,一个对象代表现实中的一个事物。<br>统一管理多个数据。<br>属性:属性值(字符串)和属性值组成  方法：一种特别的属性<br>.属性名 (有时不能用)   [‘属性名’] 通用<br>1 属性名包含特殊字符,如 _ 空格 p.content-type&#x3D;… 不能用  p[“content-type”]&#x3D;… 可行，<br>2 变量名不确定<br>var propName&#x3D;’age’<br>var value&#x3D;18<br>p.propName&#x3D;value 不可行  直接属性名当成了propName<br>p[propName]&#x3D;value  （中括号里面的是变量）可行</p>
-<h4 id="什么是函数-为什么要用函数-如何定义函数-如何调用函数"><a href="#什么是函数-为什么要用函数-如何定义函数-如何调用函数" class="headerlink" title="什么是函数?为什么要用函数?如何定义函数?如何调用函数?"></a>什么是函数?为什么要用函数?如何定义函数?如何调用函数?</h4><p>实现特定功能的n条语句的封装体<br>提高代码复用,便于阅读交流<br>函数声明或者表达式(function fn(){}    var f&#x3D;function(){})<br>test() 直接调用<br>obj.test() 通过对象调用<br>new test（）  new调用<br>test.call&#x2F;apply(obj) 临时让test成为obj的方法进行调用(可以让一个函数成为指定任意对象的方法进行调用)</p>
-<p>什么函数才是回调函数?<br>自己定义的  我没有调用  但最终执行了  （如定时器,dom事件）</p>
-<h4 id="关于加不加分号？"><a href="#关于加不加分号？" class="headerlink" title="关于加不加分号？"></a>关于加不加分号？</h4><p>js中一条语句的后面可以不加分号<br>有两种情况下必须加分号:<br>1 小括号开头的前一条语句<br>var a&#x3D;3<br>;(function(){…})()  或者在在3后面加上分号也是一样的</p>
-<p>2 中方括号的前一条语句<br>var b&#x3D;5<br>;[1,2].forEach(function(){})</p>
-<p>合并压缩(合并:将多个js文件合成一个js文件 压缩:把换行,注释能干掉的干掉，然后把变量名,函数名都换成a,b,c,d,..不重复的)</p>
-<h4 id="instanceof是如何判断的"><a href="#instanceof是如何判断的" class="headerlink" title="instanceof是如何判断的"></a>instanceof是如何判断的</h4><p>A instanceof B   如果B函数的显示原型对象在A对象的原型链上,返回true,不然就返回false</p>
-<h4 id="执行上下文："><a href="#执行上下文：" class="headerlink" title="执行上下文："></a>执行上下文：</h4><p>在执行全局代码前将window确定为全局执行上下文<br>对全局数据进行预处理:<br>var 定义的全局变量 &#x3D;&#x3D;&gt;undefined 并添加为window的属性<br>function声明的全局函数 添加为window的方法<br>this 赋值为window<br>开始执行全局代码</p>
-<h4 id="产生过几次执行上下文对象"><a href="#产生过几次执行上下文对象" class="headerlink" title="产生过几次执行上下文对象:"></a>产生过几次执行上下文对象:</h4><p>函数 执行 的次数+1（window全局）</p>
-<h4 id="产生过几个作用域"><a href="#产生过几个作用域" class="headerlink" title="产生过几个作用域:"></a>产生过几个作用域:</h4><p>函数 定义 的个数+1(window全局)</p>
-<h4 id="优化"><a href="#优化" class="headerlink" title="优化:"></a>优化:</h4><p>for(var i&#x3D;0;length&#x3D;btns.length;i&lt;length;i++){}<br>这里第二步  如果是 i&lt;btns.length btns.length每次都需要计算，放在前面则只需要计算一次</p>
-<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包:"></a>闭包:</h4><p>产生的条件:<br>一个嵌套的内部(子)函数引用了嵌套的外部(父)函数的变量时，并且执行外部函数</p>
-<p>闭包是是什么:<br>嵌套的内部函数</p>
-<p>常见的闭包:<br>1 将函数作为另外一个函数的返回值<br>function fn1(){<br>var a&#x3D;1;<br>function fn2(){<br>a++;<br>console.log(a);<br>}<br>return fn2;<br>}</p>
-<p>这里执行fn1()后  fn1,fn2变量名 都被释放了,但fn2所对应的对象没有被释放，因为有f指向这个对象,如果没有var f&#x3D;,那么这个fn2所指向的对象也会称为垃圾对象，被释放<br>var f&#x3D;fn1();<br>f();2<br>f();3</p>
-<p>2 将函数作为实参传给另外一个函数调用<br>function showDelay(msg,time){<br>setTimeout(function(){<br>msg();<br>},3000)</p>
-<p>showDelay(function(){console.log(1)},3000）</p>
-<p>3 自定义js模块<br>具有特定功能的js文件<br>将所有数据和功能都封装在一个函数内部(私有的)<br>只向外暴露一个包含n个方法的对象或函数<br>模块的使用者只需要通过模块暴露的对象调用方法来实现对应的功能<br>如 Mymodule.js中<br>function Mymodule(){<br>var msg&#x3D;”hello the earth”;<br>function doSomething(){<br>console.log(msg.toUpperCase());<br>}<br>function doOtherthing(){<br>console.log(msg.toLowerCase());<br>}<br>return {<br>doSomething:doSomething,（这里前面代表的只是字符串，后面是函数名）<br>doOtherthing:doOtherthing<br>}<br>}</p>
-<p>上述还可以写成匿名函数自调用的形式，然后通过window向外暴露出来:<br>（ function Mymodule(window){<br>var msg&#x3D;”hello the earth”;<br>function doSomething(){<br>console.log(msg.toUpperCase());<br>}<br>function doOtherthing(){<br>console.log(msg.toLowerCase());<br>}<br>window.module&#x3D; {<br>doSomething:doSomething,（这里前面代表的只是字符串，后面是函数名）<br>doOtherthing:doOtherthing<br>}<br>})(window)</p>
-<p>如果:实参，形参中添加了window ,能方便代码压缩，都换成a,b,c,d,..等单个字母</p>
-<p>在引入这个文件的文件的js模块中:<br>var module&#x3D;Mymodule();<br>module.doSomething();<br>module.doOtherthing();</p>
-<p>函数执行时出现过几次闭包:<br>取决于 外部 函数执行的次数</p>
-<p>闭包的作用:<br>函数内部的变量在函数执行完成后，仍然存活在内存中(延长了局部变量的声明周期)<br>在函数外部可以操作到函数内部的数据</p>
-<p>闭包的死亡:<br>嵌套的内部函数称为垃圾对象时<br>如上述案例中:<br>执行 f&#x3D;null;</p>
-<p>缺点:<br>函数执行完后，函数内的局部变量没有被释放，占用内存时间会变长。<br>容易造成内存泄漏</p>
-<p>解决:<br>能不用闭包就不用闭包<br>即使释放</p>
-<h4 id="内存溢出与内存泄漏："><a href="#内存溢出与内存泄漏：" class="headerlink" title="内存溢出与内存泄漏："></a>内存溢出与内存泄漏：</h4><p>内存溢出:<br>一种程序运行出现的错误<br>当程序运行需要的内存超过了剩余的内存时，就会抛出内存溢出的错误<br>如:<br>var obj&#x3D;{};<br>for(var i&#x3D;0;i&lt;100000;i++){<br>obj[i]&#x3D;new Array[10000000];<br>}<br>浏览器会直接崩溃</p>
-<p>内存泄漏:<br>占用的内存没有及时释放<br>内存泄漏积累多了就会导致内存溢出</p>
-<p>常见的内存泄漏:<br>1 意外的全局变量：<br> 如: function fn(){<br>a&#x3D;new Array[100000];<br>}</p>
-<p>2 没有及时清理的定时器或者回调函数<br>setInterval(function（）{<br>console.log(1);<br>},1000)</p>
-<p>3 闭包</p>
+        <h4 id="vue特点"><a href="#vue特点" class="headerlink" title="vue特点:"></a>vue特点:</h4><p>采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护<br>无需直接操作dom,提高开发效率<br>虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用）</p>
+<p>tips:所有花括号用(())代替</p>
+<h4 id="生产版，开发板版的区别："><a href="#生产版，开发板版的区别：" class="headerlink" title="生产版，开发板版的区别："></a>生产版，开发板版的区别：</h4><p>开发版(包含完整的警告和调试模式)<br>生产版(删除了警告  项目写完了，要上线的时候 体积更小)</p>
+<h4 id="安装DevTools："><a href="#安装DevTools：" class="headerlink" title="安装DevTools："></a>安装DevTools：</h4><p>生态系统 -&gt;工具 -&gt;DevTools-&gt;Chrome Extension<br>右上角黑的图标-&gt;管理扩展程序 -&gt;开发者模式打开-&gt;最小化浏览器<br>把安装包按住拖到底部的浏览器</p>
+<h4 id="阻止vue在启动时出现生产提示："><a href="#阻止vue在启动时出现生产提示：" class="headerlink" title="阻止vue在启动时出现生产提示："></a>阻止vue在启动时出现生产提示：</h4><p>（未使用vue-cli之前）<br>Vue.config.productionTip&#x3D;false;</p>
+<h4 id="出现favicon-ico：404错误："><a href="#出现favicon-ico：404错误：" class="headerlink" title="出现favicon.ico：404错误："></a>出现favicon.ico：404错误：</h4><p>（未使用vue-cli之前）<br>127.0.0.1代表本机<br>在vscode中点击 Open with live Server时 会在本机5500的端口上开了一台内置的小服务器，并且在整个工程(所有文件夹和文件)作为这台服务器的根资源去使用</p>
+<p>把.icon的图标放在根路径下</p>
+<h4 id="hello-world小案例"><a href="#hello-world小案例" class="headerlink" title="hello world小案例:"></a>hello world小案例:</h4><p>当data中的数据发生改变  整个模板会被重新解析<br>（未使用vue-cli之前）</p>
+<div  id='root'
+（（name））） <div 使用 （（）） 后可直接读取data里面的数据
+
+
+<p>script&gt;</p>
+<p>new Vue({ 创建vue实例<br>el:’#root’ 把工作成果放在id为root的盒子里面 值通常为css选择器字符串也可以写成<br>document.getElementById(“root”)<br>data:{ 数据供el所指定的容器使用 值暂时写成一个对象<br>name:’尚硅谷’<br>}</p>
+<p>})</p>
+<p>root容器里面依然复合html规范，只不过混入了一些特殊的vue语法<br>root容器里面的代码被称为Vue模板</p>
+<p>先有容器，然后再有Vue实例 当Vue实例开始工作的时候 把整个容器拿过来  拿过来之后解析 看有没有特殊的语法(如:（（（）） ) 如果有就在data中查找，找到后就用对应的值把容器里面((…))替换掉</p>
+<p>容器与实例只能是1对1的关系</p>
+  xxx要写js表达式，且xxx可以自动读取到data中所有的属性
+
+<p>js表达式与js语句的区别:<br>js表达式：一个表达式会产生一个值，可以放在任意一个需要值的地方<br>如:a<br>a+b<br>demo(1)<br>x&#x3D;&#x3D;y?’a’:’b’</p>
+<p>js代码(语句):<br>if（）{}<br>for(){}<br>&lt;&#x2F;script</p>
+<h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法:"></a>模板语法:</h4><p>&lt;a v-bind:href&#x3D;’url’  前面有v-bind,后面的引号里面会当成js表达式执行<br>也可简写成 &lt;a :href&#x3D;’url’<br>还能够指定别的属性 &lt;a v-bind:href&#x3D;’url’ v-bind:x&#x3D;’hello’</p>
+<p>…<br>data:{<br>url:’<a target="_blank" rel="noopener" href="http://www.atguigu.com&/#39;">www.atguigu.com&#39;</a><br>hello:’你好’<br>}</p>
+<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定:"></a>数据绑定:</h4><p>前面的v-bind是单向数据绑定 ：只能是data中的数据改变 去影响页面中的数据改变<br>，而如果页面中的数据改变，是不会影响到data中的数据改变</p>
+<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br><input v-model:value='m'><br>因为v-model默认收集就是value值，所以可以简写成<br><input v-model='m'> </p>
+<h4 id="el与data的两种写法"><a href="#el与data的两种写法" class="headerlink" title="el与data的两种写法:"></a>el与data的两种写法:</h4><p>（未使用vue-cli之前）<br>el:<br>指定容器除了<br>const v&#x3D;new Vue({<br>el:’#root’<br>}</p>
+<p>还可以 v.$mount(“#root”)</p>
+<p>data:<br>data:{}可以是对象式</p>
+<p>data：function(){ 也可以是函数式 并且必须返回一个对象<br>console.log(this) this为Vue实例对象 但如果是箭头函数形式就是全局window<br>return {<br>name:’尚硅谷’<br>}<br>}</p>
+<p>一个重要原则:由Vue管理的函数(如 函数式的data)一定不要写成箭头函数，一旦写了,this就不是Vue实例了</p>
+<h4 id="MVVM模型"><a href="#MVVM模型" class="headerlink" title="MVVM模型:"></a>MVVM模型:</h4><p>M (模型Model): 对应data中的数据<br>V (View)视图：模板<br>VM (视图模型 ViewModel):Vue实例对象</p>
+ xxx 只要是Vue实例里面的属性都能看到  包括Vue原型链上的
+<p>使用方式  直接  不需要加上 实例vm.</p>
+<h4 id="底层原理-Object-defineProperty："><a href="#底层原理-Object-defineProperty：" class="headerlink" title="底层原理 Object.defineProperty："></a>底层原理 Object.defineProperty：</h4><p>给一个对象添加&#x2F;定义属性<br>数据劫持，数据代理，计算属性都由用到过:</p>
+<p>参数1: 给谁添加<br>参数2:添加什么属性<br>参数3:配置项</p>
+<p>let person&#x3D;{  这种方式 可删除，枚举，修改<br>name:’张三’<br>}<br>Object.defineProperty(person,’age’,{<br>value:18</p>
+<p>})  这种方法定义的属性默认为不可枚举（不可遍历）<br>如果想让定义的属性可以枚举</p>
+<p>Object.defineProperty(person,’age’,{<br>value:18<br>enumerable:true  (默认值为false,不可枚举)<br>})</p>
+<p>writable:true(默认值为false，不可修改   即使做了修改操作，也不会报错，但不会影响原值)<br>configurable:true(默认值为false，不可删除   即使做了删除操作，也不会报错，但不会删除原值)</p>
+<p>案例:<br> let number&#x3D;1;<br>var obj&#x3D;{age：number}<br>当number修改时  obj中age的值不会自动的修改<br>而是 还需手动执行  obj.age&#x3D;number;<br>太麻烦</p>
+<p>有一种简单操作:<br>Object.definedProperty(obj,”age”,{<br>get:function(){<br>return number}<br>})</p>
+<p>每次访问age属性，都会触发get函数（getter）的调用,且返回值就是age的值</p>
+<p>当有人修改age属性值时,set函数（setter）会被调用，且返回值就是age的值（改变后的值）</p>
+<p>Object.definedProperty(obj,”age”,{<br>set:function(value){<br>number&#x3D;value;<br>}<br>})</p>
+<p>vscode应用商店里好用的提示插件：Vue3 Snippets</p>
+<h4 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理:"></a>数据代理:</h4><p>什么是数据代理:<br>通过一个对象代理对另一个对象中属性的操作(读&#x2F;写)<br>obj2                       obj&#x3D;{x：1}</p>
+<p>let obj&#x3D;{x:100}<br>let obj2&#x3D;{y:200}</p>
+<p>Object.defineProperty(obj2,’x’,{<br>get(){<br>return obj.x;<br>},<br>set(value){<br>obj.x&#x3D;value;<br>}<br>})</p>
+<p>Vue里的数据代理:<br>vm._data就是指 实例中的data 但内部做了数据劫持<br>vm._data&#x3D;&#x3D;&#x3D;data  :true(前提是这个data放在了全局)</p>
+<p>关键的一步:把data中的数据放到vm身上一份（为了编码更方便 省略了 _data.name中的_data）</p>
+<p>整个基本原理:<br>通过Object.defineProperty()把data中的所有属性添加到vm上<br>为每一个添加到vm身上的属性添加setter和getter<br>在setter和getter内部去操作（读&#x2F;写）data中对应的属性</p>
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理:"></a>事件处理:</h4><p>事件里面绑定的函数 （）可加可不加，但如果时插值语法中必须加 如<p>（（demo()))&lt;&#x2F;p</p>
+<p>点击时触发: <button v-on:click="showInfo()">&lt;&#x2F;button<br>可简写成  &lt;button @click&#x3D;”showInfo”&gt;&lt;&#x2F;button</p>
+<p>new Vue({<br>el:’#root’<br>document.getElementById(“root”)<br>data:{<br>name:’尚硅谷’<br>},<br>methods:{<br>showInfo(a){<br> 此处的this是vm（Vue实例对象） 这里的第一个参数（当没有传入参数的时候）是事件对象 可以获取a.target.innerText<br>}</p>
+<p>如果想传入参数并且不会丢失event<br>&lt;button @click&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  参数位置可以互换，不影响<br>}</p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符:"></a>事件修饰符:</h4><p>阻止事件默认行为:<br>methods:{<br>showInfo(event){<br>event.preventDefault();<br>}<br>或者<br>&lt;button @click.prevent&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  (.prevent对点击事件click进行修饰)</p>
+<p>阻止事件冒泡:<br>methods:{<br>showInfo(event){<br>event.stopPropagation();<br>}<br>或者<br>&lt;button @click.stop&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.once事件只触发一次<br>&lt;button @click.once&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.capture 事件的捕获模式 (事件开始从外往里面开始执行)<br>&lt;button @click.capture&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.self只有event.target是当前操作的元素对象时才触发事件（触发事件的前提条件是   事件对象为当前元素 包含不算）<br>&lt;button @click.self&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.passive（优先响应默认行为） 事件的默认行为会立即执行 无需等待事件回调函数执行完毕</p>
+<div @scroll='demo'></div  滚动条 滚动时触发
+
+
+<div @wheel='demo'></div   鼠标的滚轮 滚动时触发
+当触发鼠标滚轮时 会执行对应函数  等函数中代码执行完后(这里如果出现一些很棒花时间的循环语句，会造成页面卡顿 ) 才会触发默认行为（滚动台向上/下移动一丢丢）
+
+<div @wheel.passive='demo'></div  可以解决卡顿问题 （scroll事件本事就是先响应默认行为)
+
+
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件:"></a>键盘事件:</h4><p>@keydowm :按下 没有抬起来<br>@keyup:按下 并且松手了</p>
+<p>&lt;input @keyup.enter&#x3D;’’&gt;<br>松手后并且回车了才触发 这里的enter为按键别名</p>
+<p>类似的按键别名还有:<br>delete:删除或退格<br>esc:退出<br>space:空格<br>tab:换行(特殊 必须配合keydown去使用 本身就可以移出焦点)<br>up:上<br>down:下<br>left：做<br>right:右</p>
+<p>如果时多个单词组成的别名:<br>如CapsLock  需要用-分开<br>&lt;input @keyup.caps-lock&#x3D;’’&gt;</p>
+<p>系统修饰键:(用法特殊)<br>ctrl alt shift meta<br>&lt;input @keyup.ctrl&#x3D;’’&gt;<br>按下修饰键的同时 再按下其他键 随后释放其他键 事件才被触发<br>需要  如同时按下ctrl +y  然后松开 才会触发 ctrl+i 也行 …<br>还可以 指定其他键<br>&lt;input @keyup.ctrl.y&#x3D;’’&gt; </p>
+<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性:"></a>计算属性:</h4><p>底层原理:接住了Object.definedProperty()里面的getter和setter<br>拿着已经写完的属性（data中的数据）去加工去计算，然后生成一个全新的属性</p>
+<p>data里面放的是是属性<br>computed里面放的是计算属性（也在vm身上 和data中的数据一样可直接写在插值语法中）</p>
+<p>当第一次读取计算属性的值时  会被缓存起来   后面再访问就会走缓存路线<br>对比之下 methods读取几次就会执行几次 没有任何缓存</p>
+<p>data：{<br>firstName:’张’,<br>lastName:’三’<br>},<br>computed:{<br>当有人读取fullName时,get就会被调用,且get函数的返回值就是fullName的值<br>get什么时候被调用?(计算属性数据什么时候发生变化)1 初次读取时 2 所依赖的数据发生变化时<br>fullName:{<br>get（）{</p>
+<p>return  this.firstName+’-‘+this.lastName<br>},<br>如果fullName可能会被改 如 vm.fullName&#x3D;1; 那么set函数必须写<br>set(value){<br>const arr&#x3D;value.split(“-“);<br>this.firstName&#x3D;arr[0];<br>this.lastName&#x3D;arr[1];<br>}<br>}</p>
+<p>methods:{<br>fullName:function（）{<br>return  this.firstName+’-‘+this.lastName</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p></p
+
+
+<p>计算属性简写形式（如果确定了只读 不改）</p>
+<p>computed:{<br>fullName(){ 这个函数会直接当成get函数用<br>return  this.firstName+’-‘+this.lastName<br>},</p>
+<h4 id="监视-侦听-属性"><a href="#监视-侦听-属性" class="headerlink" title="监视(侦听)属性:"></a>监视(侦听)属性:</h4><p>对比计算属性:<br>计算属性时不能开启异步任务来维护数据，而监视属性可以（不靠return 语句来返回数据）<br>computed能完成的功能，watch都能完成,watch能完成的功能，computed不一定能完成(如watch可以异步操作 ：setTimeout(function(){})，1000)</p>
+<p>当watch,computed都能实现的时候，优先使用computed</p>
+<p>对于计算属性里面的值也可以进行监测<br>监视属性必须存在才能监视（如果不存在，也不会报错）<br>data:{<br>isCold:true,<br>}<br>watch：{<br>isCold（认定为’isCold’）:{<br>immediate:true,初始化时让handle执行一次<br>handler(newValue,oldValue){当isCold属性发生改变时，会触发handler函数<br>}<br>}</p>
+<p>监视的第二种写法<br>vm.$watch(‘isCold’,{</p>
+<p>immediate:true,<br>handler(newValue,oldValue){<br>}</p>
+<p>})<br>两个重要原则:<br>所有被vue管理的函数，最好写成普通函数，这样this的指向才是vm或者组件实例对象<br>所有不被vue管理的函数（定时器的回调函数，ajax的回调函数,promise的回调函数）,最好写成箭头函数，这样this的指向才是vm或者组件实例对象</p>
+<h4 id="深度监视："><a href="#深度监视：" class="headerlink" title="深度监视："></a>深度监视：</h4><p>data:{<br>number:{ vue监视中 如果地址值没有变化，会默认number没有变化，所以不会触发对应的函数，vue 中的watch默认不会看地址值里面的内容<br>a:1,<br>b:2<br>}<br>}<br>watch:{<br>‘number.a’:{ 监视多级结构中 某个 属性的变化<br>handler（）{</p>
+<p>}</p>
+<p>watch:{<br>number:{<br>deep:true   开启了深度监视      监视多级结构中 所有 属性的变化<br>handler（）{</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>简写形式（当配置项只有handler时才可以）<br>watch:{<br>number（newValue,oldValue）{ 这个函数相当于handler函数</p>
+<p>}</p>
+<p>或者<br>将<br>vm.$watch(‘isCold’,{</p>
+<p>immediate:true,<br>handler(newValue,oldValue){<br>}</p>
+<p>})<br>简写成<br>vm.$watch(‘isCold’,function(newValue,oldValue){</p>
+<p>})</p>
+<h4 id="绑定class样式"><a href="#绑定class样式" class="headerlink" title="绑定class样式:"></a>绑定class样式:</h4><div class='basic' :class='a' 动态样式绑定 适用于类名不确定
+
+<p>data:{<br>a:’normal’<br>}</p>
+<style
+.normal{
+...
+}
+
+
+或者 数组写法 <div class='basic' :class='arr'  适用于 个数不缺名 名字不确定
+
+data:{
+arr:['atguigu1','atguigu2','atguigu3']
+}
+
+<style
+.atguigu1{}
+.atguigu2{}
+
+也可以
+<div class='basic' :class='[a,b,c]'
+data:{
+a:'atguigu1',
+b:'atguigu2'
+或者 对象写法 适用于个数确定 名字也确定
+<div class='basic' :class='classObj'
+data:{
+classObj:{
+atguigu1:false,
+atguigu2:false
+}
+也可以
+<div class='basic' :class='{atguigu1:false,atguigu2:false}'>
+
+
+#### 绑定style样式: ####
+<p style='{fontSize:fsize+"px"}'
+
+对象写法
+data:{
+fsize:40
+} 通常改成
+<p style='styleObj'>
+
+data:{
+styleObj:{
+fontSize:'40px'
+}
+}
+或者数组形式
+<p style='[styleObj,styleObj2]'
+
+data:{
+styleObj:{
+fontSize:'40px'
+}，
+styleObj2:{
+backgroundColor:green;
+}
+}
+
+
+#### 条件渲染: ####
+<p v-show='true'> 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）
+<p v-show='1==3'> 隐藏
+
+
+<p v-if='false'> (为false时 元素节点都会消失) (底层：通过增加 删除节点)
+<p v-else-if='false'> 
+<p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
+
+如果有很高的切换频率，使用v-show
+频率低的 有v-if
+另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+
+template只能和v-if连用 不能和v-show一起使用
+<template v-if='a===1'>
+<p 123</p
+</template
+
+
+#### 列表渲染: ####
+<ul
+<li v-for='p in persons' :key='p.id'> ((p. ...))</li 
+key的作用：让每一个li拥有了一个唯一的标识（前面只有加了: 后面才会被当成表达式处理）
+或者
+<li v-for='（p,index） in persons' :key='index'>  (把 in 换成 of也行)
+
+data:{
+persons:[{},{},{}]
+}
+
+或者 也可以遍历对象
+<li v-for='（p,k） in car' :key='k'>  (这里p 指 属性值  k表示属性名) (把 in 换成 of也行)
+
+data:{
+car：{
+name：1，
+price:2,
+color:3
+}
+}
+
+v-for也可以遍历字符串
+
+也可以遍历次数
+如  v-for='(a,b) of 5' 
+a 为 1 2 3 4 5
+b 为 0 1 2 3 4
+
+
+#### key的作用与原理: ####
+把初始数据生成虚拟dom（真实dom身上没有key,但虚拟dom身上一定会有key）(此时页面啥也没有，只是内存中出现了虚拟节点)
+然后将虚拟dom转换为真实dom
+用户开始输入内容，数据开始更新，出现了新的数据
+根据新的数据，生成 新的虚拟dom
+
+然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，<li key='0' 老王 20  <input type='text'</li'如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） 
+
+
+使用index作为key不是一定会有问题，如果对数据进行了破坏顺序的操作（如数组中往前面加元素，会造成破坏，而往后面添加则不会，因为此时的key为数组的索引值）
+
+如果不写key,遍历时的索引值会默认最为key值
+
+key值最好用唯一标识(id,身份证号)
+
+
+#### 更新时的一个问题(监视数据的一个原理): ####
+
+如这种情况的改变vue监测不到:
+data:{
+persons:[{},{},{}],
+},
+methods:{
+updataMei(){
+this.person[0]={...}  不奏效 (如果只是数组中某一个元素 的某一个属性做赋值是没问题的  如this.person[0].name=123 是可以的)
+但这样写可以  this.person.splice(0,1,{...})
+}
+
+
+}
+如果显示结果为undefined,那么页面不会报错，但也不会有显示
+
+数组更新监测:
+Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：
+
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+
+如果是对象更新:
+data:{
+student:{name:'atguigu'},
+},
+methods:{
+addSex(){
+this.student.sex='男'； 不奏效
+需要这样写   Vue.set(vm._data.student,...)
+可以简写成   Vue.set(this.student,'sex','男')
+也可以  this.$set(....)  （这是对于对象）
+
+用这种方式对于数组 （hobby:['你','猜']）:
+ Vue.set(this.hobby,0,'我') 0 表示元素的索引
+}
+
+
+总结:
+如何监测数组中的数据:
+对象中后追加的属性，Vue默认不做响应式处理
+如果需要给后追加的属性做响应式，需使用一下API:
+Vue.set(...)
+vm.$set(...)
+
+如何监测
+
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98/" data-id="cl0pe0c9y0005gono5hyj60r0" data-title="面试题" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl193mn5k0005hgno2pf70w0z" data-title="vue2.0+3.0" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ES6-11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/22/ES6-11/" class="article-date">
+  <time class="dt-published" datetime="2022-03-22T06:15:40.000Z" itemprop="datePublished">2022-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/22/ES6-11/">ES6-11</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>javaScript基本语法 即es5的相关语法</p>
+<h4 id="let变量声明及声明特性"><a href="#let变量声明及声明特性" class="headerlink" title="let变量声明及声明特性:"></a>let变量声明及声明特性:</h4><p>1 变量不能重复声明<br>如 let a&#x3D;1;<br>let a&#x3D;2; 报错</p>
+<p>2 块级作用域</p>
+<p>在{}里面有效，出了这个区域就会无效(而在javascript中没有这个作用域，只会有 函数作用域 全局作用域 eval作用域 eval作用域只会出现在严格模式下)</p>
+<p>在if else while for里面 如果用let 声明 也会出现块级作用域</p>
+<p>3 不存在变量提升</p>
+<p>4 不影响作用域链(由内到外查找)</p>
+<h4 id="const声明常量及其特点"><a href="#const声明常量及其特点" class="headerlink" title="const声明常量及其特点:"></a>const声明常量及其特点:</h4><p>常量:值不能修改的量<br>一般常量使用大写</p>
+<p>1 一定要赋初始值</p>
+<p>2 常量的值不能修改</p>
+<p>3 块级作用域</p>
+<p>4 对于数组和对象的元素修改  不算作对常量的修改,不会报错<br>如  const arr&#x3D;[];<br>arr.push(1)<br>虽然arr的元素发生变化，但arr所指向的地址值没有发生变化<br>但如果 arr&#x3D;10 则会报错 因为原来的地址值变化了</p>
+<h4 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值:"></a>变量的解构赋值:</h4><p>1 数组的解构<br>const f4&#x3D;[‘老王’,’老张’,’老李’,’老桃’];<br>let（var） [wang,zhang,li,tao]&#x3D;f4;<br>wang 的值为 ‘老王’<br>…</p>
+<p>2 对象的解构</p>
+<p>const shan&#x3D;{<br>name：’隔壁老王’,<br>age:’不详’,<br>dance:function（）{}<br>}</p>
+<p>let  {name,age,dance}&#x3D;shan;</p>
+<p>name为隔壁老王<br>…</p>
+<h4 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串:"></a>模版字符串:</h4><p>&#96;&#96;反引号<br>let str&#x3D;<code>你是谐星吗</code></p>
+<p>1 内容中可以出现换行</p>
+<p>2 变量拼接</p>
+<p>let a&#x3D;<code>$&#123;str&#125;是的</code></p>
+<h4 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法:"></a>对象的简化写法:</h4><p>如:<br>let name&#x3D;’老王’;<br>let change&#x3D;function(){}</p>
+<p>const school&#x3D;{<br>name,change<br>} 这种写法等价于<br>const school&#x3D;{<br>name:name,<br>change：change<br>}</p>
+<p>还有 声明的简化<br>const school&#x3D;{<br>name:name,<br>change：change，<br>improve:function(){}<br>}可以简化成<br>const school&#x3D;{<br>name:name,<br>change：change，<br>improve(){}<br>}</p>
+<h4 id="箭头函数及其声明特点"><a href="#箭头函数及其声明特点" class="headerlink" title="箭头函数及其声明特点:"></a>箭头函数及其声明特点:</h4><p>原来<br>let fn&#x3D;function(){}</p>
+<p>现在 let fn&#x3D;(a,b)&#x3D;&gt;{<br>return a+b;<br>}</p>
+<p>1 箭头函数中this是静态的 始终指向函数声明时所在作用域下的this的值<br> 无法 通过call,apply等方式去改变this的值 （本身是没有this的，所以会自动往外找）</p>
+<p>2 不能作为构造函数来实例化对象</p>
+<p>3 箭头函数中不能使用arguments变量</p>
+<p>4 箭头函数的简写</p>
+<ol>
+<li><p>省略小括号 当形参有且只有一个的时候<br>let add&#x3D; (n)&#x3D;&gt;{<br>return n+n;<br>}<br>可直接简化成<br>let add&#x3D; n&#x3D;&gt;{<br>return n+n;<br>}</p>
+</li>
+<li><p>省略花括号 当代码体只有一条语句的时候,此时return 也必须省略 而且语句的执行结果就是函数的返回值</p>
+</li>
+</ol>
+<p>let add&#x3D; n&#x3D;&gt;{<br>return n+n;<br>} 简化成<br>let add&#x3D; n&#x3D;&gt;n+n;</p>
+<p>应用场景</p>
+<p>btn.onclick&#x3D;function(){<br>setTimeout(function(){<br>console.log(this)  这里的this是 window<br>},3000)<br>}</p>
+<p>btn.onclick&#x3D;function(){<br>setTimeout(()&#x3D;&gt;{<br>console.log(this)  换成箭头函数后这里的this是 btn元素<br>},3000)<br>}</p>
+<h4 id="es6允许给函数参数赋值初始值"><a href="#es6允许给函数参数赋值初始值" class="headerlink" title="es6允许给函数参数赋值初始值:"></a>es6允许给函数参数赋值初始值:</h4><p>1 具有默认值的参数一般放在最后(放其他位置也不会有错，但没有意义)<br>function add(a,b,c&#x3D;10){<br>return a+b+c;<br>}</p>
+<p>2 与解构赋值结合<br>function connnect({name,host&#x3D;’127.0.0.1’}){ 如果没有传 走默认值</p>
+<p>console.log(name)<br>}</p>
+<p>connect({<br>host:’localhost’<br>…<br>})</p>
+<h4 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数:"></a>rest参数:</h4><p>rest参数必须放在最后<br>function (…args){}  args为一个数组</p>
+<p>与arguments不同的是</p>
+<p>args的原型是一个数组，可以用数组的方法<br>而arguments的原型是一个对象，不能用数组的方法</p>
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符:"></a>扩展运算符:</h4><p>1 能将数组转换成 以逗号 分隔开的参数序列</p>
+<p>2 数组的合并</p>
+<p>var arr1&#x3D;[1,2];<br>var arr2&#x3D;[3,4];</p>
+<p>var arr3&#x3D;[…arr1,…arr2];[1,2,3,4]</p>
+<p>3 数组的克隆(如果里面有引用类型，就是浅拷贝)<br>var sanzhihua&#x3D;[‘a’,’b’,’c’];<br>var yiduohua&#x3D;[…sanzhihua];</p>
+<p>4 将伪数组转化为真正的数组<br>var divs&#x3D;document.querySelectorAll(‘div’)  NodeList伪数组对象</p>
+<p>var arr&#x3D;[…divs]</p>
+<p>还可以将多个对象的属性和属性值合并到一个对象里：<br>var obj1&#x3D;{name:1}  var obj2&#x3D;{city:2}  var obj3&#x3D;{action:3}</p>
+<p>var obj4&#x3D;{…obj1,…obj2,…obj3}</p>
+<h4 id="Symbol的介绍与创建"><a href="#Symbol的介绍与创建" class="headerlink" title="Symbol的介绍与创建:"></a>Symbol的介绍与创建:</h4><p>一种新的数据类型</p>
+<p>1 Symbol的值是惟一的，可以解决命名冲突的问题</p>
+<p>2 Symbol的值不能与其他数据进行运算</p>
+<p>3 Symbol定义的对象属性不能使用for… in 循环遍历，但可以使用Reflect.ownKeys来获取对象的所有键名</p>
+<p>创建Symbol<br>let s&#x3D;Symbol() 当成函数</p>
+<p>let s2&#x3D;Symbol(‘尚硅谷’);</p>
+<p>let s3&#x3D;Symbol(‘尚硅谷’);</p>
+<p>s2不等于s3<br>Symbol.for（） 创建  当成对象</p>
+<p>let s4&#x3D;Symbol.for(‘尚硅谷’)<br>let s5&#x3D;Symbol.for(‘尚硅谷’)</p>
+<p>s4与s5相等</p>
+<p>使用场景<br>给对象添加属性或者方法</p>
+<p>let youxi&#x3D;{<br>[Symbol(‘say’)]:function(){},<br>[Symbol(‘dance’)]:function(){}<br>}</p>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器:"></a>迭代器:</h4><p>iterator 是一种接口<br>任何一种数据结构只要部署了这样一个接口，就可以完成遍历操作<br>是对象中的一种属性 Symbol（Symbol.iterator）</p>
+<ol>
+<li>es6创建了一种新的遍历命令for…of循环，iterator接口主要供for..of消费</li>
+</ol>
+<p>2） 具备itrator接口的数据<br>Array<br>arguments<br>Set<br>Map<br>String<br>NodeList</p>
+<p>工作原理:<br>创建一个指针对象(由Symbol.iterator这个对象的函数创建一个对象),指向当前数据结构的起始位置<br>第一次调用next方法,指针自动指向数据结构的第一个成员<br>接下来不断调用next方法,指针一直往后移动，直到指向最后一个成员<br>每次调用Next方法返回一个包含value和done属性的对象</p>
+<p>const xiyou&#x3D;[‘猴’，’猪’,’打工人’,’光头’]</p>
+<p>let iterator&#x3D;xiyou[Symbol.iterator]( ）</p>
+<p>调用对象的next方法</p>
+<p>console.log(iterator.next());{value：’猴’,done:true}<br>console.log(iterator.next());{value：’猪’,done:true}<br>console.log(iterator.next());{value：’打工人’,done:true}<br>console.log(iterator.next());{value：’光头’,done:true}<br>console.log(iterator.next());{value:undefined,done:false}</p>
+<p>需要自定义遍历数据的时候，使用迭代器</p>
+<p>如 想要对一个对象使用for…of遍历<br> var obj&#x3D;{name:’老王’,stus:[1,2,3]};<br>因为里面没有迭代器，所以无法用for…of遍历</p>
+<p> var obj&#x3D;{<br>name:’老王’,<br>stus:[1,2,3],<br>[Symbol.iterator](）{</p>
+<p>return {<br>var that&#x3D;this;<br>var index&#x3D;0;<br>next:function(){<br>if(index&lt;that.stus.length){<br>var result&#x3D; {value:that.stus[i],done:false};<br>i++;<br>return result;<br>}<br>else{<br>return {value:undefined,done:true}<br>}<br>}</p>
+<p>}</p>
+<p>}<br>};</p>
+<p>for(var i in of){<br>console.log(v)<br>}</p>
+<p>1<br>2<br>3</p>
+<h4 id="生成器函数声明与调用"><a href="#生成器函数声明与调用" class="headerlink" title="生成器函数声明与调用:"></a>生成器函数声明与调用:</h4><p>function * gen（）{</p>
+<p>console.log(‘hello generator’);<br>}</p>
+<p>let iterator&#x3D;gen();<br>iterator.next(); 这里才执行了上面的函数</p>
+<p>生成器函数可以出席那yield语句(函数代码的分隔符)</p>
+<p>function * gen（）{<br>console.log(111);<br>yield ‘1’;<br>console.log(222);<br>yield ‘2’;<br>console.log(333);<br>yield ‘3’;</p>
+<p>}</p>
+<p>let iterator&#x3D;gen();<br>iterator.next();111<br>iterator.next();222<br>iterator.next();333</p>
+<p>function * gen（）{</p>
+<p>yield ‘1’;</p>
+<p>yield ‘2’;</p>
+<p>yield ‘3’;</p>
+<p>}</p>
+<p>console.log（iterator.next());1<br>console.log（iterator.next());2<br>console.log（iterator.next());3</p>
+<p>for（var i of gen）{<br>console.log(i)<br>}<br>1  每次迭代是yield后面的内容<br>2<br>3</p>
+<h4 id="生成器函数的参数传递"><a href="#生成器函数的参数传递" class="headerlink" title="生成器函数的参数传递:"></a>生成器函数的参数传递:</h4><p>异步编程</p>
+<p>function * gen(…args){<br>console.log(args);<br>let one&#x3D;yield ‘1’;<br>console.log(one);<br>yield ‘2’;<br>yield ‘3’;</p>
+<p>}</p>
+<p>let iterator&#x3D;gen();<br>iterator.next();111</p>
+<p>next方法可以传入实参，而这个实参就是整个yield语句的返回结果</p>
+<p>第二次调用Next方法传入的实参将作为第一次yield语句的返回结果</p>
+<p>iterator.next(‘AAA’);AAA 222 </p>
+<p>第三次调用Next方法传入的实参将作为第二次yield语句的返回结果<br>iterator.next();333</p>
+<p>生成器函数实例:<br>function one(){<br>setTimeout(function(){<br>console.log(111)</p>
+<p>iterator.next(); 解决了回调地狱的问题(回调里面一层套一层)<br>},1000)<br>}</p>
+<p>function two(){<br>setTimeout(function(){<br>console.log(222)<br>iterator.next();<br>},2000)<br>}</p>
+<p>function three(){<br>setTimeout(function(){<br>console.log(333)<br>},3000)<br>}</p>
+<p>function * time(){<br>yield one();<br>yield two();<br>yield three();<br>}</p>
+<p>var itertor&#x3D;time();<br>iterator.next();  111 222 333</p>
+<h4 id="Promise的介绍与基本使用"><a href="#Promise的介绍与基本使用" class="headerlink" title="Promise的介绍与基本使用:"></a>Promise的介绍与基本使用:</h4><p>实例化promise对象<br>有三个状态 初始化 成功 失败<br>const p&#x3D;new Promise(function(resolve,reject){<br>setTimeout(function(){<br>let data&#x3D;’数据库中的用户数据’;<br>resolve(data);  执行resolve函数后,promise的状态会变成成功</p>
+<p>let err&#x3D;’读取失败’;<br>resolve(err);<br>},1000)</p>
+<p>})</p>
+<p>如果成功后，可以调用then方法<br>如果前面调用了resolve方法，那么就会执行then里面的第一个回调函数<br>如果前面调用了reject方法，那么就会执行then里面的第二个回调函数<br>p.then(function(value){ 这里的value就是resolve函数的实参 </p>
+<p>},function(reason){这里的reason就是reject函数的实参</p>
+<p>})</p>
+<h4 id="promise封装读取文件"><a href="#promise封装读取文件" class="headerlink" title="promise封装读取文件:"></a>promise封装读取文件:</h4><p>读取文件.js<br>const fs&#x3D;require(‘fs’);</p>
+<p>调用方法读取文件<br>fs.readFile(‘..&#x2F;… .md’,(err,data)&#x3D;&gt;{<br>if（err）{throw err} 如果失败，抛出错误<br>console.log(data.toString());如果成功，输出结果<br>})</p>
+<p>把上面的换成promise封装（如果有多个，那么上面的代码会不停往里面缩进，而promise不会）<br>const p&#x3D;new Promise(function(resolve,reject){<br>fs.readFile(‘..&#x2F;….md’,(err.data)&#x3D;&gt;{<br>if（err）{reject(err)}<br>如果成功  resolve(data);<br>})</p>
+<p>})</p>
+<p>p.then(function(value){</p>
+<p>},function（reason）{</p>
+<p>})</p>
+<h4 id="使用promise封装ajax"><a href="#使用promise封装ajax" class="headerlink" title="使用promise封装ajax:"></a>使用promise封装ajax:</h4><p>const xhr&#x3D;new XMLHttpRequest()</p>
+<p>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p>xhr.send();</p>
+<p>xhr.onreadystatechange&#x3D;function(){<br>if(xhr.readyState&#x3D;&#x3D;4){<br>if(xhr.status&#x3D;&#x3D;200&amp;&amp;xhr.status&lt;300){}</p>
+<p>下面用promise对上面代码封装:<br>const p&#x3D;new Promise((resolve,reject)&#x3D;&gt;{</p>
+<p>const xhr&#x3D;new XMLHttpRequest()</p>
+<p>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p>xhr.send();</p>
+<p>xhr.onreadystatechange&#x3D;function(){<br>if(xhr.readyState&#x3D;&#x3D;4){<br>if(xhr.status&#x3D;&#x3D;200&amp;&amp;xhr.status&lt;300){<br>resolve(xhr.response)}<br>else<br>{<br>reject(xhr.status)<br>}</p>
+<p>})</p>
+<p>p.then(function(value){},function(reason){})</p>
+<h4 id="关于promise的then方法"><a href="#关于promise的then方法" class="headerlink" title="关于promise的then方法:"></a>关于promise的then方法:</h4><p>then方法的返回结果也是一个promise</p>
+<p>如果回调函数中返回的结果是非promise类型的属性，状态为成功,返回值为对象成功的值<br>如果没有写返回结果，默认返回undefined<br>const result&#x3D;p.then(function(value){<br>return 1},function(reason){})</p>
+<p>这里result的值 promiseValue为123 promiseStatus为:resolved</p>
+<p>如果回调函数中返回的结果是promise类型的属性，状态为成功,返回值为对象成功的值<br>const result&#x3D;p.then(function(value){<br>return </p>
+<p>new Promise((resolve,reject)&#x3D;&gt;{<br>resolve(‘ok’)<br>})     这里promise的状态就决定了then方法的返回结果的状态，这里成功的值就是thenn方法返回结果的值<br>},function(reason){})</p>
+<p>如果抛出错误,结果为rejected<br>const result&#x3D;p.then(function(value){<br>throw ‘出错了’<br>},function(reason){})</p>
+<p>因为then方法可以返回一个promise对象，所以可以链式调用<br>链式调用(解决回调地狱)<br>使用场景:先有，然后才有,最后才有.</p>
+<p>p.then(value&#x3D;&gt;{},reason&#x3D;&gt;{} 这里第二个错误的回调也可以不写).then(value&#x3D;&gt;{</p>
+<p>})</p>
+<h4 id="promise对象的catch方法"><a href="#promise对象的catch方法" class="headerlink" title="promise对象的catch方法:"></a>promise对象的catch方法:</h4><p>const p&#x3D;new Promise(function(resolve,reject){<br>reject(‘出错了’)<br>}</p>
+<p>下面两种都可以<br>p.then(function(){},function(reason){<br>console.log(reason);})</p>
+<p>p.catch(function(reason){<br>console.log（reason）</p>
+<p>})</p>
+<h4 id="Set："><a href="#Set：" class="headerlink" title="Set："></a>Set：</h4><p>Set（集合）<br>类似数组<br>成员的值都是唯一的<br>集合实现了iterator接口，所以可以使用扩展运算符展开和for..of进行遍历</p>
+<p>属性和方法:<br>const s&#x3D;new Set（[1,2,3,4]）<br>类型为 ‘object’</p>
+<p>个数: s.size</p>
+<p>添加元素:s.add(‘111’)</p>
+<p>删除元素:s.delete(3)</p>
+<p>检测: s.has(3) 有 返回true,否则返回false</p>
+<p>清空: s2.clear()</p>
+<p>可用于数组去重:<br>[…new Set(arr)]</p>
+<h4 id="Map："><a href="#Map：" class="headerlink" title="Map："></a>Map：</h4><p>类似对象（就是升级版的对象），也是键值对的集合<br>但是键的范围不限于字符串，各种类型的值(包括对象)都可以当作键<br>map也实现了iterator接口</p>
+<p>let m&#x3D;new Map();</p>
+<p>添加元素:m.set(‘name’,’尚硅谷’)<br>m.set(‘change’,function(){})</p>
+<p>let key&#x3D;{school:’atguigu’};<br>m.set(key,[‘北京’,’上海’,’广州’]); 这里是对象作为键名</p>
+<p>个数:m.size<br>删除:m.delete(‘name’)<br>获取:m.get(‘change’)<br>清空:m.clear();</p>
+<h4 id="class的介绍："><a href="#class的介绍：" class="headerlink" title="class的介绍："></a>class的介绍：</h4><p>class Phone{</p>
+<p>构造方法 名字不能修改<br>constructor(a,b){当出席那new Phone()时该构造函数就会执行<br>this.a&#x3D;a;<br>this.b&#x3D;b;<br>}</p>
+<p>方法必须使用该语法,不能使用es5的对象完整形式<br>call(){</p>
+<p>}<br>}</p>
+<p>var m&#x3D;new Phone(‘1’,2)</p>
+<p>上面换成es5的写法:<br>function Phone(a,b){<br>this.a&#x3D;a;<br>this.b&#x3D;b;</p>
+<p>}</p>
+<p>Phone.prototype.call&#x3D;function（）{}</p>
+<p>var m&#x3D;new Phone();</p>
+<h4 id="class的静态成员"><a href="#class的静态成员" class="headerlink" title="class的静态成员:"></a>class的静态成员:</h4><p>es5的写法:<br>function Phone(){}</p>
+<p>Phone.name&#x3D;’1’; 函数也是一个对象<br>Phone.change&#x3D;function(){};</p>
+<p>let a&#x3D; new Phone();<br>a.name;undefined<br>a.change;报错</p>
+<p>实例和构造函数对象是不相通的<br>实例是和构造函数对象的原型是相通的</p>
+<p>如果 Phone.name&#x3D;’1’ 写成  Phone.prototype.name&#x3D;’1’ 则实例也能拿到</p>
+<p>属于函数对象，而不属于实例的成员 称为 静态成员</p>
+<p>上面换成es6写法后</p>
+<p>class Phone{<br>static name&#x3D;1  静态成员<br>static change(){}<br>}</p>
+<p>var a&#x3D;new Phone()<br>a.name ：undefined<br>Phone.name :1</p>
+<h4 id="class的继承"><a href="#class的继承" class="headerlink" title="class的继承:"></a>class的继承:</h4><p>class Phone{<br>constructor(a,b){<br>this.a&#x3D;a;<br>this.b&#x3D;b;<br>}<br>call(){}<br>}</p>
+<p>class SmartPhone extends Phone{<br>constructor（a,b,c,d）{<br>super(a,b)调用父类方法  相当于es5中的 Phone.call(this,a,b);<br>this.color&#x3D;color;<br>this.size&#x3D;size;<br>}</p>
+<p>photo(){}<br>}</p>
+<p>const a&#x3D;new SmartPhone(1,2,3,4);<br>父类方法也可以调用</p>
+<h4 id="子类对父类方法的重写"><a href="#子类对父类方法的重写" class="headerlink" title="子类对父类方法的重写:"></a>子类对父类方法的重写:</h4><p>可以在字类声明一个和父类重名的方法</p>
+<p>后面子类实例调用这个重名方法时，是子类的，父类中的同名方法，字类实例是无法调用的</p>
+<h4 id="getter与setter："><a href="#getter与setter：" class="headerlink" title="getter与setter："></a>getter与setter：</h4><p>当获取某个属性时执行get函数<br>当对某个属性进行设置时执行set函数</p>
+<p>class Phone{<br>get  price(){<br>console.log(‘1’)<br>return 11  这里的返回值就是  s.price的返回值<br>}</p>
+<p>set Price(value){}</p>
+<p>}</p>
+<p>let s&#x3D;new Phone();<br>console.log(s.price) 1  11<br>s.price&#x3D;2;</p>
+<h4 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展:"></a>数值扩展:</h4><p>Number.EPSILON是javaScript表示的最小精度:<br>function equal(a,b){<br>if（Math.abs(a-b)&lt;Number.EPSILON）{<br>return true;<br>}else{return false;}<br>}</p>
+<p>console.log(equal(0.1+0.2,0.3))</p>
+<p>Number.isFinite()检测一个数是否为有限数:<br>Number.isFinite(1): true<br>Number.isFinite(100&#x2F;0): false<br>Number.isFinite(Infinity): false</p>
+<p>Number.isNaN()检测一个数值是否是NaN：<br>Number.isNaN(123) false</p>
+<p>Number.isInteger()判断一个数是否是整数：<br>Number.isInteger(1)  true<br>Number.isInteger(2.5)  false</p>
+<p>Math.trunc()将一个数的小数部分去掉<br>Math.trunc(3.5)  3</p>
+<p>Math.sign（） 检测一个数是否是正数 0 负数</p>
+<p>Math.sign（100） 1<br>Math.sign（0） 0<br>Math.sign（-100） -1</p>
+<h4 id="对象方法的扩展"><a href="#对象方法的扩展" class="headerlink" title="对象方法的扩展:"></a>对象方法的扩展:</h4><p>Object.is()  判断两个值是否完全相等(&#x3D;&#x3D;&#x3D;) </p>
+<p>Object.is(100,100)  true</p>
+<p>特殊情况:<br>Object.is(NaN,NaN)  true</p>
+<p>Object.assign（obj1,obj2）:对象的合并<br>如果出现属性重名 ，后面会覆盖前面的，如果前面对象出现 后面对象属性中没有的 则会被保留下来</p>
+<p>Object.setPrototypeOf（）  改变一个对象的原型对象<br>const school&#x3D;{};<br>const cities&#x3D;{};<br>Object.setPrototypeOf(school,cities); 把school的原型对象改成了cities对象</p>
+<p>Object.getPrototypeOf  获取一个对象的原型对象<br>Object.setPrototypeOf（school） 为cities</p>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化:"></a>模块化:</h4><p>优势:<br>防止命名冲突<br>代码复用<br>高维护性(产品升级需要做改动时，只需改一部分文件)</p>
+<p>语法:<br>import  输入其他模块的功能<br>export 规定模块的对外接口</p>
+<p>如:<br>1.html中</p>
+<script type='module'>
+import * as m1 from '../1.js' 也可以用解构赋值的形式  import {m,fun} from '../1.js' 
+console.log(m1)
+</script>
+
+<p>1.js:<br>export let m&#x3D;10;<br>export function fun(){}</p>
+<p>也可以<br>let m&#x3D;10;<br>function fun(){}<br>export {m,fun}</p>
+<p>还可以<br>export default{<br>m:10,<br>fun:function(){}</p>
+<p>}</p>
+<p>第3种调用时   m1.default.fun()</p>
+<p>当不同的js模块被引入到同一个文件中时，并且变量名出现重名，可以使用别名<br>  import {m as guigu,fun} from ‘..&#x2F;1.js’</p>
+<p>导入时 如果是默认暴露 使用结构赋值形式<br>import {default as m3} from ‘..&#x2F;1.js’</p>
+<p>简便形式 针对默认暴露:<br>import m3 from ‘..&#x2F;1.js’</p>
+<p>模块化 还可以 把上面3个js文件导入到一个新的文件4.js中<br>然后在html页面中</p>
+<script src='./4.js' type='module'></script>
+
+
+
+
+<h4 id="babel对es6模块化代码转换"><a href="#babel对es6模块化代码转换" class="headerlink" title="babel对es6模块化代码转换:"></a>babel对es6模块化代码转换:</h4><p>npm init –yes<br>npm i babel-cli babel-preset-env browserify -D(开发依赖)</p>
+<p>如果这里是局部安装  npx babel  src&#x2F;js（文件路径）  -d（要存到哪里） dist&#x2F;js –presets&#x3D;babel-preset-env  </p>
+<p>如果是全局安装  babel …</p>
+<p>(代码依然无法在浏览器中运行)还需要打包<br>npx browserify dist&#x2F;js&#x2F;app.js -o dist&#x2F;bundle.js</p>
+<h4 id="es6模块化引入npm包"><a href="#es6模块化引入npm包" class="headerlink" title="es6模块化引入npm包:"></a>es6模块化引入npm包:</h4><p>npm i jquery</p>
+<p>import $ from ‘jquery’<br>$(‘body’).css(‘background’,pink)</p>
+<h4 id="es7新特性-includes-和"><a href="#es7新特性-includes-和" class="headerlink" title="es7新特性 includes 和 **:"></a>es7新特性 includes 和 **:</h4><p>var arr&#x3D;[1,2]</p>
+<p>arr.includes(3) false</p>
+<p>2的10次方<br>2 ** 10    1024 与Math.pow(2,10) 效果一样</p>
+<h4 id="es8新特性-async-和-await"><a href="#es8新特性-async-和-await" class="headerlink" title="es8新特性 async 和 await:"></a>es8新特性 async 和 await:</h4><p>async:<br>async函数的返回值为promise对象(即便里面写的是return 1)</p>
+<p>如果返回的结果不是一个promise对象，返回的结果就是成功的Promise对象<br>如果里面抛出错误（throw new Error(‘出错了’)），则返回一个失败状态的promise</p>
+<p>返回的结果如果是一个promise对象，resolve或者reject里面的结果就是函数的结果，函数的状态与这里的promise对象状态一样</p>
+<p>await:<br>await必须放在async函数里面 （但是async里面可以没有await）<br>await右侧的表达式一般是promise对象<br>await返回的是promise成功的值<br>await的promise失败了,就会抛出异常,需要通过try..catch捕获处理</p>
+<p>try{<br>let result&#x3D;await p;</p>
+<p>}catch(e){}</p>
+<h4 id="es8对象方法扩展"><a href="#es8对象方法扩展" class="headerlink" title="es8对象方法扩展:"></a>es8对象方法扩展:</h4><p>const s&#x3D;{name:’1’,xueke:’2’};<br>获取对象所有的键名: Object.keys(s);<br>获取对象所有的值:Object.values(s);</p>
+<p>Object.entries(school); 结果:一个数组每个元素都是键值对的形式 可以用来创建map<br>new Map(Object.entries(school))</p>
+<p>Object.getOwnPropertyDescriptors(school)  对象属性的描述对象<br>也是一个对象，但属性值中还有 writable,enumerable,…</p>
+<p>(<br>属性特性:<br>writable :是否可写<br>configurable:是否可删除<br>enumerable:是否可枚举</p>
+<p>对象的克隆<br>const obj&#x3D;Object.create(null 原型对象,{<br>name：’尚硅谷’,<br>writable:true,<br>configurable:true,<br>enumerable：false<br>})</p>
+<p>)</p>
+<h4 id="es9正则扩展-命名捕获分组"><a href="#es9正则扩展-命名捕获分组" class="headerlink" title="es9正则扩展:命名捕获分组:"></a>es9正则扩展:命名捕获分组:</h4><p>举例:<br>let str&#x3D;’<a target="_blank" rel="noopener" href="http://www.atguigu.com">尚硅谷</a>‘<br>提取url和文本<br>用es5的写法是</p>
+<p>const reg&#x3D;&#x2F;<a href="(.*)">(.*)</a>&#x2F;<br>const result&#x3D;reg.exec(str);</p>
+<p>url：result[1];<br>文本:result[2];</p>
+<p>es6的写法: 可以随意命名  在属性groups中出现别名和值<br>const reg&#x3D;&#x2F;<a href="(?<url>.*)">(?<text>.*)</a>&#x2F;<br>const result&#x3D;reg.exec(str);<br>console.log(result.groups.url)<br>console.log(result.groups.text)</p>
+<h4 id="es9正则扩展-正向断言-反向断言"><a href="#es9正则扩展-正向断言-反向断言" class="headerlink" title="es9正则扩展:正向断言 反向断言 :"></a>es9正则扩展:正向断言 反向断言 :</h4><p>前瞻:<br>根据当前匹配的后边内容 来判断前面的内容是不是合法的</p>
+<p>(reg.exec(str) 的作用是专门在正则中查找字符串中所有敏感词的内容和位置的函数。找到一个敏感词，就会返回一个数组)<br>如 动态提取 555<br>var str&#x3D;’123arg么555啦啦啦’<br>const reg&#x3D;&#x2F;\d+(?&#x3D;啦)&#x2F;</p>
+<p>const result&#x3D;reg.exec(str); 这里\d+就是敏感词<br>console.log(result) </p>
+<p>后瞻:<br>根据前面的内容做判断</p>
+<p>var str&#x3D;’123arg555啦啦啦’<br>const reg&#x3D;&#x2F;(?&lt;&#x3D;么)\d+&#x2F;</p>
+<p>const result&#x3D;reg.exec(str); 这里\d+就是敏感词<br>console.log(result) </p>
+<h4 id="正则扩展-dotAll模式"><a href="#正则扩展-dotAll模式" class="headerlink" title="正则扩展:dotAll模式:"></a>正则扩展:dotAll模式:</h4><p>dot . 元字符 除换行符以外的任意单个字符</p>
+<p>let str&#x3D;&#96;<br>&lt; ul&gt;<br>&lt; li&gt;<br>&lt; a&gt;肖生客&lt; &#x2F;a&gt;<br>&lt; p&gt;上映时间&lt; &#x2F;p&gt;<br>&lt;&#x2F; li&gt;</p>
+<p>&lt; li&gt;<br>&lt; a&gt;肖生客&lt; &#x2F;a&gt;<br>&lt; p&gt;上映时间&lt; &#x2F;p&gt;<br>&lt;&#x2F; li&gt;<br>&lt; &#x2F;ul&gt;&#96;</p>
+<p>匹配出<br>电影名称和时间</p>
+<p>没有使用dotAll模式之前:</p>
+<p>const  reg&#x3D;&#x2F;&lt; li&gt;\s+&lt; a&gt;(.*?)&lt; &#x2F;a&gt;\s+&lt; p&gt;\s+(.*？)&lt;&#x2F; li&gt;&#x2F;</p>
+<p>const result&#x3D;reg.exec(str)；<br>console.log(result)</p>
+<p>使用dotAll模式后  多了一个模式修正符s 有了这个模式以后  .就可以匹配任意字符 包括换行符<br>const  reg&#x3D;&#x2F;&lt; li&gt;.<em>?&lt; a&gt;(.</em>?)&lt; &#x2F;a&gt;\s+&lt; p&gt;.*?(.*？)&lt;&#x2F; li&gt;&#x2F;</p>
+<h4 id="es10-对象的扩展方法-Object-fromEntries"><a href="#es10-对象的扩展方法-Object-fromEntries" class="headerlink" title="es10 对象的扩展方法 Object.fromEntries:"></a>es10 对象的扩展方法 Object.fromEntries:</h4><p>用来创建对象<br>参数为二维数组或map</p>
+<p>const result&#x3D;Object.fromEntries([<br>[‘name’:’尚硅谷’],<br>[‘xueke’,’前端’]<br>])</p>
+<p>const m&#x3D;new Map()</p>
+<p>Object.fromEntries(m)</p>
+<h4 id="es10"><a href="#es10" class="headerlink" title="es10:"></a>es10:</h4><p>let str&#x3D;’ arg ‘</p>
+<p>str.trimStart()  清除左侧空格<br>str.trimEnd()  清楚右侧空格</p>
+<h4 id="es10数组方法扩展"><a href="#es10数组方法扩展" class="headerlink" title="es10数组方法扩展:"></a>es10数组方法扩展:</h4><p>flat 将多维数组转换为低维数组<br>const arr&#x3D;[1,2,3,[4,5,6,[7,8]]];<br>arr.flat()  默认降低一个维度<br>arr.flat(2)  可以指定降低几个维度</p>
+<p>flatMap  flat与map的结合<br>如果返回的结果是多维度数组  可以将他降低维度<br>var arr&#x3D;[2,3,4];<br>arr.flatMap(item&#x3D;&gt;[item*10])<br>结果还是一维数组</p>
+<h4 id="es10：Symbol-prototype-description"><a href="#es10：Symbol-prototype-description" class="headerlink" title="es10：Symbol.prototype.description:"></a>es10：Symbol.prototype.description:</h4><p>var s&#x3D;Symbol(‘尚硅谷’)<br>s.description : 尚硅谷</p>
+<h4 id="es11-私有属性"><a href="#es11-私有属性" class="headerlink" title="es11:私有属性:"></a>es11:私有属性:</h4><p>class Person{<br>公有属性<br>name；</p>
+<p>私有属性(只能通过 调用类里面函数使用，在外部无法直接使用)<br>井号age;<br>井号weight;<br>constructor(name,age,weight){<br>this.name&#x3D;name;<br>this.井号age&#x3D;age;<br>this.井号weight&#x3D;weight;<br>}</p>
+<p>intro(){<br>console.log(this.井号age)<br>}</p>
+<p>}</p>
+<p>var m&#x3D;new Person(1,2,3)<br>m.name 1<br>m.井号age 报错</p>
+<h4 id="es11-Promise-allSettled"><a href="#es11-Promise-allSettled" class="headerlink" title="es11:Promise.allSettled"></a>es11:Promise.allSettled</h4><p>接受一个promise的数组作为参数<br>返回的结果状态永远都是成功的状态<br>值是里面每一个promise的状态与结果</p>
+<p>Promise.allSettled([p1,p2]) （适用于每一个异步任务都想得到一个结果）</p>
+<p>与之类似的   promise.all（适用于每一个异步任务都成功才会往下执行）<br>也是 接受一个promise的数组作为参数<br>但里面只要有一个promise失败，则返回的结果就是失败的，并且最后返回的值就是失败状态的promise的值<br>只有当所有成功，结果才成功，成功后的值，是所有promise成功的值组成的数组</p>
+<h4 id="es11可选链子操作符"><a href="#es11可选链子操作符" class="headerlink" title="es11可选链子操作符:"></a>es11可选链子操作符:</h4><p>避免了做层层判断<br>function main(config){</p>
+<p>原来是这样的  const s&#x3D;config&amp;&amp;config.db&amp;&amp;config.db.host</p>
+<p>const s&#x3D;config?.db？.host  (?.判断前面的值有没有传入,如果传了就读取后面的db属性)</p>
+<p>}</p>
+<p>main({<br>db:{<br>host:1,<br>username:2</p>
+<p>}</p>
+<p>})</p>
+<h4 id="es11：动态import-按需加载，懒加载"><a href="#es11：动态import-按需加载，懒加载" class="headerlink" title="es11：动态import()(按需加载，懒加载):"></a>es11：动态import()(按需加载，懒加载):</h4><p>等到用的时候再导入<br>import()  import函数的返回结果为一个promise对象  而这个promise对象成功的值就是暴露模块的对象</p>
+<p>import(‘.&#x2F;1.js’).then(module&#x3D;&gt;{<br>module.hello();<br>})</p>
+<h4 id="es11：BigInt："><a href="#es11：BigInt：" class="headerlink" title="es11：BigInt："></a>es11：BigInt：</h4><p>大整数类型<br>let a&#x3D;521n;  n表示大整形</p>
+<p>let n&#x3D;123;<br>BigInt(n) 123n</p>
+<p>用来进行大数值运算</p>
+<p>let max&#x3D;Number.MAX_SAFE_INTEGER;<br>max+1<br>max+2 这里已经不能再大了 这里+2与+1是一样的</p>
+<p>但可以<br>BigInt(max)+BigInt(1)<br>BigInt(max)+BigInt(2)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/22/ES6-11/" data-id="cl193mn560001hgno12zi8oip" data-title="ES6-11" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ajax" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/17/ajax/" class="article-date">
+  <time class="dt-published" datetime="2022-03-17T12:43:05.000Z" itemprop="datePublished">2022-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/17/ajax/">ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点:"></a>优缺点:</h4><p>优势:可以在页面不刷新的情况下向服务端发起请求<br>允许你根据用户事件(鼠标 放在元素上和离开,键盘,表单)来更新部分页面内容</p>
+<p>缺点:没有浏览历史，不能回退<br>存在跨域问题(同源)</p>
+<h4 id="Http协议"><a href="#Http协议" class="headerlink" title="Http协议:"></a>Http协议:</h4><p>也叫做超文本传输协议<br>规定了 浏览器和万维网服务器之间互相通信的规则<br>是一种约定,规则<br>请求(也称为请求报文  浏览器给服务器发的内容):</p>
+<p>请求行: 请求类型(get post delete …) url路径  Http&#x2F;1.1（http协议版本）</p>
+<p>请求头 包括  Host:atguigu.com<br>Cookie:name&#x3D;guigu<br>Content-type:application&#x2F;x-www-form-urlencoded<br>User-Agent:chrome 83</p>
+<p>空行(没有实际意义)</p>
+<p>请求体 username&#x3D;admin&amp;password&#x3D;admin</p>
+<p>响应(也称为响应报文  服务器给浏览器返回的结果):</p>
+<p>响应行： Http&#x2F;1.1(http协议版本)  200(响应状态码)  OK(响应状态字符串)</p>
+<p>响应头：Content-Type:text&#x2F;html;charset&#x3D;utf-8<br>Content-Iength:2048<br>Content-encoding:gzip</p>
+<p>（空行）</p>
+<p>响应体:<html></p>
+<head>
+</head>
+<body>
+</body>
+</html>
+
+
+
+<p>若在浏览器中查看：<br>鼠标右击-&gt;检查 -&gt;网络(全部)-&gt;刷新-&gt;点击最上面一个请求<br>显示的内容中<br>载荷:请求的参数</p>
+<h4 id="ajax-express框架"><a href="#ajax-express框架" class="headerlink" title="ajax-express框架:"></a>ajax-express框架:</h4><p>基于nodejs</p>
+<p>在最外层位置启动终端<br>初始化: npm init –yes（npm是Nodejs下的一个包管理工具）<br>npm i express</p>
+<p>（根目录下）建立一个js文件<br>引入express :<br>1 const express&#x3D;require(“express”)</p>
+<p>创建应用对象:<br>2 const app&#x3D;express();</p>
+<p>创建路由规则:<br>requst是对请求报文的封装<br>response是对响应报文的封装<br>3 app.get(‘&#x2F;‘,(request.response)&#x3D;&gt;{<br>设置响应体<br>response.send(“hello express”) 还可以放语句  如response.send(‘console.log(“hello”)’)<br>})</p>
+<p>监听端口启动服务<br>4 app.listen(8000，（）&#x3D;&gt;{<br>console.log(“服务已经启动，8000端口监听中”)<br>})<br>(代表的网址  <a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000</a>)<br>然后在这个js文件用终端打开  node  js文件名称<br>然后 回车</p>
+<p>案例:<br>1.js<br>上述一样，改动有<br> app.get(‘&#x2F;server’,(request.response)&#x3D;&gt;{<br>设置响应头 允许跨域<br>response.setHeader(‘Access-Control-Allow-Origin’,’*’) &#x2F;&#x2F;Control有写错过，导致跨域失败</p>
+<p>设置响应体<br>response.send(“hello express”)<br>})</p>
+<p>对应网址（<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server%EF%BC%89">http://127.0.0.1:8000/server）</a></p>
+<p>1.html</p>
+<p>ajax操作</p>
+<p>1 创建对象<br>const xhr&#x3D;new XMLHttpRequest()</p>
+<p>2 初始化(设置请求方法和url)<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p>3 发送<br>xhr.send();</p>
+<p>4 事件绑定 处理服务端返回的结果<br>on when 当…时候<br>readystate是xhr对象中的属性 表示状态 有5个值<br>0 未初始化  最开始的属性就是0<br>1 表示 open方法已经调用完毕<br>2 表示 send方法已经调用完毕<br>3 表示 服务端返回了 部分结果<br>4 表示 服务端返回了  所有结果</p>
+<p>change 改变<br>xhr.onreadystatechange&#x3D;function(){<br>if(xhr.readyState&#x3D;&#x3D;4) 当服务端返回了所有结果时 并且 服务器的返回的响<br>应状态码为200<br>if(xhr.status&#x3D;&#x3D;200&amp;&amp;xhr.status&lt;300){<br>console.log(xhr.status) 响应行里面的响应状态码<br>console.log(xhr.statusText) 响应状态字符串<br>console.log(xhr.getAllResponseHeaders()) 所有响应头<br>console.log(xhr.response) 响应体</p>
+<p>。。。.innerHTML&#x3D;xhr.response;<br>}<br>}</p>
+<p>响应状态码中<br>2xx:2开头的都表示成功</p>
+<p>重启f2</p>
+<p>如果在get请求中要传递参数:<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server%EF%BC%9Fa=100&amp;b=200&amp;c=300&#39;">http://127.0.0.1:8000/server？a=100&amp;b=200&amp;c=300&#39;</a>)</p>
+<p>如果上述案例为post请求:<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)<br>改为<br>xhr.open(‘POST’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)</p>
+<p> app.get改为<br>app.post</p>
+<p>如果在post请求中传递参数（请求体）<br>xhr.send(“a&#x3D;100&amp;b&#x3D;200&amp;c&#x3D;300”);或者 xhr.send(“a:100&amp;b:200&amp;c:300”);</p>
+<p>如果要设置请求头:<br>xhr.setRequestHeader(‘Content-Type’,’application&#x2F;x-www-form-urlencoded’)<br>Content-type是预定义的<br>Content-type:用来设置请求体内容的类型<br>application…:用来设置参数的类型</p>
+<p>如果想要自定义的    请求头<br>如:<br>xhr.setRequestHeader(‘name’,’atguigu’)<br>这样服务器那边需要加上<br>response.setHeader(‘Access-Control-Allow-Headers’,’*’)  *表示所有头类型的信息都能接受</p>
+<p>以及<br>app.post改为<br>app.all(.. 可以接受任意类型的请求 get,post,delete,options,…</p>
+<p>如果服务器向要返回一个对象给浏览器<br>由于<br>response.send(“”)里面只能是一个字符串</p>
+<p>所以需要将对象转化为字符串<br>如<br>const data&#x3D;{<br>name:’atguigu’<br>}<br>let str&#x3D;JSON.stringify(data)<br>response.send(str)</p>
+<p>对应的<br>在浏览器接受数据的时候<br>将字符串转化为对象(这是手动设置)<br>let data&#x3D;JSON.parse(xhr.response)</p>
+<p>还可以用一种自动设置的模式<br>xhr.responseType&#x3D;’json’</p>
+<p>为避免改动代码时需要重新启动:<br>npm install  -g nodemon</p>
+<p>重新启动时<br>nodemon 1.js</p>
+<h4 id="IE缓存问题"><a href="#IE缓存问题" class="headerlink" title="IE缓存问题:"></a>IE缓存问题:</h4><p>ie会将ajax请求的结果缓存下来，导致当服务器的数据发生改变时，不能即使的响应给浏览器，因为走的是缓存路线<br>如:xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server&#39;">http://127.0.0.1:8000/server&#39;</a>)<br>需改为<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/server?t=&#39;+Date.now()">http://127.0.0.1:8000/server?t=&#39;+Date.now()</a>)  加上一个时间戳<br>这时候就不会走缓存了，而是重新向服务器发起请求</p>
+<h4 id="超时与网络异常处理"><a href="#超时与网络异常处理" class="headerlink" title="超时与网络异常处理:"></a>超时与网络异常处理:</h4><p>服务器端:<br>setTimeout(()&#x3D;&gt;{<br>response.send(“…”);<br>},3000)</p>
+<p>浏览器端超时设置:<br>xhr.timeout&#x3D;2000;<br>xhr.ontimeout&#x3D;function(){<br>alert(“网络异常…”)<br>}</p>
+<p>浏览器端的网络异常回调:<br>xhr.onerror&#x3D;function(){<br>alert(“…”)<br>}</p>
+<h4 id="取消ajax请求"><a href="#取消ajax请求" class="headerlink" title="取消ajax请求:"></a>取消ajax请求:</h4><p>let xhr&#x3D;null;</p>
+<p>xhr&#x3D;new XMLHttpRequest()</p>
+<p>.. .onclick&#x3D;function（）{<br>xhr.abort();<br>}</p>
+<h4 id="ajax重复发送请求的情况"><a href="#ajax重复发送请求的情况" class="headerlink" title="ajax重复发送请求的情况:"></a>ajax重复发送请求的情况:</h4><p>为减少服务器压力</p>
+<p>let isSending&#x3D;false;是否正在发ajax请求 false没法  true正在发送</p>
+<p>..onclick&#x3D;function（）{<br>if(isSending){ 当下次重复发送的时候  上次的还处于发送状态 就取消掉<br>x.abort();<br>}</p>
+<p>const xhr&#x3D;new XMLHttpRequest()<br>isSending&#x3D;true 表示正在发送<br>…<br>xhr.onreadystatechange&#x3D;function(){<br>if（xhr.readystate&#x3D;&#x3D;4）{<br>isSending&#x3D;false;  请求成功了下次就不需要再发送，不用再重复执行代码<br>}</p>
+<p>}<br>}</p>
+<h4 id="在jquery中如何发送ajax请求"><a href="#在jquery中如何发送ajax请求" class="headerlink" title="在jquery中如何发送ajax请求:"></a>在jquery中如何发送ajax请求:</h4><p>搜 bootcdn<br>粘贴链接<br>$(‘button’).eq(0).click(function(){<br>$.get(   get后面四个参数<br>“<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/jquery-server&quot;">http://127.0.0.1:8000/jquery-server&quot;</a>,<br>{<br>a:100,<br>b:200<br>},<br>function(data){<br>data 为响应体<br>})<br>}，<br>‘json’) 设置响应体类型</p>
+<p>post请求也一样的</p>
+<p>主要在这里:<br>$(‘button’).eq(1).click(function(){<br>$.ajax({<br>url：”<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/jquery-server&quot;">http://127.0.0.1:8000/jquery-server&quot;</a>, 给谁发<br>data:{a:100,b:200},  参数<br>type:’GET’,请求类型<br>dataType：’json’, 响应体结果设置<br>success：function(data){ 成功的回调</p>
+<p>},<br>timeout:2000,超时时间<br>error:function(){ 失败的回调</p>
+<p>},<br>headers:{<br>c:300,<br>d:400<br>}</p>
+<p>})</p>
+<h4 id="使用axios发送ajax请求："><a href="#使用axios发送ajax请求：" class="headerlink" title="使用axios发送ajax请求：####"></a>使用axios发送ajax请求：####</h4><p>引入链接后</p>
+<p>axios.get(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/axios-server&#39;,{">http://127.0.0.1:8080/axios-server&#39;,{</a> 第二个参为一个对象<br>params:{参数<br>id:100<br>}，<br>headers:{请求头信息<br>name:’atguigu’<br>}</p>
+<p>}</p>
+<p>)</p>
+<p>还可以在外边配置baseURL<br>axios.defaults.baseURL&#x3D;’<a href="http://127.0.0.1:8080&#39;">http://127.0.0.1:8080&#39;</a><br>axios.get(‘axios-server’,…)</p>
+<p>如果是post请求<br>axios.post(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/axios-server&#39;">http://127.0.0.1:8080/axios-server&#39;</a>,<br>data:{请求体信息<br>username:123,<br>passward:456<br>}，<br>{其他配置<br>{<br>params:{参数<br>id:100<br>}，<br>headers:{请求头信息<br>name:’atguigu’<br>},<br>}</p>
+<p>}</p>
+<p>)</p>
+<p>axios还可以这样发送请求<br>axios({<br>method:’POST’,<br>url:’…’,<br>params:{level:30},<br>headers:{a:100},<br>data:{username:1}请求体</p>
+<p>})</p>
+<h4 id="使用fetch发送ajax请求"><a href="#使用fetch发送ajax请求" class="headerlink" title="使用fetch发送ajax请求:"></a>使用fetch发送ajax请求:</h4><p>fetch属于全局对象的，可以直接调用<br>fetch(‘<a target="_blank" rel="noopener" href="http://127.../?vip=10&#39;,{">http://127...?vip=10&#39;,{</a><br>method:’POST’<br>header：{name：’atguigu’},<br>body:’user&#x3D;admin&amp;password&#x3D;admin’<br>})</p>
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域:"></a>跨域:</h4><p>同源策略:是浏览器的一种安全策略<br>同源(同一个来源): 协议 域名 端口号 必须完全一样<br>违背同源策略就是跨域</p>
+<p>服务器端:<br>response.sendFile(__dirname+’&#x2F;index.html’) 响应一个页面</p>
+<p>一个Url(http:127.0.0.1:9000&#x2F;person)下的按钮点击后访问另一个url（http:127.0.0.1:9000&#x2F;data）<br>协议,域名，端口可以省略，浏览器会默认加上<br>x.open(‘GET’,’&#x2F;data’)</p>
+<h4 id="如何解决跨域"><a href="#如何解决跨域" class="headerlink" title="如何解决跨域:"></a>如何解决跨域:</h4><p>JSONP：只支持get请求<br>利用script标签的跨域能力来发送请求的<br>天生具有跨域能力的标签:img link iframe script<br>服务端返回函数调用并且把参数放在里面<br>response.send(‘console.log(“hello”)’)<br>如在<br>2.html：</p>
+<script>
+function hander(data){
+.. .innerHTML=data....
+}
+</script>
+<script src='...2.js'></script>
+
+<p>在2.js中:<br>app&#x2F;all(‘jsonp-server’,’….’)</p>
+<p>回调里加上<br>response.end(<code>handle($&#123;str&#125;)</code>)</p>
+<p>如果vscode中用live server打开<br><a target="_blank" rel="noopener" href="http://127.0.0.1:5500/1.html">http://127.0.0.1:5500/1.html</a><br>如果是 in Default Browsers访问<br>file:&#x2F;&#x2F;&#x2F;G:&#x2F;rain&#x2F;1.html</p>
+<h4 id="设置cors响应头实现跨域"><a href="#设置cors响应头实现跨域" class="headerlink" title="设置cors响应头实现跨域:"></a>设置cors响应头实现跨域:</h4><p>支持get和post请求<br>主要通过在服务端设置响应头</p>
+<p>response.setHeader(‘Access-Control-Allow-Origin’,’*’)<br>第2个参数也可以特指某一个url ‘http:127.0.0.1:5050’</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl193mn5e0002hgnoabxfd8w6" data-title="ajax" class="article-share-link">Share</a>
       
       
       
@@ -181,7 +904,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl0pe0c9x0004gonoai2rgkat" data-title="计算题" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl193mn5m0007hgnocxd7g2qj" data-title="计算题" class="article-share-link">Share</a>
       
       
       
@@ -193,9 +916,9 @@
 
 
   
-    <article id="post-JS核心" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-js1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/02/14/JS%E6%A0%B8%E5%BF%83/" class="article-date">
+    <a href="/2022/02/14/js1/" class="article-date">
   <time class="dt-published" datetime="2022-02-14T10:40:51.000Z" itemprop="datePublished">2022-02-14</time>
 </a>
     
@@ -207,7 +930,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/02/14/JS%E6%A0%B8%E5%BF%83/">JS</a>
+      <a class="p-name article-title" href="/2022/02/14/js1/">js1</a>
     </h1>
   
 
@@ -240,7 +963,11 @@
 <p>null转成数字为0<br>undefined转成数字为NaN</p>
 <p>转换方式二:<br>parseInt()函数 parseInt可以将一个字符串中的有效数字读取出来，然后转换成Number类型，但如果第一位就是非数字，name直接转为NaN<br>parseFloat()函数  parseFloat和parseInt类似，不同的是 parseFloat还可以获得有效的小数<br>对于非String类型使用parseInt或者parseFloat，会将其先转成字符串，然后再转成Number</p>
 <p>将其他类型转成Boolean类型:<br>数字中：0和NaN转布尔都是false<br>字符串中:只有空串(“”)转布尔为false<br>null和undefined转布尔都为false<br><br/></p>
-<h4 id="其他进制的数"><a href="#其他进制的数" class="headerlink" title="其他进制的数:"></a>其他进制的数:</h4><p>在js中，如果要表示16进制的数，需要以0x开头<br>var a&#x3D;0x10 结果为16<br>如果要表示8进制的数，需要以0开头<br>var a&#x3D;070 结果为56<br>如果要标识2进制的数，需要以0b开头<br>var a&#x3D;0b10 结果为 2<br>像var a&#x3D;”070”<br>parseInt(a);<br>这种字符串有的浏览器当成8进制，有的当成10进制度<br>解决方法:<br>parseInt(a,10)第一个表示参数，第二个表示进制<br><br/></p>
+<h4 id="其他进制的数"><a href="#其他进制的数" class="headerlink" title="其他进制的数:"></a>其他进制的数:</h4><p>在js中，如果要表示16进制的数，需要以0x开头<br>var a&#x3D;0x10 结果为16</p>
+<p>如果要表示8进制的数，需要以0开头<br>var a&#x3D;070 结果为56</p>
+<p>如果要标识2进制的数，需要以0b开头<br>var a&#x3D;0b10 结果为 2</p>
+<p>像var a&#x3D;”070”<br>parseInt(a);<br>这种字符串有的浏览器当成8进制，有的当成10进制度</p>
+<p>解决方法:<br>parseInt(a,10)第一个表示参数，第二个表示进制<br><br/></p>
 <h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符:"></a>算数运算符:</h4><p>+：对于非Number类型的进行计算，会将其转换为number类型，然后进行计算，并将结果返回。<br>任何值和NaN计算都为NaN(若是字符串相加除外)<br>任何一个值和字符串相加，都会将其先转换为字符串，然后进行拼串。<br>var a&#x3D;1;<br>a&#x3D;1+””;<br>结果为字符串1，这里是虽然是隐式转换，但过程中还是用到了 String（）函数</p>
 <p>-,<em>,&#x2F;:<br>会将参与计算的值都转换为number类型，然后计算。<br>var a&#x3D;”1”;<br>a&#x3D;a-0;<br>a&#x3D;a</em>1;<br>a&#x3D;a&#x2F;1;<br>结果为Number类型的1,可以做隐式的类型转换。</p>
 <p>%：取余。<br><br/></p>
@@ -276,7 +1003,9 @@
 <h4 id="break与continue"><a href="#break与continue" class="headerlink" title="break与continue:"></a>break与continue:</h4><p>break关键字只能又来退出switch或循环语句<br>不能在if语句中使用break和continue<br>break会终止离他最近的循环语句</p>
 <p>可以在break后跟一个label（随便一个标签）,可以终止指定的循环<br>outer：<br>for(…){<br>for(…){<br>break outer;</p>
 <p>continue可以用来跳过当次循环<br>continue默认只会对离他最近的循环起作用<br><br/></p>
-<h4 id="测试程序执行的时间"><a href="#测试程序执行的时间" class="headerlink" title="测试程序执行的时间:"></a>测试程序执行的时间:</h4><p>程序执行前，开启计时器<br>console.time(“test”);text为计时器的名字<br>…<br>console.timeEnd(“test”);终止计时器<br><br/></p>
+<h4 id="测试程序执行的时间"><a href="#测试程序执行的时间" class="headerlink" title="测试程序执行的时间:"></a>测试程序执行的时间:</h4><p>程序执行前，开启计时器<br>console.time(“test”);text为计时器的名字<br>…<br>console.timeEnd(“test”);终止计时器</p>
+<p>或者<br>var start&#x3D;Date.now();得到的是毫秒</p>
+<p>然后再回调里面  用Date.now-start<br><br/></p>
 <h4 id="对象"><a href="#对象" class="headerlink" title="对象:"></a>对象:</h4><p>对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性<br>分类:<br>1 内建对象:由ES标准标准中定义的对象，在任何的ES的实现中都可以使用<br>例如:Math,String,Number,Boolean,Function,Object,…<br>2 宿主对象:由JS的运行环境提供的对象，主要指浏览器提供的对象<br>  比如 BOM,DOM<br>  console.log()中console<br>  document.write()中的document<br>3 自建对象；由开发人员自己建立的对象<br>var obj&#x3D;new Object() 使用new关键字调用的函数，是构造函数constructor，构造函数是专门用来创建对象的函数<br>使用typeof 检查一个对象时,会返回一个object<br>对象中保存的指称为属性<br>向对象添加属性<br>语法:对象.属性名&#x3D;属性值<br>obj.name&#x3D;”孙猴子<br>读取对象中的属性:对象.属性名 obj.name<br>如果读取对象中没有的属性，不会报错，而是返回undefined<br>修改对象的属性值: obj.name&#x3D;”八戒<br>删除对象的属性 delete obj.name;<br>如果要存入特殊的属性名，不能采用 . 的方式来操作,而应该这样<br>obj[“123”]&#x3D;”monkey”<br>取的时候也必须是 obj[“123”]</p>
 <p>还可以  var n&#x3D;”123”<br>obj[n]的值还是一样(读取时还是obj[“123”])</p>
 <p>in 运算符<br>通过该运算符可以检查一个对象中是否含有指定的属性<br>如果由返回true,没有则返回false<br>语法:”属性名” in 对象<br>“name” in obj   true<br>“test” in obj   false</p>
@@ -340,16 +1069,19 @@
 <p>forEach方法需要一个函数作为参数,像这种函数，由我们创建但不由我们调用的（由浏览器自己调用的），称为回调函数。<br>数组中有几个元素，这个函数就会执行几次<br>浏览器会在回调函数中传递三个参数，a为正在遍历的元素，b为正在遍历的元素的索引，第三个参数就是正在遍历的数组<br>arr.forEach(function(a,b,c){<br>})</p>
 <p>arr.slice(a,b)可以用来从数组中提取指定元素,a为起始位置 b为末端位置，但截取的内容不包括末端的那个元素<br>该方法不会改变元素数组，而是将截取到的元素封装到一个新数组中返回</p>
 <p>arr.slice(a) 截取从索引a开始以后的所有元素，索引可以传递一个负值,如-1就是倒数第一个</p>
-<p>arr.splice(m,n)可以用来删除数组中的指定元素 m起始，n表示删除的数量，并将被删除的元素作为返回值返回<br>arr.splice(m,n,k)第三个元素及以后，这些元素将替换掉之前被删掉的元素<br>如果n为0，则表示不删，那么k代表的元素还是将插入到开始的位置(级索引m的前面)的前面</p>
+<p>arr.splice(m,n)可以用来删除数组中的指定元素 m起始，n表示删除的数量，并将被删除的元素作为返回值返回 会改变原数组<br>arr.splice(m,n,k)第三个元素及以后，这些元素将替换掉之前被删掉的元素<br>如果n为0，则表示不删，那么k代表的元素还是将插入到开始的位置(索引m的前面)的前面</p>
 <p>arr.concat(arr2) 连接两个或者多个数组(也可以是元素)，并将新数组返回，该方法不会对原数组产生影响</p>
+<p>arr.filter(（num）&#x3D;&gt;{return true&#x2F;false})<br>函数 function 为必须，数组中的每个元素都会执行这个函数。且如果返回值为 true，则该元素被保留；<br>函数的第一个参数 currentValue 也为必须，代表当前元素的值。filter会返回一个新的数组，不会改变原数组</p>
 <p>arr.join()该方法可以将一个数组转换为字符串，<br>该方法不会改变原数组，而是将转换后得到的字符串作为结果返回<br>还可以指定一个字符串作为参数，该字符串会作为元素之间的连接符<br>如果不适用连接符，默认会使用,作为连接符<br>如果连，也不想要，可以指定空字符串 “”</p>
 <p>arr.reverse() 会翻转数组 前后颠倒过来<br>会改变原数组</p>
 <p>arr.sort()  对数组进行排序<br>会改变原数组 默认会按照unicode编码来进行排序<br>即使对于纯数字的数组，也会按照unicode编码来进行排序，所以对数字进行排序时，可能会得到错误的结果<br>也可以自己来指定排序的规则<br>可以在sort()中放一个回调函数来指定排序规则<br>a，b代表数组中的连续的某两个元素<br>并且a代表的元素的位置一定在b代表的元素的前面<br>浏览器会根据元素的返回值来决定元素是否会交换位置<br>如果大于0 元素会交换位置<br>如果小于0 元素不变<br>如果等于0 则认为两个元素相等，也不交换位置<br>arr.sort(function(a,b){<br>如果升序<br>if(a&gt;b){<br>return 1;<br>}else if(a&lt;b){<br>return -1;<br>}else{<br>return 0<br>}<br>如果降序:<br>if(a&gt;b){<br>return -1;<br>}else if(a&lt;b){<br>return 1;<br>}else {<br>return 0;<br>}</p>
+<p>})</p>
+<p>当遇到数组对象时<br>arr.sort((p1,p2)&#x3D;&gt;{ 降序:后 减 前      升序:前 减 后<br>return sortType&#x3D;&#x3D;1?p2.age-p1.age(根据年龄降序):p1.age-p2.age(根据年龄升序)</p>
 <p>})<br><br/></p>
 <h4 id="call与apply"><a href="#call与apply" class="headerlink" title="call与apply:"></a>call与apply:</h4><p>这两个方法都是函数对象的方法，需要通过函数对象来调用<br>当函数调用call()和apply()都会让函数执行<br>可以将一个对象指定为第一个参数，这个对象将成为函数执行时的this<br>call方法中实参是在对象之后(第一个参数以后)依次传递<br>fun.call(obj,1,2)<br>apply方法中实参在对象之后需要以数组的形式传递<br>apply(obj,[1,2])<br><br/></p>
 <h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments:"></a>arguments:</h4><p>当调用函数时，浏览器每次都会传递进两个隐含的参数:<br>1 函数的上下文对象this<br>2 封装实参的对象arguments<br>arguments是一个类数组对象，可以通过索引来操作数据<br>当调用函数时，所用的实参都会在arguments中保存<br>arguments.length可以获取实参的长度<br>arguments.callee这个属性对应一个函数对象，就是当前正在执行的函数的对象<br><br/></p>
 <h4 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象:"></a>Date对象:</h4><p>在JS中使用Date对象来表示一个时间<br>如果直接使用构造函数创建一个Date对象，则会封装成当前代码执行的时间<br>var d&#x3D;new Date()<br>创建一个指定的时间对象:需要在构造函数中传递一个表示时间的字符串作为参数<br>日期的格式:月&#x2F;日&#x2F;年 时:分:秒<br>new Date(“12&#x2F;03&#x2F;2016 11:10:13”);<br>d.getDate() 获取当前日期是几号<br>d.getDay()  获取当前日期是星期几 会返回一个0-6的值，0表示周日，1表示周一<br>d.getMonth() 获取当前时间的月份 0-11的值 0表示1月 1表示2月  11表示12月<br>d.getFullYear() 获取当前日期对象的年份<br>d.getTime() 获取当前日期对象的时间戳<br>时间戳：从格林威治标准时间的1970年1月1日 0时0分0秒到当前日期所花费的毫秒数(1s&#x3D;1000ms<br>)<br>计算机底层在保存时间时使用的都是时间戳<br>Date.now() 获取当前代码执行时的时间戳<br>可以利用时间戳来测试代码执行的性能<br><br/></p>
-<h4 id="Math"><a href="#Math" class="headerlink" title="Math:"></a>Math:</h4><p>不是构造函数<br>里面封装了数学相关计算的一些属性和方法<br>Math.PI 圆周率 常量<br>Math.abs() 计算一个数的绝对值<br>Math.ceil() 可以对一个数进行向上取整，小数位只要有值就会向上进1<br>Math.floor() 可以对一个数进行向下取整，小数部分会被省掉<br>Math.round() 四舍五入取整<br>Math.random() 可以生成一个0到1之间的随机数 不包括0和1<br>若要随机出现0到10(包括0和10)的数<br>Math.round(Math.random()*10)<br>若要生成0到x之间的随机数<br>Math.round(Math.random()*x)<br>若要生成1到10的数<br>Math.round(Math.random()*9+1)</p>
+<h4 id="Math"><a href="#Math" class="headerlink" title="Math:"></a>Math:</h4><p>不是构造函数<br>里面封装了数学相关计算的一些属性和方法<br>Math.PI 圆周率 常量<br>Math.abs() 计算一个数的绝对值<br>Math.ceil() 可以对一个数进行向上取整，小数位只要有值就会向上进1<br>Math.floor() 可以对一个数进行向下取整，小数部分会被省掉<br>Math.round() 四舍五入取整<br>Math.random() 可以生成一个0到1之间的随机数 包括0  但不包含1<br>若要随机出现0到10(包括0和10)的数<br>Math.round(Math.random()*10)<br>若要生成0到x之间的随机数<br>Math.round(Math.random()*x)<br>若要生成1到10的数<br>Math.round(Math.random()*9+1)</p>
 <p>生成一个x到y之间的随机数:<br>Math.round(Math.random()*(y-x)+x)</p>
 <p>Math.max(1,10,5) 可以获取多个数中的最大值<br>Math.min()  可以获取多个数中的最小值</p>
 <p>Math.pow(2,2) 4 可以获取一个数的几次方<br>Math.sqrt(4) 2 可以对一个数进行开方<br><br/></p>
@@ -358,12 +1090,12 @@
 <p>当我们对一些基本数据类型调用一些属性和方法时,浏览器会临时使用一些包装类将其转换为对象，然后再调用对象的属性和方法，调用完以后，再将其转换为基本数据类型<br>所以<br>var s&#x3D;123;<br>s&#x3D;s.toString();<br>s.hello&#x3D;”你好”; 这里是添加到临时的对象里了，添加完后，这个对象就销毁了<br>console.log(s.hello) undefined  </p>
 <p>上面一共转换了两次对象<br>s.toString()1次<br>s.hello 1次  但这两个不是同一个<br>这上面两个都是临时转换为对象，然后被销毁<br><br/></p>
 <h4 id="字符串的方法"><a href="#字符串的方法" class="headerlink" title="字符串的方法:"></a>字符串的方法:</h4><p>var str&#x3D;”hello”<br>在底层 字符是以字符数组的形式保存的<br>[‘h’,’e’,’l’]<br>str.charAt(0) h 可以返回字符串中指定位置的字符<br>str.charCodeAt(1) 获取指定位置的字符的字符编码（uniCode编码）</p>
-<p>String.fromCharCode(72)  可以根据字符编码去获取字符 ‘H’<br>str.concat(“你好”,”再见”) 可以用来链接两个或多个字符串<br>str.indexOf(“h”) 可以用来检查一个字符串中含有指定内容，如果有，则胡返回其出现的第一次的索引，如果没有找到指定的内容，则返回-1<br>str.indexOf(“h”,1) 可以指定第二个参数，指定开始查找的位置，返回的还是索引<br>str.lastIndexOf(“h”) 从后往前面找<br>str.lastIndexOf(“h”，5) 也可以指定位置</p>
+<p>String.fromCharCode(72)  可以根据字符编码去获取字符 ‘H’<br>str.concat(“你好”,”再见”) 可以用来链接两个或多个字符串<br>str.indexOf(“h”) 可以用来检查一个字符串中含有指定内容，如果有，则返回其出现的第一次的索引，如果没有找到指定的内容，则返回-1 (特殊情况:’abc’.indexOf(“”): 0 ,当input框中值全删完，默认为空字符串)<br>str.indexOf(“h”,1) 可以指定第二个参数，指定开始查找的位置，返回的还是索引<br>str.lastIndexOf(“h”) 从后往前面找<br>str.lastIndexOf(“h”，5) 也可以指定位置</p>
 <p>str.slice(1,2)  可以从字符串中截取指定的内容，不会影响原字符串，而是将截取到的内容返回<br>参1: 开始位置的索引，包括开始的位置<br>参2:结束位置的索引，不包括结束位置</p>
 <p>如果省略第二个，则会截取到开始位置以后所有的<br>str.slice(1,-1) -1表示倒数第一个，截取原则还是不变</p>
 <p>str.substring()  可以用来截取一个字符串，和slice类似<br>参1 :开始截取位置的索引，包括开始位置<br>参2:结束位置的索引，不包括结束位置<br>不同的是 这个不能接收负值作为参数<br>如果是负值，则默认使用0，并且如果第二个参数小于第一个，还会互换位置</p>
 <p>str.substr() 截取指定位置的内容<br>参1:开始位置的索引<br>参2:截取的数量</p>
-<p>str.split()<br>可以将一个字符串拆分成一个数组<br>参数:需要一个字符串作为参数，将会根据这个字符串去拆分成数组<br>如果传递一个空串作为参数表，则会将每个字符拆分成数组中的一个元素<br>var str&#x3D;”abc,def,g”<br>str.split(“,”);[“abc”,”def”,”g”]<br>str.split(“d”) [“abc,”,”ef,g”]</p>
+<p>str.split()<br>可以将一个字符串拆分成一个数组<br>参数:需要一个字符串作为参数，将会根据这个字符串去拆分成数组<br>如果传递一个空串作为参数表，则会将每个字符拆分成数组中的一个元素<br>var str&#x3D;”abc,def,g”<br>str.split(“,”);[“abc”,”def”,”g”]<br>str.split(“d”) [“abc,”,”ef,g”] 两个元素</p>
 <p>str.toUpperCase() 将一个字符串转换为大写并返回<br>str.toLowerCase() 将一个字符串转换为小写并返回<br><br/></p>
 <h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式:"></a>正则表达式:</h4><p>用来定义一些字符串的规则<br>创建正则表达式的对象<br>var reg&#x3D;new RegExp(“正则表达式”,”匹配模式”);</p>
 <p>只要字符串中有a,严格区分大小写,就返回true<br>var reg&#x3D;new RegExp(“a”); reg： &#x2F;a&#x2F;</p>
@@ -388,10 +1120,12 @@
 <p>在正则表达式中可以使用\表示转义字符<br>&#x2F;.&#x2F;  表示.</p>
 <p>reg&#x3D;/&#x2F;\ 表示一个\</p>
 <p>reg.test(“b.\“)  true  这里字符串中的\也转义了，实际上是一个\ （\在字符串中也是一个转义字符）</p>
-<p>\w：任意字母,数字,_ [A-z0-9_]<br>\W：除了 字母，数字,_ [^A-z0-9_]<br>\d：任意的数字 [0-9]<br>\D：除了数字<br>\s：空格<br>\S:除了空格</p>
+<p>\w：任意字母,数字,_ [A-z0-9_]<br>\W：除了 字母，数字,_ [^A-z0-9_]<br>\d：任意的数字 [0-9]<br>\D：除了数字<br>\s：空格<br>\S:除了空格<br>（） 是为了提取匹配字符串的，表达式中有几个()就有几个相应的匹配字符串</p>
 <p>\b：单词边界<br>&#x2F;\bchild\b&#x2F;  表示child为一个独立的单词 前面和后面一个位置都有空格 或后面什么都没有<br>\B：除了单词边界</p>
 <p>去除字符串中的空格<br>str&#x3D;str.replace(&#x2F;\s&#x2F;g,”_”)</p>
-<p>去除开头的空格<br>str&#x3D;str.replace（&#x2F;^\s*&#x2F;，” “）<br>去除结尾的空格<br>str&#x3D;str.replace(&#x2F;\s*$&#x2F;,” “)<br>去除开头和结束的空格<br>str&#x3D;str.replace(&#x2F;^\s*|\s*$&#x2F;g,” “)<br><br/></p>
+<p>去除开头的空格<br>str&#x3D;str.replace（&#x2F;^\s*&#x2F;，” “）<br>去除结尾的空格<br>str&#x3D;str.replace(&#x2F;\s*$&#x2F;,” “)<br>去除开头和结束的空格<br>str&#x3D;str.replace(&#x2F;^\s*|\s*$&#x2F;g,” “)</p>
+<br/>
+
 <h4 id="文档的加载"><a href="#文档的加载" class="headerlink" title="文档的加载:"></a>文档的加载:</h4><p>浏览器在加载一个页面时，是按照自上向下的顺序加载的，读取到一行就运行一行<br>如果将script标签写在页面的上面,代码执行时，页面还没有加载<br>onload事件会在整个页面加载完成之后触发<br>window.onload&#x3D;function(){} 这个可以确保当代码执行时所有dom对象已经加载完毕<br><br/></p>
 <h4 id="dom查询"><a href="#dom查询" class="headerlink" title="dom查询:"></a>dom查询:</h4><p>下面五个通过 document对象(在整个页面查询)调用<br>getElementById() 通过id获取一个元素节点对象</p>
 <p>getElementsByTagName() 通过标签名获取一组元素节点对象</p>
@@ -427,13 +1161,13 @@
 <p>var left&#x3D;event.pageX；鼠标相对于整个页面的坐标,这个属性在ie8中不支持</p>
 <p>box1.style.left&#x3D;left+”px”;  这里元素需要开启定位才能生效，这里的参照物是整个页面</p>
 <p>}<br><br/></p>
-<h4 id="事件的冒泡"><a href="#事件的冒泡" class="headerlink" title="事件的冒泡:"></a>事件的冒泡:</h4><p>指事件的向上传导，当后代元素的事件被触发时，它的祖先元素的相同事件也会被触发<br>document.body.onclick&#x3D;function(event){<br>如果要取消冒泡 event.cancelBubble&#x3D;true;<br><br/></p>
+<h4 id="事件的冒泡"><a href="#事件的冒泡" class="headerlink" title="事件的冒泡:"></a>事件的冒泡:</h4><p>指事件的向上传导，当后代元素的事件被触发时，它的祖先元素的相同事件也会被触发<br>document.body.onclick&#x3D;function(event){<br>如果要取消冒泡 event.cancelBubble&#x3D;true;<br>或者<br>event.stopPropagation();<br><br/></p>
 <h4 id="事件的委派"><a href="#事件的委派" class="headerlink" title="事件的委派:"></a>事件的委派:</h4><p>指事件统一绑定给元素共同的祖先元素,当后代元素身上的事件触发时,会一直冒泡到祖先元素，从而通过祖先元素的响应函数来处理事件</p>
 <p>好处:可以减少事件绑定的次数，提高程序的性能<br>event.target 表示事件触发的对象<br><br/></p>
 <h4 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定:"></a>事件的绑定:</h4><p>1 使用对象.事件&#x3D;函数 的形式绑定响应函数<br>它只能为一个元素的同一个事件绑定一次响应函数<br>不能绑定多个，如果绑定多个，则后面的会覆盖前面的</p>
 <p>2 addEventListener()<br>可以为同一个元素的同一个事件绑定多个响应函数(ie8及以下不支持)<br>参数:<br>事件的字符串，不要on<br>回调函数，当事件触发时，该函数会被调用<br>是否在捕获阶段触发事件，需要一个值，一般都为false<br>btn1.addEventListener(“click”,function(){},false)<br>这里的this是绑定事件的对象</p>
 <p>在ie8中可以使用<br>btn.attachEvent(“onclick”,function(){}）和上面不同的是 这个 是 事件后绑定先执行，<br>这里的this是window<br><br/></p>
-<h4 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播:"></a>事件的传播:</h4><p>W3C将事件传播分为3个阶段:<br>1 捕获阶段<br>从最外层的祖先元素向目标元素进行事件的捕获，但是默认此时不会触发事件</p>
+<h4 id="事件的传播"><a href="#事件的传播" class="headerlink" title="事件的传播:"></a>事件的传播:</h4><p>W3C将事件传播分为3个阶段:<br>1 捕获阶段（先触发捕获 最后才触发冒泡）<br>从最外层的祖先元素向目标元素进行事件的捕获，但是默认此时不会触发事件</p>
 <p>2 目标阶段<br>事件捕获到目标元素 捕获结束 开始在目标元素上触发事件</p>
 <p>3 冒泡阶段<br>事件从目标元素向他的祖先元素传递，依次触发祖先元素上的事件</p>
 <p>如果希望在捕获阶段触发事件，可以将addEventListener的第三个参数设置为true</p>
@@ -443,7 +1177,7 @@
 <p>使用addEventListener绑定事件取消默认行为是不能使用return false,<br>而是使用event.preventDefault()<br><br/></p>
 <h4 id="滚轮事件"><a href="#滚轮事件" class="headerlink" title="滚轮事件:"></a>滚轮事件:</h4><p>box1.onmousewheel&#x3D;function(event){但火狐不支持<br>event.wheelDelta 可以获取鼠标滚轮滚动的方向  正值向上  负值向下<br>}<br><br/></p>
 <h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件:"></a>键盘事件:</h4><p>一般都会绑定给一些可以获取到焦点的对象或者是document(input,..)<br>onkeydown：键盘被按下<br>onkeyup:键盘被松开</p>
-<p>document.onkeydown&#x3D;function(event){<br>console.log(event.keyCode) 按键的编码</p>
+<p>document.onkeydown&#x3D;function(event){<br>console.log(event.keyCode) 按键的编码<br>event.key  按键的名字</p>
 <p>event.altKey<br>event.ctrlKey<br>event.shiftKey 这三个用来判断alt,ctrl,shift是否被按下，如若按下了则返回true</p>
 <p>在文本框中输入内容，属于onkeydown的默认行为<br>使文本框中不能输入数字<br>if(event.keyCode&gt;&#x3D;48&amp;&amp;event.keyCode&lt;&#x3D;57){<br>return false;<br>}<br><br/></p>
 <p>BOM对象:</p>
@@ -459,7 +1193,9 @@
 <h4 id="定时器简介"><a href="#定时器简介" class="headerlink" title="定时器简介:"></a>定时器简介:</h4><p>setInterval(function(){},1000)<br>定时调用:每隔一段时间执行一次回调函数<br>时间单位是毫秒<br>返回一个number类型的数据<br>这个数字作为定时器的唯一标识</p>
 <p>清除上面的定时器<br>var timer&#x3D;setInterval(…)<br>clearInterval(timer);<br>可以接收任意参数，<br>如果参数是一个有效的定时器标识，则会停止定时器<br>如果不是一个有效的标识，则什么也不会做</p>
 <p>如果同时开启多个定时器，则会速度变快，需要在开启前清除掉上一个</p>
-<p>setTimeout(function(){},300)<br>延时调用一个函数不马上执行，而是隔一段时间之后再执行，而且只会执行一次<br>clearTimeout(…)<br><br/></p>
+<p>setTimeout(function(){},300)<br>延时调用一个函数不马上执行，而是隔一段时间之后再执行，而且只会执行一次<br>clearTimeout(…)</p>
+<p>定时器真的是定时执行的吗:<br>定时器并不能保证真正定时执行<br>一般会延迟一丁点(可以接受),也有可能延迟很长时间(不能接受:如 外面存在一个for循环  循环次数非常分大 1后面10个0,而定时器回调函数是在主线程执行的 并且js是单线程)</p>
+<p>定时器是如何实现的:<br>事件循环模型<br><br/></p>
 <h4 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图:"></a>轮播图:</h4><p>为每一个链接添加属性 all[i].num&#x3D;i;<br><br/></p>
 <h4 id="类的操作"><a href="#类的操作" class="headerlink" title="类的操作:"></a>类的操作:</h4><p>可以修改元素class的属性来间接修改样式<br>box.className&#x3D;”m2”;</p>
 <p>.m2{<br>…<br>}</p>
@@ -487,11 +1223,19 @@
 <h4 id="借用构造函数继承（假的）"><a href="#借用构造函数继承（假的）" class="headerlink" title="借用构造函数继承（假的）:"></a>借用构造函数继承（假的）:</h4><p>s实际上只是简化了代码(借用其他函数初始化了一些相同的属性)<br>关键：在子类型的构造函数中通过call（）调用父类型的构造函数<br>function Person(name,age){<br>this.name&#x3D;name;<br>this.age&#x3D;age;<br>}</p>
 <p>function Student(name,age,price){<br>Person.call(this,age,price);相当于 this.age&#x3D;age;this.price&#x3D;price;<br>this.price&#x3D;price;<br>}</p>
 <p>new Student(‘Tom’,20,100);</p>
+<h4 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核:"></a>浏览器内核:</h4><p>是支撑浏览器运行的最核心的程序:<br>Chrome,Safari：webkit<br>firefox：Gecko<br>IE：Trident<br>360,搜狗等国内浏览器:Trident+webkit（双核双驱动）</p>
+<p>不同的浏览器可能不一样</p>
+<p>内核由很多模块组成：<br>内核是一个比较大的程序，有很多模块<br>如:<br>js引擎(也是代码，起到一个解释的作用)模块:负责js程序的编译与运行 </p>
+<p>html,css文档解析模块:负责页面文本的(如输入百度网址回车后  最先得到(读取)html,css的文本，然后进行拆解(根据一定的规则拆解，如标签  html,body,…))</p>
+<p>Dom&#x2F;Css模块:负责dom&#x2F;css在内存中的相关处理(如看到一个p 标签，会生成一个p标签对象，这个对象还会有top,left,等一些如何显示的数据)</p>
+<p>布局和渲染模块:负责页面的布局和效果的绘制(参照内存中的对象)</p>
+<p>（以上四个模块运行在 主线程）</p>
+<p>(以下的模块是运行在 分线程)<br>定时器模块:负责定时器的管理(如 setTimeout(fn,3s)，但里面的fn回调函数是在主线程中运行的)<br>事件管理模块:负责事件的管理(如 对一个按钮进行监听)<br>网络请求模块:负责ajax请求</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/JS%E6%A0%B8%E5%BF%83/" data-id="cl0pe0c9q0001gono63a8dmgs" data-title="JS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl193mn5i0004hgno66h920gv" data-title="js1" class="article-share-link">Share</a>
       
       
       
@@ -534,7 +1278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl0pe0c9u0002gono0rincj1m" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl193mn5f0003hgno047f16y2" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
       
       
       
@@ -594,7 +1338,7 @@
 <p>特殊情况:<br>如果相邻的外边距一正一负,取他们的和<br>如果相邻的外边距都是负的,取其中绝对值较大的</p>
 <p>父子的情况:<br>给子元素设置上外边距,它会传给父元素，导致整体移动<br>解决方法:<br>给父元素设置border(起到隔开的作用)<br><br/><br><br/></p>
 <h4 id="display的可选值"><a href="#display的可选值" class="headerlink" title="display的可选值:"></a>display的可选值:</h4><p>inline 转换成行内<br>block  转成块级<br>inline-block 转成行内块<br>table  将元素设置为一个表格<br>none   元素不会在页面中显示<br>flex   弹性盒子<br><br/><br><br/></p>
-<h4 id="隐藏元素的方式与区别"><a href="#隐藏元素的方式与区别" class="headerlink" title="隐藏元素的方式与区别:"></a>隐藏元素的方式与区别:</h4><p>display:none 隐藏元素 不会占据位置</p>
+<h4 id="隐藏元素的方式与区别"><a href="#隐藏元素的方式与区别" class="headerlink" title="隐藏元素的方式与区别:"></a>隐藏元素的方式与区别:</h4><p>display:none 隐藏元素 不会占据位置（不是代表元素标签不在）</p>
 <p>visibility: hidden 隐藏元素  仍然占据位置</p>
 <p>height:0;overflow:hidden;<br><br/><br><br/></p>
 <h4 id="有序列表与无序列表"><a href="#有序列表与无序列表" class="headerlink" title="有序列表与无序列表:"></a>有序列表与无序列表:</h4><p>无序 ul</p>
@@ -836,8 +1580,8 @@ actio. 表单要提交数据的服务器的地址
 autocomplete="on /off"   历史记录显示与否 （也可以直接给到form 属性上，可直接作用在所有input type="text" 上  
 
 <p>数据要提交到服务器，必须要为元素指定一个name属性</p>
-<p>单选按钮  <input type="radio" name='...'>  &lt;input …<br>两个必须是同一个name属性 同时还需要有一个value属性<br>checked 默认选中</p>
-<p>多选框 type&#x3D;’checkbox’ …</p>
+<p>单选按钮  &lt;input type&#x3D;”radio” name&#x3D;’…’  &lt;input …<br>两个必须是同一个name属性 同时还需要有一个value属性<br>checked 默认选中</p>
+<p>多选框 type&#x3D;’checkbox’ …（在vue中如果出现多个  关于取值 得这样写<br>&lt;input type&#x3D;’checkbox’v-model&#x3D;’hobby’  value&#x3D;’study’  hobby必须为一个数组  同时必须指定value值，不然每个默认为checked  最后结果全部在数组中 ）</p>
 <p>下拉列表</p>
 <p>&lt;select name&#x3D;’</p>
 <option value='...' selected> ...</option>
@@ -953,7 +1697,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl0pe0c9i0000gono1ibzfafl" data-title="CSS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl193mn4m0000hgno7jl2b8ie" data-title="CSS" class="article-share-link">Share</a>
       
       
       
@@ -995,7 +1739,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
 <p>cmd命令:<br>切换到D盘: d:<br>进入到文件夹:直接 cd source_posts<br>查看当前目录下的内容(hexo博客情况下)：ls -l<br>对自己创建的博客进行添加内容:vim  文件名.md<br>新建立一个博客  hexo new post  博客名</p>
 <p>如果使用markdownpad2写博客出现警告框:<br>Awesomium插件下载链接：<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1za81RMtIY_FQRkPd6iJ9rQ">https://pan.baidu.com/s/1za81RMtIY_FQRkPd6iJ9rQ</a> 密码：<br>yho5<br>然后关闭，重新打开</p>
 <p>如果编辑博客时出现<br>[o]pen Read-only, (E)dit anyway， ®ecover， (D)elete it，(Q)uit，<br>(A)bort<br>问题原因：编辑文件时断网或同一个文件在上一次编辑时未进行保存，则在下一次想要进行编辑时就会出现：<br>解决方法如下：<br>1、如不想编辑该文档，直接按下q就离开vim，也就是退出编辑<br>2、如想继续重新编辑该文档、按下E</p>
-<p>退2层目录 : cd ..&#x2F;..&#x2F; （退到source前面一个目录下面）<br>清理:hexo clean<br>生产: hexo g</p>
+<p>退2层目录 : cd ..&#x2F;..&#x2F; （退到source前面一个目录下面）<br>清理:hexo clean<br>生产: hexo g<br>生成到远程中:hexo d</p>
 <p>如果要部署在github上:</p>
 <ul>
 <li>新建一个仓库<br>仓库名称:昵称.github.io<br>在hexo中安装git插件：（需要在新建的目录下）cnpm install –save hexo-deployer-git<br>查看:ls<br>然后 vim _config.yml<br>滑到最下面deploy配置:<br>type: git<br>repo: 那个github上的仓库地址<br>branch: master<br>这个冒号后面一定要有一个空格</li>
@@ -1008,7 +1752,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl0pe0c9v0003gonohila5e69" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl193mn5l0006hgnogvq7hgrn" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
       
       
       
@@ -1038,7 +1782,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -1051,7 +1795,15 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       <ul>
         
           <li>
-            <a href="/2022/02/25/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+            <a href="/2022/03/25/vue2-0-3-0/">vue2.0+3.0</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/22/ES6-11/">ES6-11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/ajax/">ajax</a>
           </li>
         
           <li>
@@ -1059,15 +1811,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
           </li>
         
           <li>
-            <a href="/2022/02/14/JS%E6%A0%B8%E5%BF%83/">JS</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/">github官网快速进入的方法</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/11/CSS/">CSS</a>
+            <a href="/2022/02/14/js1/">js1</a>
           </li>
         
       </ul>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>vue2.0+3.0 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 生产版，开发板版的区别：开发版(包含完整的警告和调试模式)生产版(删除了警告">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue2.0+3.0">
+<meta property="og:url" content="http://example.com/2022/03/25/vue2-0-3-0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue特点:采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护无需直接操作dom,提高开发效率虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用） tips:所有花括号用(())代替 生产版，开发板版的区别：开发版(包含完整的警告和调试模式)生产版(删除了警告">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-24T16:12:49.000Z">
+<meta property="article:modified_time" content="2022-03-27T10:00:06.772Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vue2-0-3-0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/25/vue2-0-3-0/" class="article-date">
+  <time class="dt-published" datetime="2022-03-24T16:12:49.000Z" itemprop="datePublished">2022-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      vue2.0+3.0
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="vue特点"><a href="#vue特点" class="headerlink" title="vue特点:"></a>vue特点:</h4><p>采用组件化(一个.vue文件)模式 提高代码复用率，让代码更好维护<br>无需直接操作dom,提高开发效率<br>虚拟dom(如果数据有变化，就会有帮助 将新的数据和旧的数据对比（diff算法），相同的会保留下来,新的数据再放上去)+Diff算法  尽量复用dom节点（原来有的，依然在用）</p>
+<p>tips:所有花括号用(())代替</p>
+<h4 id="生产版，开发板版的区别："><a href="#生产版，开发板版的区别：" class="headerlink" title="生产版，开发板版的区别："></a>生产版，开发板版的区别：</h4><p>开发版(包含完整的警告和调试模式)<br>生产版(删除了警告  项目写完了，要上线的时候 体积更小)</p>
+<h4 id="安装DevTools："><a href="#安装DevTools：" class="headerlink" title="安装DevTools："></a>安装DevTools：</h4><p>生态系统 -&gt;工具 -&gt;DevTools-&gt;Chrome Extension<br>右上角黑的图标-&gt;管理扩展程序 -&gt;开发者模式打开-&gt;最小化浏览器<br>把安装包按住拖到底部的浏览器</p>
+<h4 id="阻止vue在启动时出现生产提示："><a href="#阻止vue在启动时出现生产提示：" class="headerlink" title="阻止vue在启动时出现生产提示："></a>阻止vue在启动时出现生产提示：</h4><p>（未使用vue-cli之前）<br>Vue.config.productionTip&#x3D;false;</p>
+<h4 id="出现favicon-ico：404错误："><a href="#出现favicon-ico：404错误：" class="headerlink" title="出现favicon.ico：404错误："></a>出现favicon.ico：404错误：</h4><p>（未使用vue-cli之前）<br>127.0.0.1代表本机<br>在vscode中点击 Open with live Server时 会在本机5500的端口上开了一台内置的小服务器，并且在整个工程(所有文件夹和文件)作为这台服务器的根资源去使用</p>
+<p>把.icon的图标放在根路径下</p>
+<h4 id="hello-world小案例"><a href="#hello-world小案例" class="headerlink" title="hello world小案例:"></a>hello world小案例:</h4><p>当data中的数据发生改变  整个模板会被重新解析<br>（未使用vue-cli之前）</p>
+<div  id='root'
+（（name））） <div 使用 （（）） 后可直接读取data里面的数据
+
+
+<p>script&gt;</p>
+<p>new Vue({ 创建vue实例<br>el:’#root’ 把工作成果放在id为root的盒子里面 值通常为css选择器字符串也可以写成<br>document.getElementById(“root”)<br>data:{ 数据供el所指定的容器使用 值暂时写成一个对象<br>name:’尚硅谷’<br>}</p>
+<p>})</p>
+<p>root容器里面依然复合html规范，只不过混入了一些特殊的vue语法<br>root容器里面的代码被称为Vue模板</p>
+<p>先有容器，然后再有Vue实例 当Vue实例开始工作的时候 把整个容器拿过来  拿过来之后解析 看有没有特殊的语法(如:（（（）） ) 如果有就在data中查找，找到后就用对应的值把容器里面((…))替换掉</p>
+<p>容器与实例只能是1对1的关系</p>
+  xxx要写js表达式，且xxx可以自动读取到data中所有的属性
+
+<p>js表达式与js语句的区别:<br>js表达式：一个表达式会产生一个值，可以放在任意一个需要值的地方<br>如:a<br>a+b<br>demo(1)<br>x&#x3D;&#x3D;y?’a’:’b’</p>
+<p>js代码(语句):<br>if（）{}<br>for(){}<br>&lt;&#x2F;script</p>
+<h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法:"></a>模板语法:</h4><p>&lt;a v-bind:href&#x3D;’url’  前面有v-bind,后面的引号里面会当成js表达式执行<br>也可简写成 &lt;a :href&#x3D;’url’<br>还能够指定别的属性 &lt;a v-bind:href&#x3D;’url’ v-bind:x&#x3D;’hello’</p>
+<p>…<br>data:{<br>url:’<a target="_blank" rel="noopener" href="http://www.atguigu.com&/#39;">www.atguigu.com&#39;</a><br>hello:’你好’<br>}</p>
+<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定:"></a>数据绑定:</h4><p>前面的v-bind是单向数据绑定 ：只能是data中的数据改变 去影响页面中的数据改变<br>，而如果页面中的数据改变，是不会影响到data中的数据改变</p>
+<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br><input v-model:value='m'><br>因为v-model默认收集就是value值，所以可以简写成<br><input v-model='m'> </p>
+<h4 id="el与data的两种写法"><a href="#el与data的两种写法" class="headerlink" title="el与data的两种写法:"></a>el与data的两种写法:</h4><p>（未使用vue-cli之前）<br>el:<br>指定容器除了<br>const v&#x3D;new Vue({<br>el:’#root’<br>}</p>
+<p>还可以 v.$mount(“#root”)</p>
+<p>data:<br>data:{}可以是对象式</p>
+<p>data：function(){ 也可以是函数式 并且必须返回一个对象<br>console.log(this) this为Vue实例对象 但如果是箭头函数形式就是全局window<br>return {<br>name:’尚硅谷’<br>}<br>}</p>
+<p>一个重要原则:由Vue管理的函数(如 函数式的data)一定不要写成箭头函数，一旦写了,this就不是Vue实例了</p>
+<h4 id="MVVM模型"><a href="#MVVM模型" class="headerlink" title="MVVM模型:"></a>MVVM模型:</h4><p>M (模型Model): 对应data中的数据<br>V (View)视图：模板<br>VM (视图模型 ViewModel):Vue实例对象</p>
+ xxx 只要是Vue实例里面的属性都能看到  包括Vue原型链上的
+<p>使用方式  直接  不需要加上 实例vm.</p>
+<h4 id="底层原理-Object-defineProperty："><a href="#底层原理-Object-defineProperty：" class="headerlink" title="底层原理 Object.defineProperty："></a>底层原理 Object.defineProperty：</h4><p>给一个对象添加&#x2F;定义属性<br>数据劫持，数据代理，计算属性都由用到过:</p>
+<p>参数1: 给谁添加<br>参数2:添加什么属性<br>参数3:配置项</p>
+<p>let person&#x3D;{  这种方式 可删除，枚举，修改<br>name:’张三’<br>}<br>Object.defineProperty(person,’age’,{<br>value:18</p>
+<p>})  这种方法定义的属性默认为不可枚举（不可遍历）<br>如果想让定义的属性可以枚举</p>
+<p>Object.defineProperty(person,’age’,{<br>value:18<br>enumerable:true  (默认值为false,不可枚举)<br>})</p>
+<p>writable:true(默认值为false，不可修改   即使做了修改操作，也不会报错，但不会影响原值)<br>configurable:true(默认值为false，不可删除   即使做了删除操作，也不会报错，但不会删除原值)</p>
+<p>案例:<br> let number&#x3D;1;<br>var obj&#x3D;{age：number}<br>当number修改时  obj中age的值不会自动的修改<br>而是 还需手动执行  obj.age&#x3D;number;<br>太麻烦</p>
+<p>有一种简单操作:<br>Object.definedProperty(obj,”age”,{<br>get:function(){<br>return number}<br>})</p>
+<p>每次访问age属性，都会触发get函数（getter）的调用,且返回值就是age的值</p>
+<p>当有人修改age属性值时,set函数（setter）会被调用，且返回值就是age的值（改变后的值）</p>
+<p>Object.definedProperty(obj,”age”,{<br>set:function(value){<br>number&#x3D;value;<br>}<br>})</p>
+<p>vscode应用商店里好用的提示插件：Vue3 Snippets</p>
+<h4 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理:"></a>数据代理:</h4><p>什么是数据代理:<br>通过一个对象代理对另一个对象中属性的操作(读&#x2F;写)<br>obj2                       obj&#x3D;{x：1}</p>
+<p>let obj&#x3D;{x:100}<br>let obj2&#x3D;{y:200}</p>
+<p>Object.defineProperty(obj2,’x’,{<br>get(){<br>return obj.x;<br>},<br>set(value){<br>obj.x&#x3D;value;<br>}<br>})</p>
+<p>Vue里的数据代理:<br>vm._data就是指 实例中的data 但内部做了数据劫持<br>vm._data&#x3D;&#x3D;&#x3D;data  :true(前提是这个data放在了全局)</p>
+<p>关键的一步:把data中的数据放到vm身上一份（为了编码更方便 省略了 _data.name中的_data）</p>
+<p>整个基本原理:<br>通过Object.defineProperty()把data中的所有属性添加到vm上<br>为每一个添加到vm身上的属性添加setter和getter<br>在setter和getter内部去操作（读&#x2F;写）data中对应的属性</p>
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理:"></a>事件处理:</h4><p>事件里面绑定的函数 （）可加可不加，但如果时插值语法中必须加 如<p>（（demo()))&lt;&#x2F;p</p>
+<p>点击时触发: <button v-on:click="showInfo()">&lt;&#x2F;button<br>可简写成  &lt;button @click&#x3D;”showInfo”&gt;&lt;&#x2F;button</p>
+<p>new Vue({<br>el:’#root’<br>document.getElementById(“root”)<br>data:{<br>name:’尚硅谷’<br>},<br>methods:{<br>showInfo(a){<br> 此处的this是vm（Vue实例对象） 这里的第一个参数（当没有传入参数的时候）是事件对象 可以获取a.target.innerText<br>}</p>
+<p>如果想传入参数并且不会丢失event<br>&lt;button @click&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  参数位置可以互换，不影响<br>}</p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符:"></a>事件修饰符:</h4><p>阻止事件默认行为:<br>methods:{<br>showInfo(event){<br>event.preventDefault();<br>}<br>或者<br>&lt;button @click.prevent&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  (.prevent对点击事件click进行修饰)</p>
+<p>阻止事件冒泡:<br>methods:{<br>showInfo(event){<br>event.stopPropagation();<br>}<br>或者<br>&lt;button @click.stop&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.once事件只触发一次<br>&lt;button @click.once&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.capture 事件的捕获模式 (事件开始从外往里面开始执行)<br>&lt;button @click.capture&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.self只有event.target是当前操作的元素对象时才触发事件（触发事件的前提条件是   事件对象为当前元素 包含不算）<br>&lt;button @click.self&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>.passive（优先响应默认行为） 事件的默认行为会立即执行 无需等待事件回调函数执行完毕</p>
+<div @scroll='demo'></div  滚动条 滚动时触发
+
+
+<div @wheel='demo'></div   鼠标的滚轮 滚动时触发
+当触发鼠标滚轮时 会执行对应函数  等函数中代码执行完后(这里如果出现一些很棒花时间的循环语句，会造成页面卡顿 ) 才会触发默认行为（滚动台向上/下移动一丢丢）
+
+<div @wheel.passive='demo'></div  可以解决卡顿问题 （scroll事件本事就是先响应默认行为)
+
+
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件:"></a>键盘事件:</h4><p>@keydowm :按下 没有抬起来<br>@keyup:按下 并且松手了</p>
+<p>&lt;input @keyup.enter&#x3D;’’&gt;<br>松手后并且回车了才触发 这里的enter为按键别名</p>
+<p>类似的按键别名还有:<br>delete:删除或退格<br>esc:退出<br>space:空格<br>tab:换行(特殊 必须配合keydown去使用 本身就可以移出焦点)<br>up:上<br>down:下<br>left：做<br>right:右</p>
+<p>如果时多个单词组成的别名:<br>如CapsLock  需要用-分开<br>&lt;input @keyup.caps-lock&#x3D;’’&gt;</p>
+<p>系统修饰键:(用法特殊)<br>ctrl alt shift meta<br>&lt;input @keyup.ctrl&#x3D;’’&gt;<br>按下修饰键的同时 再按下其他键 随后释放其他键 事件才被触发<br>需要  如同时按下ctrl +y  然后松开 才会触发 ctrl+i 也行 …<br>还可以 指定其他键<br>&lt;input @keyup.ctrl.y&#x3D;’’&gt; </p>
+<h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性:"></a>计算属性:</h4><p>底层原理:接住了Object.definedProperty()里面的getter和setter<br>拿着已经写完的属性（data中的数据）去加工去计算，然后生成一个全新的属性</p>
+<p>data里面放的是是属性<br>computed里面放的是计算属性（也在vm身上 和data中的数据一样可直接写在插值语法中）</p>
+<p>当第一次读取计算属性的值时  会被缓存起来   后面再访问就会走缓存路线<br>对比之下 methods读取几次就会执行几次 没有任何缓存</p>
+<p>data：{<br>firstName:’张’,<br>lastName:’三’<br>},<br>computed:{<br>当有人读取fullName时,get就会被调用,且get函数的返回值就是fullName的值<br>get什么时候被调用?(计算属性数据什么时候发生变化)1 初次读取时 2 所依赖的数据发生变化时<br>fullName:{<br>get（）{</p>
+<p>return  this.firstName+’-‘+this.lastName<br>},<br>如果fullName可能会被改 如 vm.fullName&#x3D;1; 那么set函数必须写<br>set(value){<br>const arr&#x3D;value.split(“-“);<br>this.firstName&#x3D;arr[0];<br>this.lastName&#x3D;arr[1];<br>}<br>}</p>
+<p>methods:{<br>fullName:function（）{<br>return  this.firstName+’-‘+this.lastName</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p></p
+
+
+<p>计算属性简写形式（如果确定了只读 不改）</p>
+<p>computed:{<br>fullName(){ 这个函数会直接当成get函数用<br>return  this.firstName+’-‘+this.lastName<br>},</p>
+<h4 id="监视-侦听-属性"><a href="#监视-侦听-属性" class="headerlink" title="监视(侦听)属性:"></a>监视(侦听)属性:</h4><p>对比计算属性:<br>计算属性时不能开启异步任务来维护数据，而监视属性可以（不靠return 语句来返回数据）<br>computed能完成的功能，watch都能完成,watch能完成的功能，computed不一定能完成(如watch可以异步操作 ：setTimeout(function(){})，1000)</p>
+<p>当watch,computed都能实现的时候，优先使用computed</p>
+<p>对于计算属性里面的值也可以进行监测<br>监视属性必须存在才能监视（如果不存在，也不会报错）<br>data:{<br>isCold:true,<br>}<br>watch：{<br>isCold（认定为’isCold’）:{<br>immediate:true,初始化时让handle执行一次<br>handler(newValue,oldValue){当isCold属性发生改变时，会触发handler函数<br>}<br>}</p>
+<p>监视的第二种写法<br>vm.$watch(‘isCold’,{</p>
+<p>immediate:true,<br>handler(newValue,oldValue){<br>}</p>
+<p>})<br>两个重要原则:<br>所有被vue管理的函数，最好写成普通函数，这样this的指向才是vm或者组件实例对象<br>所有不被vue管理的函数（定时器的回调函数，ajax的回调函数,promise的回调函数）,最好写成箭头函数，这样this的指向才是vm或者组件实例对象</p>
+<h4 id="深度监视："><a href="#深度监视：" class="headerlink" title="深度监视："></a>深度监视：</h4><p>data:{<br>number:{ vue监视中 如果地址值没有变化，会默认number没有变化，所以不会触发对应的函数，vue 中的watch默认不会看地址值里面的内容<br>a:1,<br>b:2<br>}<br>}<br>watch:{<br>‘number.a’:{ 监视多级结构中 某个 属性的变化<br>handler（）{</p>
+<p>}</p>
+<p>watch:{<br>number:{<br>deep:true   开启了深度监视      监视多级结构中 所有 属性的变化<br>handler（）{</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>简写形式（当配置项只有handler时才可以）<br>watch:{<br>number（newValue,oldValue）{ 这个函数相当于handler函数</p>
+<p>}</p>
+<p>或者<br>将<br>vm.$watch(‘isCold’,{</p>
+<p>immediate:true,<br>handler(newValue,oldValue){<br>}</p>
+<p>})<br>简写成<br>vm.$watch(‘isCold’,function(newValue,oldValue){</p>
+<p>})</p>
+<h4 id="绑定class样式"><a href="#绑定class样式" class="headerlink" title="绑定class样式:"></a>绑定class样式:</h4><div class='basic' :class='a' 动态样式绑定 适用于类名不确定
+
+<p>data:{<br>a:’normal’<br>}</p>
+<style
+.normal{
+...
+}
+
+
+或者 数组写法 <div class='basic' :class='arr'  适用于 个数不缺名 名字不确定
+
+data:{
+arr:['atguigu1','atguigu2','atguigu3']
+}
+
+<style
+.atguigu1{}
+.atguigu2{}
+
+也可以
+<div class='basic' :class='[a,b,c]'
+data:{
+a:'atguigu1',
+b:'atguigu2'
+或者 对象写法 适用于个数确定 名字也确定
+<div class='basic' :class='classObj'
+data:{
+classObj:{
+atguigu1:false,
+atguigu2:false
+}
+也可以
+<div class='basic' :class='{atguigu1:false,atguigu2:false}'>
+
+
+#### 绑定style样式: ####
+<p style='{fontSize:fsize+"px"}'
+
+对象写法
+data:{
+fsize:40
+} 通常改成
+<p style='styleObj'>
+
+data:{
+styleObj:{
+fontSize:'40px'
+}
+}
+或者数组形式
+<p style='[styleObj,styleObj2]'
+
+data:{
+styleObj:{
+fontSize:'40px'
+}，
+styleObj2:{
+backgroundColor:green;
+}
+}
+
+
+#### 条件渲染: ####
+<p v-show='true'> 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）
+<p v-show='1==3'> 隐藏
+
+
+<p v-if='false'> (为false时 元素节点都会消失) (底层：通过增加 删除节点)
+<p v-else-if='false'> 
+<p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
+
+如果有很高的切换频率，使用v-show
+频率低的 有v-if
+另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+
+template只能和v-if连用 不能和v-show一起使用
+<template v-if='a===1'>
+<p 123</p
+</template
+
+
+#### 列表渲染: ####
+<ul
+<li v-for='p in persons' :key='p.id'> ((p. ...))</li 
+key的作用：让每一个li拥有了一个唯一的标识（前面只有加了: 后面才会被当成表达式处理）
+或者
+<li v-for='（p,index） in persons' :key='index'>  (把 in 换成 of也行)
+
+data:{
+persons:[{},{},{}]
+}
+
+或者 也可以遍历对象
+<li v-for='（p,k） in car' :key='k'>  (这里p 指 属性值  k表示属性名) (把 in 换成 of也行)
+
+data:{
+car：{
+name：1，
+price:2,
+color:3
+}
+}
+
+v-for也可以遍历字符串
+
+也可以遍历次数
+如  v-for='(a,b) of 5' 
+a 为 1 2 3 4 5
+b 为 0 1 2 3 4
+
+
+#### key的作用与原理: ####
+把初始数据生成虚拟dom（真实dom身上没有key,但虚拟dom身上一定会有key）(此时页面啥也没有，只是内存中出现了虚拟节点)
+然后将虚拟dom转换为真实dom
+用户开始输入内容，数据开始更新，出现了新的数据
+根据新的数据，生成 新的虚拟dom
+
+然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，<li key='0' 老王 20  <input type='text'</li'如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） 
+
+
+使用index作为key不是一定会有问题，如果对数据进行了破坏顺序的操作（如数组中往前面加元素，会造成破坏，而往后面添加则不会，因为此时的key为数组的索引值）
+
+如果不写key,遍历时的索引值会默认最为key值
+
+key值最好用唯一标识(id,身份证号)
+
+
+#### 更新时的一个问题(监视数据的一个原理): ####
+
+如这种情况的改变vue监测不到:
+data:{
+persons:[{},{},{}],
+},
+methods:{
+updataMei(){
+this.person[0]={...}  不奏效 (如果只是数组中某一个元素 的某一个属性做赋值是没问题的  如this.person[0].name=123 是可以的)
+但这样写可以  this.person.splice(0,1,{...})
+}
+
+
+}
+如果显示结果为undefined,那么页面不会报错，但也不会有显示
+
+数组更新监测:
+Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：
+
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+
+如果是对象更新:
+data:{
+student:{name:'atguigu'},
+},
+methods:{
+addSex(){
+this.student.sex='男'； 不奏效
+需要这样写   Vue.set(vm._data.student,...)
+可以简写成   Vue.set(this.student,'sex','男')
+也可以  this.$set(....)  （这是对于对象）
+
+用这种方式对于数组 （hobby:['你','猜']）:
+ Vue.set(this.hobby,0,'我') 0 表示元素的索引
+}
+
+
+总结:
+如何监测数组中的数据:
+对象中后追加的属性，Vue默认不做响应式处理
+如果需要给后追加的属性做响应式，需使用一下API:
+Vue.set(...)
+vm.$set(...)
+
+如何监测
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl193mn5k0005hgno2pf70w0z" data-title="vue2.0+3.0" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/22/ES6-11/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6-11</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/25/vue2-0-3-0/">vue2.0+3.0</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/22/ES6-11/">ES6-11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/ajax/">ajax</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/">计算题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/14/js1/">js1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
