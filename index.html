@@ -117,7 +117,7 @@
 <h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法:"></a>模板语法:</h4><p>&lt;a v-bind:href&#x3D;’url’  前面有v-bind,后面的引号里面会当成js表达式执行<br>也可简写成 &lt;a :href&#x3D;’url’<br>还能够指定别的属性 &lt;a v-bind:href&#x3D;’url’ v-bind:x&#x3D;’hello’</p>
 <p>…<br>data:{<br>url:’<a target="_blank" rel="noopener" href="http://www.atguigu.com&/#39;">www.atguigu.com&#39;</a><br>hello:’你好’<br>}</p>
 <h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定:"></a>数据绑定:</h4><p>前面的v-bind是单向数据绑定 ：只能是data中的数据改变 去影响页面中的数据改变<br>，而如果页面中的数据改变，是不会影响到data中的数据改变</p>
-<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br>&lt;input v-model:value&#x3D;’m’<br>因为v-model默认收集就是value值，所以可以简写成<br>&lt;input v-model&#x3D;’m’</p>
+<p>v-model为双向数据绑定 但不是所有元素都支持v-model,<br>v-model只能应用在表单类元素上(输入类元素)<br>&lt;input v-model:value&#x3D;’m’<br>因为v-model默认收集就是value值，所以可以简写成<br>&lt; input v-model&#x3D;’m’&gt;</p>
 <h4 id="el与data的两种写法"><a href="#el与data的两种写法" class="headerlink" title="el与data的两种写法:"></a>el与data的两种写法:</h4><p>（未使用vue-cli之前）<br>el:<br>指定容器除了<br>const v&#x3D;new Vue({<br>el:’#root’<br>}</p>
 <p>还可以 v.$mount(“#root”)</p>
 <p>data:<br>data:{}可以是对象式</p>
@@ -154,15 +154,12 @@
 <p>.capture 事件的捕获模式 (事件开始从外往里面开始执行)<br>&lt;button @click.capture&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
 <p>.self只有event.target是当前操作的元素对象时才触发事件（触发事件的前提条件是   事件对象为当前元素 包含不算）<br>&lt;button @click.self&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
 <p>.passive（优先响应默认行为） 事件的默认行为会立即执行 无需等待事件回调函数执行完毕</p>
-<div @scroll='demo'></div  滚动条 滚动时触发
-
-
-<div @wheel='demo'></div   鼠标的滚轮 滚动时触发
+<p>&lt; div @scroll&#x3D;’demo’&gt;&lt; &#x2F;div&gt;  滚动条 滚动时触发</p>
+<div @wheel='demo'></div>   鼠标的滚轮 滚动时触发
 当触发鼠标滚轮时 会执行对应函数  等函数中代码执行完后(这里如果出现一些很棒花时间的循环语句，会造成页面卡顿 ) 才会触发默认行为（滚动台向上/下移动一丢丢）
 
-<div @wheel.passive='demo'></div  可以解决卡顿问题 （scroll事件本事就是先响应默认行为)
-
-<p>v-model的三个修饰符:<br> .number: 让文本框中得到的结果为数字型，而不是默认的字符串<br>&lt; input type&#x3D;’number’ v-model.number&#x3D;’userInfo.age’ </p>
+<p>&lt; div @wheel.passive&#x3D;’demo’&gt;&lt; &#x2F;div&gt;  可以解决卡顿问题 （scroll事件本事就是先响应默认行为)</p>
+<p>v-model的三个修饰符:<br> .number: 让文本框中得到的结果为数字型，而不是默认的字符串<br>&lt; input type&#x3D;’number’ v-model.number&#x3D;’userInfo.age’&gt; </p>
 <p>.lazy:失去焦点时再收集<br>&lt; textarea v-model.lazy&#x3D;’userInfo.other’&gt;</p>
 <p>.trim: 去掉首位空格</p>
 <h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件:"></a>键盘事件:</h4><p>@keydowm :按下 没有抬起来<br>@keyup:按下 并且松手了</p>
