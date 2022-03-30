@@ -14,7 +14,7 @@
 <meta property="og:description" content="JS编写的位置:可写在外部文件中，然后引入script type&#x3D;”text&#x2F;javascript” src&#x3D;”js&#x2F;script.js” 也可以写在script  &#x2F;script 还可以 button onclick&#x3D;”” 字面量与变量:字面量都是一些不可改变的值 如 1，2，3 变量可以用来保存字面量，变量的值是可以任意改变的 声明变">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-14T10:40:51.000Z">
-<meta property="article:modified_time" content="2022-03-27T08:30:56.263Z">
+<meta property="article:modified_time" content="2022-03-30T10:04:51.629Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -207,7 +207,8 @@
 <p>var person1&#x3D;new Person（）;<br>person1 instanceof Person :true<br>var person2&#x3D;new Person(); </p>
 <p>如果把方法写在构造函数里面，那么person1,person2的方法是不同的，会造成浪费内存，而放在原型链上，则2个对象的方法是同一个</p>
 <p>function  Animal(){…}<br>var animal1&#x3D;new animal();<br>animal1 instanceof animal:true</p>
-<h4 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象:"></a>原型对象:</h4><p>原型prototype：<br>我们所创建的每一个属性，解析器都会向函数中添加一个属性prototype,这个属性(保存了一个地址)对应着一个对象，这个对象就是所谓的原型对象（默认是一个object的空对象）(如：空间地址为0x123)。<br>原型对象有一个属性constructor，它指向函数对象<br>如果函数作为作为普通函数调用,那么prototype没有任何作用。<br>当函数以构造函数的形式调用时，它所创建的对象中都会有一个隐含的属性，指向该构造函数的原型对象，即 创建出来的那个对象的__proto__属性也是保存了一个地址，指向了同一个空间。<br>也就是 对象.<strong>proto</strong>&#x3D;&#x3D;函数.prototype<br>原型对象就像一个公共区域，所有同一个类的实例都可以访问到这个原型对象<br>可以将对象中公有的内容都设置在原型对象中<br>向MyClass构造函数中添加属性a（这个是在公共区间中存入a,并不是单个的实例中存入）<br>MyClass.a&#x3D;….</p>
+<h4 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象:"></a>原型对象:</h4><p>构造函数名.prototype  为显示原型属性<br>实例对象.<strong>proto</strong>    为隐式原型属性<br>这两个都是指向同一个原型对象 </p>
+<p>原型prototype：<br>我们所创建的每一个属性，解析器都会向函数中添加一个属性prototype,这个属性(保存了一个地址)对应着一个对象，这个对象就是所谓的原型对象（默认是一个object的空对象）(如：空间地址为0x123)。<br>原型对象有一个属性constructor，它指向函数对象<br>如果函数作为作为普通函数调用,那么prototype没有任何作用。<br>当函数以构造函数的形式调用时，它所创建的对象中都会有一个隐含的属性，指向该构造函数的原型对象，即 创建出来的那个对象的__proto__属性也是保存了一个地址，指向了同一个空间。<br>也就是 对象.<strong>proto</strong>&#x3D;&#x3D;函数.prototype<br>原型对象就像一个公共区域，所有同一个类的实例都可以访问到这个原型对象<br>可以将对象中公有的内容都设置在原型对象中<br>向MyClass构造函数中添加属性a（这个是在公共区间中存入a,并不是单个的实例中存入）<br>MyClass.a&#x3D;….</p>
 <p>当我们访问对象的一个属性或者方法时，它会现在对象自身中查找，如果有则直接使用，如果没有，则会去原型对象中寻找,如果找到则直接使用。</p>
 <p>向原型中添加方法<br>MyClass.prototype.sayName&#x3D;function(){} 这样既是公共的方法，也不会污染全局作用域的命名空间<br>使用 in 检查对象中有没有某个属性时，如果对象中没有，但原型中有，也会返回true<br>可以使用对象中的hasOwnProperty来检查 对象自身 有没有该属性<br>像  实例.<strong>proto</strong>.hasOwnProperty(“hasOwnProerty”):false</p>
 <p>原型对象也是对象，它也有原型，如果原型中没有，则去原型对象的原型中寻找，也就是<br>函数名.prototype.__proto__或者是实例.<strong>proto</strong>.<strong>proto</strong></p>
@@ -392,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl195kl680005fsno4oo30sb8" data-title="js1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl1dgb8lm0004c4no32gy9rx9" data-title="js1" class="article-share-link">Share</a>
       
       
       
